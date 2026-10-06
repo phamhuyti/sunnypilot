@@ -1,0 +1,307 @@
+{
+  "appName": "Cơ sở dữ liệu Sunnylink",
+  "version": "2026.002",
+  "dataSource": "Tài liệu Sunnypilot chính thức",
+  "lastUpdated": "2026-09-03",
+  "features": [
+    {
+      "id": "mads",
+      "name": "M.A.D.S.",
+      "fullName": "Hệ thống lái xe hỗ trợ mô-đun",
+      "category": "Kiểm soát cốt lõi",
+      "officialDefinition": "Tách rời điều khiển bên (tay lái) khỏi điều khiển dọc (ga/phanh), cho phép xe tự lái ngay cả khi ngắt ga tự động.",
+      "userSummary": "Tay lái vẫn hoạt động ngay cả khi bạn phanh hoặc dừng.",
+      "userTranslation": "\"Đánh lái luôn bật.\" Xe sẽ tự lái cho bạn ngay cả khi bạn hoàn toàn kiểm soát được tốc độ. Bạn có thể lướt, phanh hoặc tăng tốc mà không cần tắt tay lái.",
+      "settingsKeys": [
+        "MadsEnabled",
+        "MadsSteeringMode",
+        "MadsMainCruiseAllowed",
+        "MadsUnifiedEngagementMode"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/modular-assistive-driving-system-m-a-d-s-features-and-functionality/245"
+    },
+    {
+      "id": "nnlc",
+      "name": "NNLC",
+      "fullName": "Điều khiển ngang bằng mạng nơ-ron",
+      "category": "Kiểm soát cốt lõi",
+      "officialDefinition": "Thay thế bộ điều khiển PID/Indi truyền thống bằng mô hình mạng thần kinh nhập dữ liệu độ cong trong quá khứ để dự đoán đường lái trong tương lai. Trực tiếp xuất ra độ cong để điều khiển bên.",
+      "userSummary": "Bộ điều khiển lái dựa trên AI. Lưu ý: Loại trừ lẫn nhau với Enforce Torque Control.",
+      "userTranslation": "\"Đánh lái AI.\" Sử dụng mạng nơ-ron để điều khiển thay vì các công thức toán học truyền thống. Lưu ý: Trong sunnypilot 2026.002+, NNLC và Kiểm soát mô-men xoắn thực thi loại trừ lẫn nhau.",
+      "settingsKeys": [
+        "NeuralNetworkLateralControl"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/neural-network-lateral-control-nnlc/246"
+    },
+    {
+      "id": "blinker_pause",
+      "name": "Tạm dừng khi bật xi nhan",
+      "fullName": "Điều khiển ngang tạm dừng Blinker",
+      "category": "Kiểm soát cốt lõi",
+      "officialDefinition": "Tạm dừng điều khiển ngang (lái) khi bạn kích hoạt đèn xi nhan, cung cấp cho bạn khả năng điều khiển lái hoàn toàn bằng tay trong khi kích hoạt đèn nháy. Tự động điều khiển lại tay lái sau khi đèn xi nhan tắt hoặc vượt quá ngưỡng tốc độ có thể định cấu hình.",
+      "userSummary": "Trả lại tay lái bằng tay khi đèn xi nhan đang nhấp nháy.",
+      "userTranslation": "\"Ghi đè tín hiệu.\" Khi bạn bật đèn nháy để chuyển làn hoặc rẽ, sunnypilot sẽ bước sang một bên và cho phép bạn lái bằng tay mà không cần phải nhấn vô lăng hoặc ngắt kết nối hệ thống.",
+      "settingsKeys": [
+        "BlinkerPauseLateralControl",
+        "BlinkerMinLateralControlSpeed"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/blinker-pause-lateral-control/240"
+    },
+    {
+      "id": "torque_control",
+      "name": "Điều khiển mô-men xoắn",
+      "fullName": "Kiểm soát lái mô-men xoắn & Tự điều chỉnh",
+      "category": "Kiểm soát cốt lõi",
+      "officialDefinition": "Bộ điều khiển bên hiện đại tính toán mô-men xoắn chính xác của động cơ lái cần thiết dựa trên gia tốc ngang, ma sát và động lực học của xe. Có thuật toán tự điều chỉnh thích ứng liên tục tinh chỉnh phản hồi lái trong thời gian thực.",
+      "userSummary": "Hệ thống lái mô-men xoắn chính xác với khả năng tự điều chỉnh thích ứng theo thời gian thực.",
+      "userTranslation": "\"Đánh lái mô-men xoắn thích ứng.\" Thay thế các phương pháp lái cũ bằng mô hình mô-men xoắn có độ chính xác cao. Nếu ô tô của bạn đi chệch hướng hoặc cảm thấy luộm thuộm khi vào các khúc cua, việc bật Tự điều chỉnh sẽ cho phép sunnypilot tự động điều chỉnh lực ma sát và lực lái cho chiếc ô tô cụ thể của bạn.",
+      "settingsKeys": [
+        "EnforceTorqueControl",
+        "SelfTune",
+        "LessRestrictSettingsForSelfTune",
+        "EnableCustomTorqueTuning",
+        "ManualTuneFriction",
+        "TorqueControlTuneVersion",
+        "ManualRealTimeTuning"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/torque-settings/3688"
+    },
+    {
+      "id": "dec",
+      "name": "DEC",
+      "fullName": "Kiểm soát thử nghiệm động",
+      "category": "Kiểm soát cốt lõi",
+      "officialDefinition": "Tự động chuyển đổi giữa Chế độ thư giãn (Theo chiều dọc tiêu chuẩn) và Chế độ thử nghiệm (Xử lý đèn giao thông/Biển báo dừng) dựa trên bối cảnh lái xe (ví dụ: tốc độ, loại đường).",
+      "userSummary": "Tự động chuyển đổi chế độ lái xe dựa trên ngữ cảnh.",
+      "userTranslation": "\"Bộ chuyển đổi thành phố/đường cao tốc.\" Tự động chuyển đổi chế độ dựa trên ngữ cảnh. Di chuyển êm ái trên đường cao tốc ở Chế độ Chill và giảm tốc độ thông minh tại các giao lộ và biển báo dừng khi cần thiết.",
+      "settingsKeys": [
+        "DynamicExperimentalControl"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/dynamic-experimental-control/242"
+    },
+    {
+      "id": "quiet_mode",
+      "name": "Chế độ yên lặng",
+      "fullName": "Tính năng chế độ im lặng",
+      "category": "Kiểm soát cốt lõi",
+      "officialDefinition": "Loại bỏ các cảnh báo âm thanh và chuông không quan trọng khi lái xe. sunnypilot sẽ chỉ phát âm thanh cảnh báo trong những tình huống cần sự chú ý của người lái xe ngay lập tức, duy trì hoạt động phản hồi trực quan đồng thời loại bỏ tiếng bíp thông thường trong cabin.",
+      "userSummary": "Tắt tiếng các chuông không quan trọng trong khi vẫn duy trì cảnh báo an toàn.",
+      "userTranslation": "\"Chuyến đi im lặng.\" Tắt các tiếng bíp và chuông thông thường để bạn có thể thưởng thức âm nhạc hoặc cuộc trò chuyện yên tĩnh nhưng vẫn sẽ phát ra âm thanh báo động khẩn cấp lớn nếu bạn cần tiếp tục ngay lập tức.",
+      "settingsKeys": [
+        "QuietMode"
+      ],
+      "docUrl": "https://docs.sunnypilot.ai/features/quiet-mode/"
+    },
+    {
+      "id": "icbm",
+      "name": "ICBM",
+      "fullName": "Quản lý nút hành trình thông minh",
+      "category": "Khả năng tương thích",
+      "officialDefinition": "Một hệ thống được thiết kế để quản lý tốc độ xe bằng cách \"nhấn\" điện tử các nút ga tự động gốc của ô tô (RES+/SET-) để bắt chước khả năng điều khiển theo chiều dọc hoàn toàn trên những ô tô không hỗ trợ hệ thống này.",
+      "userSummary": "Cho phép kiểm soát tốc độ thông minh trên những chiếc xe không được hỗ trợ bằng cách mô phỏng các lần nhấn nút.",
+      "userTranslation": "\"Hacker du thuyền.\" Nếu ô tô của bạn không hỗ trợ ga/phanh tự lái hoàn toàn, tính năng này sẽ mô phỏng các nút trên vô lăng của bạn để buộc xe giảm tốc độ khi vào cua hoặc giới hạn tốc độ.",
+      "settingsKeys": [
+        "IntelligentCruiseButtonManagement"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/intelligent-cruise-button-management-icbm/244"
+    },
+    {
+      "id": "scc_v",
+      "name": "SCC-V",
+      "fullName": "Ga tự động thông minh - Vision (SCC-V)",
+      "category": "Kiểm soát tốc độ",
+      "officialDefinition": "Hệ thống Ga tự động thông minh - Vision (SCC-V) tận dụng dữ liệu tầm nhìn của camera để chủ động điều chỉnh tốc độ xe của bạn bằng cách tính toán độ cong của đường phía trước.",
+      "userSummary": "Giảm tốc độ ở những đường cong mà máy ảnh nhìn thấy.",
+      "userTranslation": "\"Làm chậm đường cong mắt.\" Chiếc xe nhìn thấy một khúc cua gấp sắp tới và giảm tốc độ nhẹ nhàng trước khi vào khúc cua, giống như cách người lái xe thực hiện.",
+      "settingsKeys": [
+        "VisionBasedTurnSpeedControl"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/smart-cruise-control-using-camera-vision-for-proactive-speed-adjustment/248"
+    },
+    {
+      "id": "scc_m",
+      "name": "SCC-M",
+      "fullName": "Kiểm soát tốc độ rẽ dựa trên bản đồ",
+      "category": "Kiểm soát tốc độ",
+      "officialDefinition": "Sử dụng dữ liệu OpenStreetMap (OSM) để dự đoán độ cong của đường sắp tới và giảm tốc độ đã đặt ACC cho phù hợp bằng cách sử dụng quy hoạch khoảng cách dựa trên độ giật.",
+      "userSummary": "Làm chậm các đường cong sử dụng dữ liệu bản đồ.",
+      "userTranslation": "\"Làm chậm đường cong dựa trên bản đồ.\" Chiếc xe nhìn vào bản đồ, nhìn thấy một khúc cua phía trước và giảm tốc độ trước khi bạn có thể nhìn thấy nó.",
+      "settingsKeys": [
+        "SmartCruiseControlMap"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/smart-cruise-control-map-scc-m-feature-description/247"
+    },
+    {
+      "id": "sla",
+      "name": "SLA",
+      "fullName": "Hỗ trợ giới hạn tốc độ",
+      "category": "Kiểm soát tốc độ",
+      "officialDefinition": "Tự động điều chỉnh tốc độ cài đặt hành trình của xe để phù hợp với giới hạn tốc độ hiện tại. Được lấy từ Dữ liệu bản đồ, Camera bảng điều khiển (TSR) hoặc kết hợp cả hai.",
+      "userSummary": "Tự động đặt hành trình đến giới hạn tốc độ được phát hiện.",
+      "userTranslation": "\"Giới hạn tốc độ tự động.\" Tự động điều chỉnh hệ thống ga tự động của bạn theo giới hạn tốc độ hợp pháp (cộng với mức chênh lệch tùy chỉnh của bạn, ví dụ: +5 mph).",
+      "settingsKeys": [
+        "SpeedLimitAssistMode",
+        "SpeedLimitSource",
+        "SpeedLimitOffsetType",
+        "SpeedLimitOffsetValue"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/speed-limit-assist/249"
+    },
+    {
+      "id": "custom_acc",
+      "name": "ACC tùy chỉnh",
+      "fullName": "Mức tăng ACC tùy chỉnh",
+      "category": "Kiểm soát tốc độ",
+      "officialDefinition": "Cho phép cấu hình các giá trị tăng/giảm tốc độ cho Bấm nhanh (ví dụ: ±1) và Bấm lâu (ví dụ: ±5) của các nút hành trình.",
+      "userSummary": "Ánh xạ lại các giá trị tăng tốc độ của nút hành trình.",
+      "userTranslation": "\"Bộ định cỡ bước nút.\" Tùy chỉnh các nút trên vô lăng của bạn để một lần nhấn sẽ thay đổi tốc độ thêm 1 mph và giữ nó sẽ tăng thêm 5 mph (hoặc bất kỳ kích thước bước nào bạn chọn).",
+      "settingsKeys": [
+        "CustomAccIncrements",
+        "CustomAccShortPressIncrement",
+        "CustomAccLongPressIncrement"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/custom-acc-increments/241"
+    },
+    {
+      "id": "alpha_longitudinal",
+      "name": "Điều khiển dọc Alpha",
+      "fullName": "Điều khiển theo chiều dọc sunnypilot (Alpha)",
+      "category": "Kiểm soát tốc độ",
+      "officialDefinition": "Triển khai điều khiển theo chiều dọc tùy chỉnh nội bộ của sunnypilot. Mang lại khả năng tăng tốc mượt mà, khả năng di chuyển khi xe đang dừng và hành vi dừng và đi được cải thiện so với hành trình OEM nguyên bản.",
+      "userSummary": "Thuật toán kiểm soát phanh và ga tùy chỉnh của sunnypilot.",
+      "userTranslation": "\"Ga & phanh tùy chỉnh.\" Thay thế hệ thống ga tự động bằng radar tại nhà máy của ô tô của bạn bằng logic phanh và ga của sunnypilot, cho phép giảm tốc độ mượt mà hơn và tùy chỉnh khoảng cách theo dõi ô tô.",
+      "settingsKeys": [
+        "AlphaLongitudinal",
+        "LongitudinalManeuverMode"
+      ],
+      "docUrl": "https://docs.sunnypilot.ai/features/cruise/alpha-longitudinal/"
+    },
+    {
+      "id": "alc",
+      "name": "ALC",
+      "fullName": "Tự động chuyển làn đường",
+      "category": "Điều hướng",
+      "officialDefinition": "Bắt đầu chuyển làn sau khi có tín hiệu đèn nháy và bộ hẹn giờ trễ có thể định cấu hình mà không yêu cầu \"nhích\" mô-men xoắn lên vô lăng. Tích hợp tính năng Giám sát điểm mù (BSM) để đảm bảo an toàn.",
+      "userSummary": "Nhấn vào đèn nháy -> Xe tự động di chuyển sau khi kiểm tra an toàn.",
+      "userTranslation": "\"Thay đổi làn đường rảnh tay.\" Bạn bật đèn xi nhan, sunnypilot xác minh điểm mù đã rõ ràng, đợi bộ hẹn giờ trễ ưa thích của bạn và tự động thực hiện chuyển làn đường trơn tru.",
+      "settingsKeys": [
+        "AutoLaneChangeTimer",
+        "AutoLaneChangeBsmDelay"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/auto-lane-change/240"
+    },
+    {
+      "id": "osm_maps",
+      "name": "Bản đồ OSM",
+      "fullName": "Hình học & Điều hướng Ngoại tuyến OpenStreetMap",
+      "category": "Điều hướng",
+      "officialDefinition": "Tích hợp dữ liệu vectơ OpenStreetMap (OSM) đã tải xuống vào thiết bị. Cung cấp hình dạng đường ngoại tuyến, độ cong của đường cong và giới hạn tốc độ đã được xác minh mà không yêu cầu vùng phủ sóng di động trong quá trình lái xe của bạn.",
+      "userSummary": "Bản đồ ngoại tuyến làm chậm đường cong cung cấp năng lượng và giới hạn tốc độ.",
+      "userTranslation": "\"Kiến thức về đường ngoại tuyến.\" Tải bản đồ trực tiếp xuống bộ nhớ thiết bị của bạn để sunnypilot biết giới hạn tốc độ và những khúc cua sắc nét sắp tới ngay cả khi lái xe qua các vùng sâu vùng xa với tín hiệu di động bằng 0.",
+      "settingsKeys": [
+        "SmartCruiseControlMap",
+        "DisplayRoadName",
+        "SpeedLimitSource",
+        "MapAdvisorySpeedLimit"
+      ],
+      "docUrl": "https://docs.sunnypilot.ai/features/connected/osm-maps/"
+    },
+    {
+      "id": "hud_visuals",
+      "name": "HUD và hiển thị",
+      "fullName": "Hình ảnh & số liệu HUD tùy chỉnh trên đường",
+      "category": "Hiển thị & Hình ảnh",
+      "officialDefinition": "Một bộ lớp phủ HUD trên màn hình lái xe bao gồm khả năng tăng tốc theo thời gian thực (Thanh nhiên liệu tên lửa), khoảng cách của xe dẫn đầu và số liệu tốc độ bên dưới chevron, bộ hẹn giờ dừng, chỉ số đồng hồ tốc độ thực và hình ảnh cảnh báo điểm mù.",
+      "userSummary": "Tùy chỉnh đo từ xa màn hình lái xe, thanh tăng tốc và số liệu thống kê về xe dẫn đầu.",
+      "userTranslation": "\"Dash HUD chuyên nghiệp.\" Cải thiện màn hình của bạn với khả năng đo từ xa phong phú: xem khoảng cách và tốc độ chính xác của xe phía trước, thanh tăng tốc lực G được mã hóa màu và bạn đã dừng đèn đỏ trong bao lâu.",
+      "settingsKeys": [
+        "DisplayRocketFuelBar",
+        "ChevronInfo",
+        "StandstillTimer",
+        "TrueVEgoUI",
+        "HideVEgoUI",
+        "ShowTurnSignals",
+        "BlindSpotDetection",
+        "DeveloperUIInfo",
+        "SteeringArc",
+        "RainbowMode"
+      ],
+      "docUrl": "https://docs.sunnypilot.ai/features/display/hud-visuals/"
+    },
+    {
+      "id": "driving_models",
+      "name": "Mô hình và AI",
+      "fullName": "Bộ chọn mô hình lái xe & Cấu hình AI",
+      "category": "Mô hình và AI",
+      "officialDefinition": "Cho phép chuyển đổi và thử nghiệm các mô hình điều khiển mạng thần kinh thị giác khác nhau trực tiếp trên thiết bị. Định cấu hình các tham số mô hình nâng cao bao gồm mong muốn rẽ làn đường, độ trễ điều khiển học tập trực tiếp và độ trễ phần mềm camera.",
+      "userSummary": "Bộ chuyển đổi mô hình AI trong cabin với các thông số tinh chỉnh.",
+      "userTranslation": "\"Hoán đổi não.\" Chọn giữa các mô hình AI khác nhau được đào tạo về các phong cách lái xe khác nhau (đường cao tốc êm ái, những khúc cua gấp, thành phố hung hãn). Điều chỉnh độ trễ lái và tốc độ quay mong muốn cho phù hợp với sở thích của bạn.",
+      "settingsKeys": [
+        "DrivingModel",
+        "ModelLibrary",
+        "LaneTurnDesire",
+        "AdjustLaneTurnSpeed",
+        "LiveLearningSteerDelay",
+        "ManualSoftwareDelay",
+        "AdjustCameraOffset"
+      ],
+      "docUrl": "https://docs.sunnypilot.ai/features/models/"
+    },
+    {
+      "id": "sunnylink",
+      "name": "sunnylink",
+      "fullName": "sunnylink Dịch vụ được kết nối & Cấu hình từ xa",
+      "category": "Dịch vụ được kết nối",
+      "officialDefinition": "Hệ thống phụ trợ đám mây của sunnypilot kết nối thiết bị của bạn với bảng điều khiển quản lý web. Cho phép sao lưu và khôi phục cấu hình tự động, đồng bộ hóa tài trợ GitHub và chuyển đổi tham số từ xa.",
+      "userSummary": "Sao lưu đám mây, bảng điều khiển web và quản lý tham số từ xa.",
+      "userTranslation": "\"Người bạn đồng hành của đám mây.\" Kết nối thiết bị của bạn với sunnylink.ai để bạn có thể sao lưu cài đặt, điều chỉnh các thông số từ điện thoại và liên kết tài khoản GitHub của bạn để biết các tính năng của nhà tài trợ.",
+      "settingsKeys": [
+        "EnableSunnylinkUploader",
+        "CompletedSunnylinkConsentVersion",
+        "SunnylinkDongleId"
+      ],
+      "docUrl": "https://docs.sunnypilot.ai/features/connected/sunnylink/"
+    },
+    {
+      "id": "hkg_tuning",
+      "name": "Tinh chỉnh HKG",
+      "fullName": "Điều chỉnh theo chiều dọc của Hyundai",
+      "category": "Xe cụ thể",
+      "officialDefinition": "Áp dụng cấu hình điều chỉnh cụ thể (\"Stock\" hoặc \"Dynamic\") cho chính sách điều khiển dọc cho xe Hyundai/Kia/Genesis (HKG). Tích hợp với trạng thái Hỗ trợ lái xe trên đường cao tốc (HDA) gốc.",
+      "userSummary": "Khả năng phản hồi của bàn đạp ga dành cho Hyundai/Kia/Genesis.",
+      "userTranslation": "\"Sửa chân ga Hyundai.\" Nếu chiếc Kia/Hyundai của bạn tăng tốc quá chậm hoặc cảm thấy chậm chạp khi tiếp tục từ điểm dừng, việc chuyển chế độ này sang \"Dynamic\" sẽ cải thiện phản ứng ga.",
+      "settingsKeys": [
+        "HyundaiLongitudinalTuning"
+      ],
+      "docUrl": "https://community.sunnypilot.ai/t/hyundai-longitudinal-tuning-implementation-in-sunnypilot/243"
+    }
+  ],
+  "glossary": {
+    "ACC": "Ga tự động thích ứng - Duy trì tốc độ cài đặt và bám sát giao thông",
+    "ALC": "Tự động định làn đường / Tự động chuyển làn đường - Giữ xe ở giữa hoặc tự động chuyển làn đường",
+    "BSM": "Giám sát điểm mù - Cảm biến phương tiện phát hiện xe ở làn đường liền kề",
+    "DEC": "Kiểm soát thử nghiệm động - Chuyển đổi theo ngữ cảnh giữa chế độ Chill và Thử nghiệm",
+    "E2E": "End-to-End - Mạng nơ-ron AI dự đoán trực tiếp đường đi của phương tiện",
+    "ESCC": "Ga tự động thông minh nâng cao - Tích hợp nút bấm và quản lý hành trình Hyundai/Kia",
+    "Firehose": "Hệ thống tải lên dữ liệu đo từ xa lái xe tự động quy mô lớn góp phần đào tạo mô hình lái xe",
+    "HDA": "Hỗ trợ lái xe trên đường cao tốc - Hệ thống đường cao tốc của nhà máy Hyundai/Kia",
+    "HKG": "Hyundai/Kia/Genesis - Gia đình nền tảng ô tô Hàn Quốc",
+    "ICBM": "Quản lý nút hành trình thông minh - Quản lý điện tử các nút hành trình trên vô lăng",
+    "LDW": "Cảnh báo chệch làn đường - Cảnh báo bằng hình ảnh/xúc giác khi đi chệch làn đường",
+    "MADS": "Hệ thống lái xe hỗ trợ mô-đun - Kiến trúc hành trình và lái tách rời độc quyền của sunnypilot",
+    "MICI": "dấu phẩy bốn chỉ định mã nền tảng phần cứng",
+    "NNLC": "Điều khiển bên mạng thần kinh - Mô hình học sâu dự đoán quỹ đạo lái",
+    "OSM": "OpenStreetMap - Cơ sở dữ liệu bản đồ toàn cầu nguồn mở được sử dụng để giới hạn độ cong và tốc độ ngoại tuyến",
+    "PID": "Proportional-Integral-Derivative - Bộ điều khiển phản hồi toán học cổ điển dành cho lái",
+    "SDSU": "Smart DSU - Thiết bị đánh chặn phần cứng hậu mãi dành cho hỗ trợ hành trình radar cũ của Toyota",
+    "SLA": "Hỗ trợ giới hạn tốc độ - Tự động điều chỉnh tốc độ cài đặt hành trình dựa trên giới hạn đường hợp pháp",
+    "SCC-M": "Bản đồ ga tự động thông minh - Giảm tốc độ đường cong dựa trên hình dạng bản đồ OSM",
+    "SCC-V": "Tầm nhìn ga tự động thông minh - Giảm tốc độ trên đường cong dựa trên cảm nhận của camera trước",
+    "TICI": "chỉ định mã nền tảng phần cứng bằng dấu phẩy 3",
+    "TIZI": "chỉ định mã nền tảng phần cứng 3X bằng dấu phẩy",
+    "TSR": "Nhận dạng biển báo giao thông - Phát hiện biển báo giới hạn tốc độ trên đường dựa trên camera",
+    "UEM": "Chế độ tương tác hợp nhất - Tùy chọn tương tác bằng một nút cho MADS",
+    "WMI": "World Model Iteration - Kiến trúc mô hình E2E nâng cao",
+    "ZSS": "Cảm biến lái Zorro - Cảm biến góc lái quang học độ phân giải cao cho xe Toyota cũ"
+  }
+}

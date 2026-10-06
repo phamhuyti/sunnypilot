@@ -1,0 +1,2360 @@
+{
+  "appName": "Cơ sở dữ liệu xe Sunnylink",
+  "version": "1.0",
+  "lastUpdated": "2026-09-02",
+  "vehicles": [
+    {
+      "id": "hyundai-ioniq-5-2022",
+      "make": "Hyundai",
+      "model": "Ioniq 5",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG Canvas",
+        "radar": "Nội bộ (SCC chứng khoán)"
+      },
+      "bestSettings": {
+        "drivingModel": "WMI V12",
+        "torqueTuning": "v0.0",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Remain Active",
+        "experimentalMode": "Dynamic"
+      },
+      "configs": [
+        {
+          "name": "Đường cao tốc êm ái (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock / OP Long",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Cân bằng hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock / OP Long",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ],
+      "communityConsensus": "Rất khuyến khích sử dụng WMI V12 với Torque v0.0 để định tâm mượt mà nhất. NNLC rất quan trọng để ngăn chặn bóng bàn ở tốc độ đường cao tốc. Sử dụng 'Camera Offset' (Pos=Trái, Neg=Phải) trong cài đặt nếu xe đang chạy quá gần một bên.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "SPUser88",
+          "rating": 5,
+          "comment": "Đã thay đổi lộ trình đi lại của tôi. WMI V12 vượt xa HDA có sẵn."
+        },
+        {
+          "user": "EVDriver",
+          "rating": 4,
+          "comment": "Mô-men xoắn v0.0 là điều bắt buộc đối với giá lái Ioniq 5. Camera offset cuối cùng đã khắc phục được vấn đề về làn đường trên cầu của tôi."
+        }
+      ],
+      "forumQuotes": [
+        {
+          "text": "Aggressive TR: TỐT NHẤT. TẬP TRUNG ĐƯỜNG RẮN ROCK. RẤT NHANH CHÓNG. Nhưng không mượt mà.",
+          "user": "warren.2",
+          "context": "Thử nghiệm các mô hình E2E về khả năng căn giữa làn đường"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": "toyota-rav4-2019",
+      "make": "Toyota",
+      "model": "RAV4",
+      "years": "2019-2021",
+      "hardware": {
+        "device": "comma 3 / 3X",
+        "harness": "Toyota Security Key / TSS2",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "WD40",
+        "torqueTuning": "Default",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Default",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "TSS2 RAV4 được hưởng lợi từ mẫu 'North Dakota' để xử lý mô-men xoắn tốt hơn trên các đường cong trên đường cao tốc. Stock ACC đáng tin cậy nhưng OP Long được ưu tiên hơn nếu phần cứng cho phép.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/toyota-lexus/87",
+      "reviews": [
+        {
+          "user": "ToyotaTech",
+          "rating": 5,
+          "comment": "North Dakota là mẫu xe duy nhất có thể xử lý các đường cong của đường cao tốc địa phương một cách hoàn hảo."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Độ ổn định của đường cao tốc (WD40)",
+          "settings": {
+            "drivingModel": "WD40",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "OFF"
+          }
+        },
+        {
+          "name": "Chuyến tham quan thoải mái (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "E2E hiện đại (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "honda-civic-2022",
+      "make": "Honda",
+      "model": "Civic",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 4",
+        "harness": "Honda Bosch",
+        "radar": "Kho (Bosch)"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "OP Long (Alpha)",
+        "mads": "Remain Active",
+        "experimentalMode": "Always On"
+      },
+      "communityConsensus": "Civic 2022+ với dấu phẩy 4 là một cỗ máy mạnh mẽ. Việc sử dụng 'Pop Model' mang lại phong cách lái xe 'một bàn đạp' tuyệt vời trong giao thông thành phố với Chế độ thử nghiệm.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/honda-acura/81",
+      "reviews": [
+        {
+          "user": "CivicSi",
+          "rating": 4.5,
+          "comment": "Chế độ thử nghiệm cuối cùng cũng có thể sử dụng được trong thành phố trên nền tảng này."
+        }
+      ],
+      "isRecommended": true,
+      "configs": [
+        {
+          "name": "Đi làm hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock (EPS Mod)",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock Long",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Độ mịn bên (TCPmV3)",
+          "settings": {
+            "drivingModel": "The Cool Peoples Model v3",
+            "torqueTuning": "Stock (EPS Mod)",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock Long",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kia-niro-2023",
+      "make": "Kia",
+      "model": "Niro",
+      "years": "2023-2025",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "The Cool Peoples Model v3",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Enabled (Always On)",
+        "experimentalMode": "Enabled"
+      },
+      "communityConsensus": "Được người dùng đánh giá 11/10 về khả năng định tâm. Độ ổn định vượt trội và khả năng giữ làn đường trên đường cao tốc, vượt xa HDA nguyên bản.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "NiroFan",
+          "rating": 5,
+          "comment": "11/10 cho việc định tâm. Cải tiến lớn so với HDA gốc."
+        }
+      ],
+      "isRecommended": true,
+      "configs": [
+        {
+          "name": "Sự lựa chọn của cộng đồng (TCPmV3)",
+          "settings": {
+            "drivingModel": "The Cool Peoples Model v3",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đội xe yêu thích (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "genesis-gv60-2022",
+      "make": "Genesis",
+      "model": "GV60",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "WMI V12",
+        "torqueTuning": "Auto",
+        "lateralControl": "Default HKG",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Chuyên gia điều động đô thị. Xử lý các khúc cua gấp trong đô thị và lấy lại tốc độ nhanh chóng với độ tin cậy cao hơn nhiều so với hệ thống nguyên bản.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "GenesisDriver",
+          "rating": 5,
+          "comment": "Hoàn hảo cho việc lái xe trong thành phố. Bây giờ các ngã rẽ thật suôn sẻ."
+        }
+      ],
+      "isRecommended": true,
+      "configs": [
+        {
+          "name": "Cao tốc cao cấp (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đội xe hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ford-f150-2021",
+      "make": "Ford",
+      "model": "F-150",
+      "years": "2021-2023",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Ford Q",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Dark Souls Model v2",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock Radar",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Trải nghiệm lái xe trên đường cao tốc mượt mà. Người dùng thích nó hơn BlueCruise nguyên bản của Ford vì khả năng tập trung vào các đường cong tốt hơn.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/ford/79",
+      "reviews": [
+        {
+          "user": "F150Owner",
+          "rating": 4.5,
+          "comment": "Tốt hơn BlueCruise. Vẫn tập trung ngay cả trên những đường cong chặt chẽ."
+        }
+      ],
+      "isRecommended": true,
+      "configs": [
+        {
+          "name": "Kiểm soát có thẩm quyền (Dark Souls Model v2)",
+          "settings": {
+            "drivingModel": "Dark Souls Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Tàu lượn đường cao tốc (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chevy-bolt-2017",
+      "make": "Chevrolet",
+      "model": "Bolt EV/EUV",
+      "years": "2017-2023",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "GM (L or A)",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "Default GM",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Recommended"
+      },
+      "communityConsensus": "Kinh nghiệm cấp độ đầu vào vững chắc. Độ tin cậy cao cho việc di chuyển hàng ngày và thay đổi làn đường trên đường cao tốc một cách suôn sẻ.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/general-motors/80",
+      "reviews": [
+        {
+          "user": "BoltCommuter",
+          "rating": 5,
+          "comment": "Đáng tin cậy và trơn tru. Hoàn hảo cho chuyến đi 50 dặm hàng ngày của tôi."
+        }
+      ],
+      "isRecommended": true,
+      "configs": [
+        {
+          "name": "Đi làm hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Định tâm chính xác (CD210 Model)",
+          "settings": {
+            "drivingModel": "CD210 Model",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "OFF"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chrysler-pacifica-2017",
+      "make": "Chrysler",
+      "model": "Pacifica",
+      "years": "2017-2024",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Chrysler",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "Default",
+        "lateralControl": "MADS",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Enabled (Essential)",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Chuyến đi đường gia đình cần thiết. MADS giữ cho tay lái luôn hoạt động ngay cả khi ở tốc độ dưới 37 dặm/giờ, giảm bớt sự mệt mỏi cho người lái trong những chuyến đi dài.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/chrysler-jeep-ram/78",
+      "reviews": [
+        {
+          "user": "FamilyVan",
+          "rating": 4.8,
+          "comment": "MADS là yếu tố thay đổi cuộc chơi về lưu lượng truy cập. Không còn tình trạng mất lái ở tốc độ thấp."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Chuyến tham quan gia đình (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đường cao tốc cân bằng (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lincoln-navigator-2022",
+      "make": "Lincoln",
+      "model": "Navigator",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 4",
+        "harness": "Ford Q",
+        "radar": "Stock (giả mạo là Expedition)"
+      },
+      "bestSettings": {
+        "drivingModel": "Dark Souls Model v2",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Alpha Longitudinal",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Xe hoạt động thành công nếu bị giả mạo là Ford Expedition sử dụng BluePilot. Sử dụng Alpha Longitudinal để có hiệu suất phanh/khí tinh tế.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/ford/79",
+      "reviews": [
+        {
+          "user": "LincolnLuxe",
+          "rating": 5,
+          "comment": "Việc giả mạo như một cuộc thám hiểm đã hoạt động hoàn hảo. Mượt mà hơn nhiều so với stock."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Cơ quan quyền lực hạng nặng (Dark Souls Model v2)",
+          "settings": {
+            "drivingModel": "Dark Souls Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Cao tốc cao cấp (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ram-1500-2019",
+      "make": "RAM",
+      "model": "1500",
+      "years": "2019-2024",
+      "hardware": {
+        "device": "comma 3 / 3X",
+        "harness": "RAM",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Dark Souls Model v2",
+        "torqueTuning": "v1",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Chuyển đổi giữa Kiểm soát mô-men xoắn v0 và v1 để giảm tình trạng bóng bàn trên đường cao tốc. Một số người dùng 10.4 báo cáo rằng không có hỗ trợ tạm thời; chuyển đổi điều chỉnh là cách khắc phục đầu tiên.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/chrysler-jeep-ram/78",
+      "reviews": [
+        {
+          "user": "TruckerJoe",
+          "rating": 4,
+          "comment": "Điều chỉnh v1 đã khắc phục được sự cố bóng bàn của tôi trên đường cao tốc."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Cơ quan quản lý xe tải (Dark Souls Model v2)",
+          "settings": {
+            "drivingModel": "Dark Souls Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Xe kéo đường cao tốc (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "byd-frigate-07-2023",
+      "make": "BYD",
+      "model": "Frigate 07",
+      "years": "2023-2025",
+      "hardware": {
+        "device": "comma 3X",
+        "harness": "CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Nâng cấp lớn về việc giữ làn đường của nhà máy trên đường cao tốc. Khả năng điều khiển dọc vẫn đang phát triển và có thể hơi giật khi giao thông đông đúc.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/byd/77",
+      "reviews": [
+        {
+          "user": "EcoDriver",
+          "rating": 4.5,
+          "comment": "Đã thay đổi lộ trình đi lại trên đường cao tốc của tôi. Điều khiển ngang là một con thú."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Cân bằng hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Thông minh E2E (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "honda-ridgeline-2022",
+      "make": "Honda",
+      "model": "Ridgeline",
+      "years": "2021-2023",
+      "hardware": {
+        "device": "comma 4",
+        "harness": "Honda Bosch",
+        "radar": "Kho (Bosch)"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock Longitudinal (Nidec)",
+        "mads": "Remain Active",
+        "experimentalMode": "Smart Cruise Vision"
+      },
+      "communityConsensus": "Cần thiết phải kích hoạt 'Điều khiển dọc nguyên bản' cho nền tảng Honda Nidec để tránh tiếng ồn do ABS mài mòn khi phanh. SC Model vẫn giữ được các đường cong tuyệt vời, giữ ở trung tâm mà không bị bóng bàn và không ôm sát đường kẻ.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/honda-acura/81",
+      "reviews": [
+        {
+          "user": "RidgePilot",
+          "rating": 4,
+          "comment": "Cổ đã cố định từ lâu tiếng mài đáng sợ. Bên là hoàn hảo với mô hình SC."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Đi lại cân bằng (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Kiểm soát chắc chắn (Dark Souls Model v2)",
+          "settings": {
+            "drivingModel": "Dark Souls Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hyundai-tucson-hybrid-2022",
+      "make": "Hyundai",
+      "model": "Tucson (Hybrid)",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 3X",
+        "harness": "Torque control CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "WMI V12",
+        "torqueTuning": "v0",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Cải thiện độ ổn định ở tốc độ giữa các tiểu bang bằng cách điều chỉnh các giá trị đánh lái_max và kp. WMIv12 được chú ý là có khả năng lái nhanh/mô-men xoắn tương tự như phiên bản v9.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "TucsonTech",
+          "rating": 4.5,
+          "comment": "Cải thiện độ ổn định đáng kể ở tốc độ cao với Torque v0."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Điều hướng thông minh (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock / OP Long",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đội xe hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock / OP Long",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hyundai-elantra-2021",
+      "make": "Hyundai",
+      "model": "Elantra",
+      "years": "2021-2023",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "v0",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Enabled",
+        "experimentalMode": "Enabled"
+      },
+      "communityConsensus": "Lái xe đáng tin cậy với Pop Model, WMIv9, WMIv12 và DARKSOULS. Lưu ý: Hệ thống phanh bị giật đáng kể khi dừng và đi khi xe thường bò về phía trước thay vì dừng hẳn.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "ElantraDriver",
+          "rating": 4,
+          "comment": "Đường bên rất tuyệt nhưng hãy cẩn thận khi tham gia giao thông!"
+        }
+      ],
+      "configs": [
+        {
+          "name": "Đi lại linh hoạt (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đô thị E2E (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lexus-rc-2023",
+      "make": "Lexus",
+      "model": "RC",
+      "years": "2023-2025",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Toyota Security Key / TSS2",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "OP Model 10 V3",
+        "torqueTuning": "Default",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Lúng túng ở các ngã tư khu phố; có xu hướng chậm lại hoặc dừng lại bất ngờ. Off-Policy v5 cung cấp khả năng định tâm đường cao tốc tốt hơn.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/toyota-lexus/87",
+      "reviews": [
+        {
+          "user": "LexusOwner",
+          "rating": 4,
+          "comment": "Định tâm đường cao tốc cuối cùng đã được sửa với OPM v5."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Bên hiệu suất cao (OP Model 10 V3)",
+          "settings": {
+            "drivingModel": "OP Model 10 V3",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đã thử nghiệm ngoài chính sách (Off-Policy Model v5)",
+          "settings": {
+            "drivingModel": "Off-Policy Model v5",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lexus-is-2017",
+      "make": "Lexus",
+      "model": "IS",
+      "years": "2017-2020",
+      "hardware": {
+        "device": "comma 3X / 4",
+        "harness": "Toyota Security Key / TSS2",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "v0.0",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "configs": [
+        {
+          "name": "Đi lại đã được chứng minh (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Chảy máu cạnh (Firehose Model)",
+          "settings": {
+            "drivingModel": "Firehose Model",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ],
+      "communityConsensus": "Mẫu Firehose được đánh giá cao để định tâm làn đường ổn định và xử lý trơn tru các khúc cua trên đường cao tốc. Việc sử dụng Mô-men xoắn v0.0 và các giá trị bù camera dương giúp khắc phục tình trạng ôm sát làn đường bên trái. Đặt lại hiệu chuẩn trước khi chuyển sang Firehose để học tập tối ưu.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/toyota-lexus/87",
+      "reviews": [
+        {
+          "user": "Adrian_Abedon",
+          "rating": 5,
+          "comment": "Mô hình Firehose đã biến đổi IS của tôi. Việc định tâm làn đường hiện đã ổn định trên đường cao tốc."
+        },
+        {
+          "user": "Lexus_Driver_99",
+          "rating": 4.5,
+          "comment": "Torque v0.0 tốt hơn nhiều so với mặc định. Rất khuyến khích thiết lập."
+        }
+      ],
+      "forumQuotes": [
+        {
+          "text": "Gắn bó với firehose, điều khiển mô-men xoắn bên, học trực tiếp + học beta và phiên bản điều khiển mô-men xoắn v0. Tôi đã tìm thấy những cài đặt đó là tối ưu.",
+          "user": "Adrian_Abedon",
+          "context": "Lexus IS 2017 có dấu phẩy 3X/4"
+        }
+      ],
+      "isRecommended": true
+    },
+    {
+      "id": "lexus-rx350-2017",
+      "make": "Lexus",
+      "model": "RX 350",
+      "years": "2016-2022",
+      "hardware": {
+        "device": "comma 3X / 4",
+        "harness": "Toyota Security Key / TSS2",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "v0.0",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Điều chỉnh 'Camera Offset' là chìa khóa để khắc phục sự cố bám làn đường trên nền tảng RX 350. Mẫu Firehose cung cấp khả năng định tâm đường cao tốc tốt hơn North Dakota cho giá lái này.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/toyota-lexus/87",
+      "reviews": [
+        {
+          "user": "peterclampton",
+          "rating": 4.8,
+          "comment": "Việc thêm độ lệch camera tích cực đã khắc phục được các vấn đề về ôm bên trái của tôi. Firehose thật tuyệt vời."
+        }
+      ],
+      "forumQuotes": [
+        {
+          "text": "Tôi chỉ điều chỉnh căn giữa làn đường (bù camera) để nó di chuyển qua một chút thì tôi không gặp phải vấn đề “ôm sát vạch bên trái”.",
+          "user": "peterclampton",
+          "context": "RX350 2017 với mẫu mặc định và firehose"
+        }
+      ],
+      "configs": [
+        {
+          "name": "Cao tốc cao cấp (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Định tâm cứng (WD40)",
+          "settings": {
+            "drivingModel": "WD40",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "OFF"
+          }
+        }
+      ]
+    },
+    {
+      "id": "honda-accord-2018",
+      "make": "Honda",
+      "model": "Accord",
+      "years": "2018-2022",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Honda Bosch",
+        "radar": "Kho (Bosch)"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "OP Long (Alpha)",
+        "mads": "Remain Active",
+        "experimentalMode": "Always On"
+      },
+      "communityConsensus": "Accord thế hệ thứ 10 là một nền tảng vững chắc. Việc sử dụng 'Pop Model' mang lại phong cách lái xe 'một bàn đạp' tuyệt vời trong giao thông thành phố với Chế độ thử nghiệm.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/honda-acura/81",
+      "reviews": [
+        {
+          "user": "AccordDriver",
+          "rating": 4.5,
+          "comment": "Chế độ thử nghiệm cuối cùng cũng có thể sử dụng được trong thành phố trên nền tảng này."
+        }
+      ],
+      "forumQuotes": [
+        {
+          "text": "Đã sử dụng TCPV3 trong nhiều tháng... hài lòng với hiệu suất.",
+          "user": "captainsmith06",
+          "context": "Độ tin cậy lâu dài của Accord thế hệ thứ 10"
+        }
+      ],
+      "configs": [
+        {
+          "name": "Đã được chứng minh hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đô thị E2E (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hyundai-ioniq-5-2026",
+      "make": "Hyundai",
+      "model": "Ioniq 5 (Early Access)",
+      "years": "2025-2026",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "OP Model 10 V3",
+        "torqueTuning": "v0",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Vào cua tốc độ cao xuất sắc (>30 MPH), nhưng gặp khó khăn ở tốc độ thấp với việc bám làn đường và khóa xe. Khuyến nghị sử dụng Torque v0.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "IoniqPilot",
+          "rating": 4.2,
+          "comment": "Những đường cong tốc độ cao được xử lý như mơ. Những vòng quay tốc độ thấp vẫn cần phải nỗ lực."
+        }
+      ],
+      "configs": [
+        {
+          "name": "E2E bên nâng cao (OP Model 10 V3)",
+          "settings": {
+            "drivingModel": "OP Model 10 V3",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Mô hình thế giới hàng đầu (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kia-sportage-phev-2024",
+      "make": "Kia",
+      "model": "Sportage PHEV",
+      "years": "2023-2025",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Kumars Vibe",
+        "torqueTuning": "Default",
+        "lateralControl": "Nevada (Curves)",
+        "longitudinalControl": "Stock Hyundai Longitudinal",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Mô hình Nevada hiện là nhà vô địch về định tâm đường cong trên đường cao tốc. Các mẫu xe Kumar và Herbalist mang lại cảm giác lái mượt mà hơn.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "PHEV_User",
+          "rating": 5,
+          "comment": "Nevada vượt qua những khúc cua với tốc độ nhanh như một tay đua chuyên nghiệp. Chuyển tiếp mượt mà."
+        }
+      ],
+      "forumQuotes": [
+        {
+          "text": "Cảm giác lái trở nên 'ổn định' và tự tin hơn theo thời gian... Vào cua ngày càng trở nên chính xác.",
+          "user": "Tony.Wu",
+          "context": "Đánh giá cộng đồng sau 1 năm về nền tảng HKG CAN-FD"
+        }
+      ],
+      "configs": [
+        {
+          "name": "Cộng đồng yêu thích (Kumars Vibe)",
+          "settings": {
+            "drivingModel": "Kumars Vibe",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Định tâm chắc chắn (Nevada Model)",
+          "settings": {
+            "drivingModel": "Nevada Model",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "audi-a3-mqb-evo-2022",
+      "make": "Audi",
+      "model": "A3 (MQB Evo)",
+      "years": "2022-2025",
+      "hardware": {
+        "device": "comma 4",
+        "harness": "VW/Audi MQB",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "DTRv6 mang lại độ êm ái cho đường cong trên đường cao tốc một cách tuyệt vời. WMIv12 được ưu tiên cho hoạt động thông minh của thành phố nhưng đòi hỏi sự chú ý cao.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/volkswagen-audi-skoda/88",
+      "reviews": [
+        {
+          "user": "EuroTuner",
+          "rating": 4.5,
+          "comment": "DTRv6 cuối cùng đã được vợ chấp thuận cho A3. Mượt mà hơn nhiều so với hỗ trợ di chuyển chứng khoán."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Autobahn mượt mà (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Thông minh hiện đại (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "subaru-crosstrek-2020",
+      "make": "Subaru",
+      "model": "Crosstrek",
+      "years": "2018-2023",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Subaru",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "CD210 Model",
+        "torqueTuning": "v0.0 (Manual)",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "configs": [
+        {
+          "name": "Định tâm Subaru (CD210 Model)",
+          "settings": {
+            "drivingModel": "CD210 Model",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đường cao tốc cứng (WD40)",
+          "settings": {
+            "drivingModel": "WD40",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "OFF"
+          }
+        }
+      ],
+      "communityConsensus": "Việc sử dụng CD210 ngăn cản việc ôm sát đường cong bên trong thường gặp ở các mẫu cũ. Đặt mô hình mô-men xoắn thủ công về 0,0 giúp xe có cảm giác cực kỳ ổn định và 'trên đường ray'. Đã xác nhận hỗ trợ tiếp tục các giải pháp dừng xe và phanh tay bằng tay.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/subaru/85",
+      "reviews": [
+        {
+          "user": "CrossPilot",
+          "rating": 5,
+          "comment": "CD210 + Torque 0.0 hoàn hảo cho Crosstrek. Không còn phải chống chọi với bánh xe trên những khúc cua nữa."
+        }
+      ]
+    },
+    {
+      "id": "honda-odyssey-2018",
+      "make": "Honda",
+      "model": "Odyssey",
+      "years": "2018-2024",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Honda Bosch",
+        "radar": "Kho (Bosch)"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "Stronger Steering",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "OP Long (Alpha)",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Phuộc MVL cung cấp khả năng điều khiển mạnh mẽ hơn đáng kể và khả năng điều chỉnh trực tiếp bàn đạp ga cho các mẫu xe của Bosch. Tuyệt vời cho những chuyến đi đường dài với đầy đủ hành lý cho gia đình.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/honda-acura/81",
+      "reviews": [
+        {
+          "user": "VanPilot",
+          "rating": 5,
+          "comment": "Hệ thống lái mạnh mẽ hơn trên Odyssey là một cải tiến lớn. Cảm thấy tự tin hơn rất nhiều."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Sự thoải mái khi đi đường (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đi làm hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hyundai-sonata-2021",
+      "make": "Hyundai",
+      "model": "Sonata",
+      "years": "2020-2023",
+      "hardware": {
+        "device": "comma 3 / 3X",
+        "harness": "Hyundai",
+        "radar": "SCC nhà máy"
+      },
+      "bestSettings": {
+        "drivingModel": "WMI V12",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "OP Long (Alpha)",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Alpha Longitudinal là điều cần thiết để vượt qua mức tối thiểu 20 MPH SCC của nhà máy, cho phép chức năng dừng và đi trơn tru khi giao thông đông đúc.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "Sonata_OP",
+          "rating": 5,
+          "comment": "Việc vượt qua mức tối thiểu 20 dặm/giờ đã thay đổi mọi thứ. Việc dừng lại và đi cuối cùng cũng suôn sẻ."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Điều hướng thông minh (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đi lại linh hoạt (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "toyota-sienna-2021",
+      "make": "Toyota",
+      "model": "Sienna",
+      "years": "2021-2023",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Toyota Security Key / TSS2",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "Default",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Đã được xác nhận là hoạt động tốt trên dấu phẩy 3X khi lái xe trên đường cao tốc cũng như lái xe trong thành phố tắc nghẽn.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/toyota-lexus/87",
+      "reviews": [
+        {
+          "user": "Sienna_Fan",
+          "rating": 5,
+          "comment": "Tuyệt vời cho cả lái xe trên đường cao tốc và thành phố. Chế độ C3X là cứu cánh khi tham gia giao thông."
+        }
+      ],
+      "forumQuotes": [
+        {
+          "text": "Nó dường như hoạt động tuyệt vời... khi lái xe trên đường cao tốc trên chiếc C3X của tôi... nó dường như giúp bạn tỉnh táo khi tham gia giao thông ở NYC.",
+          "user": "Y_S",
+          "context": "Hiệu quả cho cả mật độ đường cao tốc và thành phố"
+        }
+      ],
+      "isRecommended": true,
+      "configs": [
+        {
+          "name": "Chuyến tham quan gia đình (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Trung tâm rắn (WD40)",
+          "settings": {
+            "drivingModel": "WD40",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "OFF"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kia-ev6-2022",
+      "make": "Kia",
+      "model": "EV6",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "WMI V12",
+        "torqueTuning": "v0.0",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Enabled",
+        "experimentalMode": "Dynamic"
+      },
+      "communityConsensus": "Người dùng EV6 nêu bật hành vi xuất sắc trên đường cao tốc với NNLC. Để chuyển làn một cách suôn sẻ nhất, hãy đảm bảo bật 'Thay đổi làn đường không cần di chuyển' trong cài đặt. MADS được khuyến nghị sử dụng khi lái xe trong thành phố để duy trì khả năng hỗ trợ lái trong khi quản lý việc dừng và đi theo cách thủ công.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "EV6_Pilot",
+          "rating": 5,
+          "comment": "NNLC làm cho EV6 có cảm giác như nó có HDA3 thực sự. Đá vững chắc trên I-5."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Flagship thông minh (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Cân bằng hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kia-telluride-2020",
+      "make": "Kia",
+      "model": "Telluride",
+      "years": "2020-2022",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG Canvas",
+        "radar": "SCC nhà máy"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "Default",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Essential",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Một nhà vô địch về chuyến đi đường. MADS là điều cần thiết cho những mẫu xe này để giữ cho tay lái hoạt động ở tốc độ dưới 30 MPH. Người dùng báo cáo rằng 'North Dakota' là mẫu xe tốt nhất để xử lý trọng lượng của Telluride trên những đoạn đường dài.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "TellyOwner",
+          "rating": 4.8,
+          "comment": "Mẫu North Dakota là lựa chọn phù hợp cho Telluride. Vì vậy, tự tin hơn nhiều so với chứng khoán."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Hành khách yêu thích (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Độ cứng tối đa (WD40)",
+          "settings": {
+            "drivingModel": "WD40",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "OFF"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hyundai-palisade-2020",
+      "make": "Hyundai",
+      "model": "Palisade",
+      "years": "2020-2022",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG Canvas",
+        "radar": "SCC nhà máy"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "v1",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Tương tự như Telluride, Palisade được hưởng lợi từ việc điều chỉnh Mô-men xoắn v1 để chống lại hiện tượng 'bóng bàn' trên đường cao tốc. Đảm bảo bật 'Chế độ im lặng' để giúp gia đình yên bình mà không bị cảnh báo liên tục.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "PaliDad",
+          "rating": 4.5,
+          "comment": "Hoàn hảo cho chuyến đi đường gia đình. Mô-men xoắn v1 đã khắc phục các hiện tượng lệch tâm nhỏ."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Hành khách yêu thích (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Mịn bên (TCPmV3)",
+          "settings": {
+            "drivingModel": "The Cool Peoples Model v3",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kia-k5-2021",
+      "make": "Kia",
+      "model": "K5",
+      "years": "2021-2024",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "v0.0",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Enabled",
+        "experimentalMode": "Always On"
+      },
+      "communityConsensus": "Hiệu suất của sedan thể thao. Nền tảng K5 có khả năng điều khiển tuyệt vời; Mô-men xoắn v0.0 và NNLC cung cấp khả năng định vị chính xác, sắc nét ngay cả trên những khúc cua đường cao tốc tương đối chật hẹp.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "K5_Turbo",
+          "rating": 5,
+          "comment": "K5 với NNLC thật đáng kinh ngạc. Nó xử lý các đường cong như một người chuyên nghiệp."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Thể thao hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Mô hình thế giới E2E (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hyundai-kona-ev-2019",
+      "make": "Hyundai",
+      "model": "Kona EV",
+      "years": "2019-2023",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG Canvas",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "WMI V12",
+        "torqueTuning": "Default",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Đáng tin cậy và ổn định. WMI V12 kết hợp với Kiểm soát mô-men xoắn tiêu chuẩn là trải nghiệm 'đặt và quên' nhất đối với nền tảng Kona EV. Hành khách sử dụng năng lượng hiệu quả.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [
+        {
+          "user": "KonaElectric",
+          "rating": 4.5,
+          "comment": "Chắc chắn cho việc đi lại hàng ngày. Định tâm làn đường tốt hơn rất nhiều so với nguyên bản."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Thành phố & Đường cao tốc (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Đi lại đã được chứng minh (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "toyota-tundra-2022",
+      "make": "Toyota",
+      "model": "Tundra",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 3X / 4",
+        "harness": "Toyota TSK",
+        "radar": "Nhà máy TSK"
+      },
+      "bestSettings": {
+        "drivingModel": "WMI V12",
+        "torqueTuning": "Self-Tune",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Tundra 2022+ yêu cầu dây đai và nhánh tương thích với TSK. Người dùng báo cáo độ ổn định tuyệt vời với 'WMI V12', nhưng 'Tự điều chỉnh' phải được bật để xử lý các đặc tính giá lái độc đáo của xe tải. MADS rất được khuyến khích cho các tình huống kéo.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/toyota-lexus/87",
+      "reviews": [
+        {
+          "user": "TundraTough",
+          "rating": 4.9,
+          "comment": "Hỗ trợ TSK là yếu tố thay đổi cuộc chơi cho Tundra. WMI V12 vẫn vững chắc trên đường cao tốc ngay cả khi có xe kéo."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Hiện đại mượt mà (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Cơ quan quản lý xe tải lớn (Dark Souls Model v2)",
+          "settings": {
+            "drivingModel": "Dark Souls Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mazda-cx5-2021",
+      "make": "Mazda",
+      "model": "CX-5",
+      "years": "2021-2024",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Mazda Gen 2",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "Default",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "CX-5 được yêu thích 'di sản' nhờ cảm giác lái tự nhiên. 'Down to Ride v6' là tiêu chuẩn vàng về sự thoải mái của hành khách ở đây. Tránh 'Pop Model' nếu bạn gặp phải dao động khi có gió lớn.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/mazda/83",
+      "reviews": [
+        {
+          "user": "MazdaMinded",
+          "rating": 4.7,
+          "comment": "DTR v6 khiến CX-5 có cảm giác như một chiếc tàu tuần dương hạng sang. Chuyển tiếp rất mượt mà."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Sự thoải mái tinh tế (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Hoạt động hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "subaru-ascent-2019",
+      "make": "Subaru",
+      "model": "Ascent",
+      "years": "2019-2022",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Subaru Giraffe",
+        "radar": "MắtSight"
+      },
+      "bestSettings": {
+        "drivingModel": "CD210 Model",
+        "torqueTuning": "v1.2",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Optional",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Tích hợp EyeSight của Subaru rất chắc chắn. 'CD210' cung cấp khả năng xử lý đường cong tốt hơn cho khung Ascent lớn hơn so với kiến ​​trúc nguyên bản. V1.2 Điều chỉnh mô-men xoắn được khuyến nghị để giảm thiểu các rung động vi mô nhỏ.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/subaru/85",
+      "reviews": [
+        {
+          "user": "AscentLife",
+          "rating": 4.6,
+          "comment": "CD210 giúp ích rất nhiều khi đi trên đường cao tốc. Cảm thấy tự tin hơn nhiều so với EyeSight."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Định tâm Subaru AWD (CD210 Model)",
+          "settings": {
+            "drivingModel": "CD210 Model",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Tàu lượn chở khách (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "honda-pilot-2019",
+      "make": "Honda",
+      "model": "Pilot",
+      "years": "2019-2022",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Honda Bosch",
+        "radar": "Nhà máy Bosch"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "v0",
+        "lateralControl": "NNLC",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Bosch Pilot phản ứng đặc biệt tốt với 'Pop Model' và NNLC. Nó giúp loại bỏ cảm giác “trôi nổi” thường gặp trong hệ thống Honda Sensing của nhà máy. Sử dụng mô-men xoắn 'v0' để ngăn chặn việc điều chỉnh quá mức trên những đoạn đường dài.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/honda-acura/81",
+      "reviews": [
+        {
+          "user": "PilotCaptain",
+          "rating": 4.8,
+          "comment": "NNLC là điều bắt buộc đối với Phi công. Bây giờ nó đi thẳng như một mũi tên."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Đường cao tốc gia đình (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Tiêu chuẩn hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rivian-r1t-2022",
+      "make": "Rivian",
+      "model": "R1T",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 3X / 4",
+        "harness": "Custom Rivian CAN",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "OP Model 10 V3",
+        "torqueTuning": "Experimental",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Recommended",
+        "experimentalMode": "Always On"
+      },
+      "communityConsensus": "Vẫn còn trong quyền truy cập sớm cho nhiều người. Kiến trúc CAN-FD phức tạp của Rivian yêu cầu 'Off-Policy v3' để thay đổi làn đường một cách đáng tin cậy. Chế độ Thử nghiệm thường được duy trì để tận dụng khả năng phanh tái tạo cao của Rivian.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/rivian/90",
+      "reviews": [
+        {
+          "user": "RivianRich",
+          "rating": 4.4,
+          "comment": "Những ngày đầu nhưng đầy hứa hẹn. Off-Policy v3 xử lý R1T nặng một cách đáng ngạc nhiên."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Độ chính xác ngoài chính sách (OP Model 10 V3)",
+          "settings": {
+            "drivingModel": "OP Model 10 V3",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Cơ quan quyền lực hạng nặng (Dark Souls Model v2)",
+          "settings": {
+            "drivingModel": "Dark Souls Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rivian-r1s-2022",
+      "make": "Rivian",
+      "model": "R1S",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 3X / 4",
+        "harness": "Custom Rivian CAN",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "OP Model 10 V3",
+        "torqueTuning": "Experimental",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Recommended",
+        "experimentalMode": "Always On"
+      },
+      "communityConsensus": "Chia sẻ nền tảng CAN-FD với R1T. Chiều dài cơ sở ngắn hơn đòi hỏi phải điều chỉnh sang bên chắc chắn hơn một chút để tránh lắc lư. Off-Policy v3 mang lại khả năng tập trung làn đường trên đường cao tốc tuyệt vời và Chế độ thử nghiệm tận dụng khả năng tái tạo một bàn đạp của Rivian.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/rivian/90",
+      "reviews": [
+        {
+          "user": "R1S_Explorer",
+          "rating": 4.5,
+          "comment": "Chiều dài cơ sở ngắn hơn một chút so với R1T khiến nó phản ứng rất nhanh trên OP Model 10 V3. Người đi đường vững chắc."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Độ chính xác ngoài chính sách (OP Model 10 V3)",
+          "settings": {
+            "drivingModel": "OP Model 10 V3",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Cơ quan quyền lực hạng nặng (Dark Souls Model v2)",
+          "settings": {
+            "drivingModel": "Dark Souls Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tesla-model3-2017",
+      "make": "Tesla",
+      "model": "Model 3",
+      "years": "2017-2023",
+      "hardware": {
+        "device": "comma 3X / 4",
+        "harness": "Tesla Harness",
+        "radar": "Nguyên bản / Tầm nhìn"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "Tesla Custom",
+        "lateralControl": "EPAS Control",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Always On",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Hỗ trợ sunnypilot đặc biệt cho Model 3 trước HW4. Pop Model tái tạo cảm giác khóa chặt của FSD đồng thời cung cấp khả năng tùy chỉnh trình điều khiển đầy đủ và quyền điều khiển EPAS cao.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/tesla/86",
+      "reviews": [
+        {
+          "user": "Model3Modder",
+          "rating": 5,
+          "comment": "Tốt hơn nhiều so với Autopilot tiêu chuẩn. Không có vấn đề về phanh ảo nếu cài đặt phù hợp."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Mượt mà hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Thông minh E2E (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tesla-modely-2020",
+      "make": "Tesla",
+      "model": "Model Y",
+      "years": "2020-2024",
+      "hardware": {
+        "device": "comma 3X / 4",
+        "harness": "Tesla Harness",
+        "radar": "Nguyên bản / Tầm nhìn"
+      },
+      "bestSettings": {
+        "drivingModel": "Pop Model v2",
+        "torqueTuning": "Tesla Custom",
+        "lateralControl": "EPAS Control",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Always On",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Sự đồng thuận mạnh mẽ của cộng đồng đối với các mẫu crossover Model Y trước HW4. Hệ thống ga tự động dọc êm ái và hệ thống điều khiển ngang EPAS có thẩm quyền cao giúp bạn không bị vấp ngã trên đường cao tốc mà không bị căng thẳng.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/tesla/86",
+      "reviews": [
+        {
+          "user": "ModelYTouring",
+          "rating": 5,
+          "comment": "Độ ổn định ngang tuyệt vời trong những chuyến đi đường dài. Sunnypilot giúp việc lái xe trên đường cao tốc trở nên dễ dàng mà không gặp khó khăn."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Mượt mà hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Thông minh E2E (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "volvo-xc90-2016",
+      "make": "Volvo",
+      "model": "XC90",
+      "years": "2016-2022",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Volvo Harness",
+        "radar": "Nhà máy"
+      },
+      "bestSettings": {
+        "drivingModel": "CD210 Model",
+        "torqueTuning": "Self-Tune",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Nền tảng SPA của Volvo được hưởng lợi đáng kể từ khả năng điều khiển ngang của sunnypilot. 'CD210' thường được cho là thoải mái nhất đối với các biến thể hệ thống treo khí nén của XC90. Tự điều chỉnh là cần thiết để định tâm làn đường nhất quán ở tốc độ đường cao tốc.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/volvo/89",
+      "reviews": [
+        {
+          "user": "VolvoViking",
+          "rating": 4.7,
+          "comment": "Mượt mà hơn nhiều so với Pilot Assist nguyên bản. CD210 xử lý XC90 nặng rất đẹp."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Ổn định mượt mà (CD210 Model)",
+          "settings": {
+            "drivingModel": "CD210 Model",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Sự thoải mái khi đi đường (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ford-f150-lightning-2022",
+      "make": "Ford",
+      "model": "F-150 Lightning",
+      "years": "2022-2024",
+      "hardware": {
+        "device": "comma 3X / 4",
+        "harness": "Ford Q4",
+        "radar": "Phần cứng BlueCruise"
+      },
+      "bestSettings": {
+        "drivingModel": "Dark Souls Model v2",
+        "torqueTuning": "v1.2 Stiff",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock / OP Long",
+        "mads": "Always On",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Đối với Lightning, 'Dark Souls v2' cung cấp quyền cần thiết để giữ cho xe tải ở giữa ngay cả khi có gió ngược. Người dùng kéo rơ moóc nhận thấy việc điều chỉnh mô-men xoắn 'v1.2 Stiff' là cách đáng tin cậy duy nhất để ngăn chặn việc điều chỉnh độ lắc của đuôi.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/ford/79",
+      "reviews": [
+        {
+          "user": "LightningStrike",
+          "rating": 4.8,
+          "comment": "Trải nghiệm rảnh tay tốt nhất cho F-150. Dark Souls v2 rất tự tin."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Cơ quan EV hạng nặng (Dark Souls Model v2)",
+          "settings": {
+            "drivingModel": "Dark Souls Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Hành trình mượt mà (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "toyota-corolla-2023",
+      "make": "Toyota",
+      "model": "Corolla",
+      "years": "2023-2024",
+      "hardware": {
+        "device": "comma 3X / 4",
+        "harness": "Toyota TSK",
+        "radar": "TSS 3.0"
+      },
+      "bestSettings": {
+        "drivingModel": "WD40",
+        "torqueTuning": "v0",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "TSS 3.0 Corollas rất nhạy. 'Pop Model' với mô-men xoắn 'v0' là cách thiết lập đường cao tốc được ưu tiên để duy trì hiệu quả và vị trí trung tâm. Hỗ trợ TSK là bắt buộc đối với mẫu năm nay.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/toyota-lexus/87",
+      "reviews": [
+        {
+          "user": "CorollaClassic",
+          "rating": 4.9,
+          "comment": "Làn đường hoàn hảo tập trung vào chiếc Corolla 2024 của tôi. Pop Model rất linh hoạt."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Đường cao tốc đá rắn (WD40)",
+          "settings": {
+            "drivingModel": "WD40",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "OFF"
+          }
+        },
+        {
+          "name": "Người đi lại toàn diện (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lincoln-corsair-2020",
+      "make": "Lincoln",
+      "model": "Corsair",
+      "years": "2020-2023",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Ford Q3",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "Default",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock ACC",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Sự tập trung vào sự sang trọng của Corsair phù hợp nhất với 'Down to Ride v6'. Nó bắt chước phong cách lái nhẹ nhàng, thoải mái của Co-Pilot360 nguyên bản nhưng có khả năng chịu đựng đường cong tốt hơn nhiều.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/ford/79",
+      "reviews": [
+        {
+          "user": "LincolnLuxury",
+          "rating": 4.6,
+          "comment": "DTR v6 chính xác là thứ mà chiếc xe này cần. Mềm mại như lụa."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Sang trọng mịn màng (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Năng động hàng ngày (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hyundai-custin-2025",
+      "make": "Hyundai",
+      "model": "Custin",
+      "years": "2024-2025",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "HKG CAN-FD",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "WMI V12",
+        "torqueTuning": "Default",
+        "lateralControl": "Torque Control",
+        "longitudinalControl": "Stock",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Cấu hình do cộng đồng đóng góp có sẵn. Custin là nền tảng xe tải nhỏ của Hyundai có hỗ trợ CAN-FD.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/hyundai-kia-genesis/11",
+      "reviews": [],
+      "configs": [
+        {
+          "name": "E2E hiện đại (WMI V12)",
+          "settings": {
+            "drivingModel": "WMI V12",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Tàu lượn chở khách (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "v0.0",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ford-escape-2020",
+      "make": "Ford",
+      "model": "Escape",
+      "years": "2020-2024",
+      "hardware": {
+        "device": "comma 3 / 3X / 4",
+        "harness": "Ford Q3 / Q4",
+        "radar": "Nguyên bản"
+      },
+      "bestSettings": {
+        "drivingModel": "Down to Ride v6",
+        "torqueTuning": "Default",
+        "lateralControl": "NNLC (On)",
+        "longitudinalControl": "Stock Radar",
+        "mads": "Enabled",
+        "experimentalMode": "Off"
+      },
+      "communityConsensus": "Yêu cầu gói Co-Pilot360 Assist+. Sử dụng cùng dòng dây nịt Ford Q như F-150. BluePilot 5.0 giúp định tâm đường cao tốc một cách trơn tru. Người dùng báo cáo khả năng giữ làn đường được cải thiện so với Co-Pilot360 có sẵn.",
+      "forumUrl": "https://community.sunnypilot.ai/c/vehicle-talk/ford/79",
+      "reviews": [
+        {
+          "user": "EscapeDriver",
+          "rating": 4.5,
+          "comment": "BluePilot là một bản nâng cấp tuyệt vời so với Co-Pilot360. Định tâm mượt mà trên đường cao tốc."
+        }
+      ],
+      "configs": [
+        {
+          "name": "Chuyến tham quan cân bằng (Down to Ride v6)",
+          "settings": {
+            "drivingModel": "Down to Ride v6",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        },
+        {
+          "name": "Lựa chọn đi lại (Pop Model v2)",
+          "settings": {
+            "drivingModel": "Pop Model v2",
+            "torqueTuning": "Stock",
+            "lateralControl": "NNLC (On)",
+            "longitudinalControl": "Stock",
+            "mads": "Remain Active",
+            "experimentalMode": "Dynamic"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1687 @@
+{
+  "appName": "Cơ sở dữ liệu Sunnylink",
+  "version": "5.0",
+  "schemaVersion": "v2_expanded",
+  "categories": [
+    {
+      "id": "models",
+      "name": "Cài đặt mô hình",
+      "icon": "🧠",
+      "description": "Chọn và quản lý các mô hình lái xe cũng như định cấu hình các thông số liên quan đến mô hình.",
+      "settings": [
+        {
+          "key": "AdjustCameraOffset",
+          "label": "Điều chỉnh độ lệch camera",
+          "type": "slider",
+          "default": 0,
+          "min": -0.35,
+          "max": 0.35,
+          "unit": "mét",
+          "helpText": "Phạm vi: -0,35 đến 0,35 mét",
+          "description": "Hầu như thay đổi phối cảnh của máy ảnh để di chuyển tâm của mô hình sang Trái (+ giá trị) hoặc Phải (- giá trị).",
+          "useCase": "Điều chỉnh vị trí lắp camera hoặc tùy chọn vị trí làn đường của người lái.",
+          "tradeoffs": [
+            "Giá trị dương dịch chuyển xe về phía bên trái của làn đường.",
+            "Giá trị âm dịch chuyển xe về phía bên phải làn đường.",
+            "Bù quá nhiều có thể gây ra cảnh báo chệch làn đường."
+          ],
+          "userNote": "Mặc định 0,00. Điều chỉnh nếu bạn cảm thấy xe lái quá xa sang trái hoặc sang phải. Mẹo cộng đồng: Nếu sử dụng các mô hình như Down to Ride v6 trên Dấu phẩy 4 và gặp hiện tượng 'ôm phải', hãy thử độ lệch từ -0,05 đến -0,10.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "LaneTurnDesire",
+          "label": "Sử dụng mong muốn rẽ làn đường",
+          "type": "toggle",
+          "default": false,
+          "description": "Khi được bật, ở tốc độ 20 mph (32 km/h) trở xuống và bật đèn xi nhan, mô hình này sẽ lập kế hoạch rẽ theo hướng đèn nháy ở đường có thể lái được gần nhất. Điều này giúp mẫu xe thực hiện những cú rẽ mượt mà hơn ở tốc độ thấp.",
+          "useCase": "Giúp xe có thể vào cua gấp ở tốc độ thấp hơn khi bật đèn nháy.",
+          "tradeoffs": [
+            "Không dành cho việc chuyển làn — được thiết kế để rẽ ở tốc độ thấp.",
+            "Chỉ hoạt động ở tốc độ 20 mph (32 km/h) hoặc thấp hơn."
+          ],
+          "userNote": "Cho phép rẽ ở tốc độ thấp mượt mà hơn tại các giao lộ.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "AdjustLaneTurnSpeed",
+          "label": "Điều chỉnh tốc độ rẽ làn đường",
+          "type": "slider",
+          "default": 19,
+          "min": 0,
+          "max": 50,
+          "unit": "mph",
+          "helpText": "Mặc định: 19 mph. Đặt tốc độ tối đa mà mong muốn rẽ làn đường được kích hoạt.",
+          "description": "Đặt tốc độ tối đa mà mong muốn rẽ làn đường được kích hoạt. Sử dụng nút - và + để điều chỉnh.",
+          "dependencies": [
+            {
+              "key": "LaneTurnDesire",
+              "label": "Sử dụng mong muốn rẽ làn đường"
+            },
+            {
+              "key": "ShowAdvancedControls",
+              "label": "Hiển thị các điều khiển nâng cao"
+            }
+          ],
+          "userNote": "Chỉ xuất hiện khi Sử dụng mong muốn rẽ làn đường và Hiển thị điều khiển nâng cao được bật.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "DrivingModel",
+          "label": "Mô hình lái",
+          "type": "dropdown",
+          "description": "Chọn mô hình lái xe AI. Mỗi mẫu xe đều có những đặc điểm lái xe riêng.",
+          "useCase": "Chọn mẫu xe phù hợp với phong cách lái xe và điều kiện đường sá của bạn.",
+          "userNote": "Xem Thư viện mô hình để biết mô tả chi tiết của hơn 66 mô hình có sẵn.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ModelLibrary",
+          "label": "Thư viện mô hình",
+          "type": "action",
+          "description": "Duyệt qua thư viện đầy đủ gồm hơn 66 mô hình lái xe kèm theo mô tả, ngày phát hành và sự đồng thuận của cộng đồng.",
+          "useCase": "Tìm mẫu xe hoàn hảo cho phong cách lái xe của bạn.",
+          "userNote": "Bao gồm các mẫu WMI, Dark Souls, Down to Ride, Tomb Raider và các mẫu Legacy.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "RefreshModelList",
+          "label": "Làm mới danh sách mô hình",
+          "type": "action",
+          "description": "Buộc làm mới danh sách model có sẵn từ máy chủ. Sử dụng tùy chọn này nếu bạn mong muốn có sẵn một mô hình mới nhưng không thấy nó trong hộp thoại lựa chọn.",
+          "userNote": "Sử dụng khi có mẫu mới nhưng không được hiển thị.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ClearModelCache",
+          "label": "Xóa bộ nhớ đệm mô hình",
+          "type": "action",
+          "description": "Xóa tất cả các mẫu đã tải xuống ngoại trừ mẫu hiện đang hoạt động. Kích thước bộ đệm hiện tại tính bằng MB được hiển thị. Hữu ích cho việc giải phóng không gian lưu trữ.",
+          "userNote": "Giải phóng không gian lưu trữ bằng cách xóa các tệp mô hình cũ.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "LiveLearningSteerDelay",
+          "label": "Học độ trễ đánh lái theo thời gian thực",
+          "type": "toggle",
+          "default": true,
+          "description": "Cho phép học theo thời gian thực và thời gian phản hồi lái thích ứng. Hệ thống liên tục đo độ trễ lái thực tế và điều chỉnh mức bù phù hợp. Khi bị tắt, thời gian phản hồi cố định sẽ được sử dụng thay thế.",
+          "recommended": true,
+          "useCase": "Tự động bù đắp cho độ trễ lái dành riêng cho xe.",
+          "deepDive": "Đo độ trễ giữa góc lái theo yêu cầu và chuyển động thực tế của bánh xe, sau đó điều chỉnh dự đoán để bù đắp.",
+          "userNote": "Giữ BẬT để có phản hồi lái tối ưu.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ManualSoftwareDelay",
+          "label": "Điều chỉnh độ trễ phần mềm",
+          "type": "slider",
+          "default": 0.2,
+          "description": "Đặt giá trị độ trễ cố định của phần mềm được sử dụng khi tắt Độ trễ đánh lái học tập trực tiếp. Mặc định là 0,2 giây. Sử dụng nút - và + để điều chỉnh.",
+          "dependencies": [
+            {
+              "key": "ShowAdvancedControls",
+              "label": "Hiển thị các điều khiển nâng cao"
+            }
+          ],
+          "warning": "Chỉ xuất hiện khi tính năng Trì hoãn đánh lái học tập trực tiếp bị tắt và Hiển thị điều khiển nâng cao được bật.",
+          "userNote": "Chỉ sửa đổi nếu Trì hoãn đánh lái học tập trực tiếp bị tắt.",
+          "deviceAvailability": "config-hidden"
+        }
+      ]
+    },
+    {
+      "id": "device",
+      "name": "Cài đặt thiết bị",
+      "icon": "📱",
+      "description": "Xem thông tin thiết bị, quản lý hiệu chuẩn, cấu hình hoạt động nguồn điện và truy cập các tiện ích hệ thống.",
+      "settings": [
+        {
+          "key": "ForceOffroadMode",
+          "label": "Bật tính năng Luôn Offroad",
+          "type": "toggle",
+          "default": false,
+          "description": "Chuyển đổi chế độ 'Luôn đi offroad'. Khi được bật, thiết bị vẫn ở trạng thái offroad (đỗ) ngay cả khi xe đang chạy. Điều này ngăn không cho tính năng hỗ trợ lái xe hoạt động, do đó bạn có thể định cấu hình cài đặt, tải xuống bản cập nhật hoặc thực hiện bảo trì mà không cần hệ thống cố gắng điều khiển xe.",
+          "safetyLevel": "safe",
+          "useCase": "Sử dụng khi đỗ xe để thay đổi cài đặt, tải xuống bản cập nhật hoặc thực hiện bảo trì.",
+          "userNote": "'Offroad' có nghĩa là đỗ/không lái xe. 'Onroad' có nghĩa là lái xe. Chỉ khả dụng khi đi offroad.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "DeviceBootMode",
+          "label": "Hành vi thức dậy",
+          "type": "dropdown",
+          "options": [
+            "Default",
+            "Offroad"
+          ],
+          "default": "Default",
+          "description": "Kiểm soát những gì thiết bị thực hiện khi khởi động hoặc thức dậy từ chế độ ngủ. Mặc định: khởi động bình thường và sẵn sàng tham gia. Offroad: tự động bật Luôn Offroad mỗi lần khởi động hoặc thức dậy.",
+          "useCase": "Đặt thành Offroad nếu bạn muốn thiết bị khởi động ở chế độ cấu hình/bảo trì theo mặc định.",
+          "userNote": "Cài đặt này vẫn tồn tại trong suốt quá trình khởi động lại.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "UseMetricUnits",
+          "label": "Sử dụng hệ thống số liệu",
+          "type": "toggle",
+          "default": false,
+          "description": "Chuyển đổi hiển thị từ dặm một giờ (mph) sang km một giờ (km/h) trên toàn bộ giao diện.",
+          "useCase": "Đặt dựa trên hệ thống đo lường của khu vực của bạn.",
+          "userNote": "Bật nếu bạn thích đơn vị số liệu.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "QuietMode",
+          "label": "Chế độ yên lặng",
+          "type": "toggle",
+          "default": false,
+          "description": "Loại bỏ các âm thanh không quan trọng trong khi vẫn duy trì tất cả các cảnh báo liên quan đến an toàn. Cảnh báo an toàn (cảnh báo nhẹ, cảnh báo tức thời, nhắc nhở mất tập trung, nhắc nhở chú ý lặp đi lặp lại) luôn phát. Tắt tiếng ở Chế độ Im lặng: âm thanh tương tác, âm thanh tách ra, âm thanh từ chối, lời nhắc tiêu chuẩn.",
+          "useCase": "Giảm âm thanh không quan trọng để có trải nghiệm lái xe yên tĩnh hơn trong khi vẫn duy trì cảnh báo an toàn.",
+          "userNote": "Có thể được chuyển đổi trong khi lái xe.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "OnroadUploads",
+          "label": "Tải lên khi đang di chuyển",
+          "type": "toggle",
+          "default": true,
+          "description": "Chuyển đổi tải lên dữ liệu trong khi lái xe. Khi được bật, thiết bị sẽ tải lên các đoạn đường lái xe qua kết nối di động hoặc Wi-Fi trong quá trình lái xe của bạn. Khi bị tắt, quá trình tải lên sẽ bị hoãn lại cho đến khi xe được đỗ và thiết bị đang ở địa hình khác.",
+          "useCase": "Tắt để tiết kiệm băng thông trên các kết nối dữ liệu có đồng hồ đo hoặc bị giới hạn.",
+          "userNote": "Được bật theo mặc định. Tắt nếu sử dụng điểm phát sóng di động có đồng hồ đo.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "Language",
+          "label": "Ngôn ngữ",
+          "type": "dropdown",
+          "options": [
+            "en",
+            "fr",
+            "ko",
+            "zh"
+          ],
+          "default": "en",
+          "description": "Lựa chọn ngôn ngữ giao diện người dùng.",
+          "useCase": "Chọn ngôn ngữ hiển thị ưa thích của bạn.",
+          "userNote": "Chọn ngôn ngữ ưa thích của bạn cho giao diện.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "RecordUploadDriverCamera",
+          "label": "Ghi và tải lên Camera trình điều khiển",
+          "type": "toggle",
+          "default": false,
+          "description": "Tải cảnh quay từ camera hướng về phía người lái xe để giúp cải thiện thuật toán giám sát người lái xe. Khi được bật, dữ liệu camera của người lái xe sẽ được đưa vào các đoạn đường lái xe đã tải lên.",
+          "useCase": "Giúp cải thiện thuật toán giám sát lái xe bằng cách chia sẻ dữ liệu camera của lái xe.",
+          "tradeoffs": [
+            "Xem xét quyền riêng tư - trình điều khiển được ghi lại.",
+            "Sử dụng thêm dung lượng lưu trữ và băng thông."
+          ],
+          "userNote": "Việc thay đổi nút chuyển đổi này yêu cầu thiết bị phải ở chế độ offroad.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "RecordUploadMicAudio",
+          "label": "Ghi và tải lên âm thanh Mic",
+          "type": "toggle",
+          "default": false,
+          "description": "Ghi lại âm thanh micrô khi lái xe. Âm thanh được lưu trữ cục bộ và được đưa vào video dashcam có sẵn thông qua kết nối bằng dấu phẩy.",
+          "useCase": "Ghi lại âm thanh trong cabin để xem lại cùng với cảnh quay lái xe.",
+          "tradeoffs": [
+            "Xem xét quyền riêng tư - cuộc trò chuyện được ghi lại.",
+            "Sử dụng thêm dung lượng lưu trữ và băng thông."
+          ],
+          "userNote": "Việc thay đổi nút chuyển đổi này yêu cầu thiết bị phải ở chế độ offroad.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "GsmMetered",
+          "label": "Đo GSM",
+          "type": "toggle",
+          "default": true,
+          "description": "Cho phép đo dữ liệu di động để theo dõi và giới hạn mức sử dụng dữ liệu.",
+          "useCase": "Giám sát mức tiêu thụ dữ liệu khi sử dụng điểm phát sóng di động hoặc kết nối di động.",
+          "userNote": "Giữ BẬT để theo dõi việc sử dụng dữ liệu trên các kết nối có đồng hồ đo.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "GsmRoaming",
+          "label": "Chuyển vùng GSM",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép chuyển vùng di động khi ở ngoài mạng của nhà cung cấp dịch vụ của bạn.",
+          "useCase": "Kích hoạt khi đi du lịch quốc tế và cần kết nối.",
+          "tradeoffs": [
+            "Có thể phải chịu phí chuyển vùng đáng kể.",
+            "Có thể có tốc độ kết nối chậm hơn."
+          ],
+          "warning": "Có thể phải chịu phí chuyển vùng. Giữ TẮT trừ khi đi du lịch.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "GsmApn",
+          "label": "APN GSM",
+          "type": "text",
+          "default": "",
+          "description": "Tên điểm truy cập để kết nối dữ liệu di động.",
+          "useCase": "Định cấu hình cài đặt APN tùy chỉnh cho nhà cung cấp dịch vụ di động của bạn.",
+          "userNote": "Chỉ sửa đổi nếu nhà cung cấp dịch vụ của bạn yêu cầu cài đặt APN cụ thể.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "CreateBackup",
+          "label": "Tạo bản sao lưu",
+          "type": "action",
+          "description": "Sao lưu cài đặt hiện tại vào bộ nhớ thiết bị.",
+          "useCase": "Lưu cấu hình hiện tại của bạn trước khi cập nhật hoặc thay đổi.",
+          "userNote": "Được khuyến nghị trước khi cập nhật lớn hoặc cài đặt lại.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "RestoreVersion",
+          "label": "Khôi phục phiên bản",
+          "type": "action",
+          "description": "Khôi phục cài đặt từ bản sao lưu trước đó.",
+          "useCase": "Khôi phục cấu hình của bạn sau khi thiết lập lại hoặc cài đặt mới.",
+          "warning": "Điều này sẽ ghi đè lên cài đặt hiện tại.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "UninstallSunnypilot",
+          "label": "Gỡ cài đặt sunnypilot",
+          "type": "action",
+          "description": "Xóa hoàn toàn sunnypilot khỏi thiết bị.",
+          "useCase": "Gỡ cài đặt sạch trước khi chuyển sang một nhánh khác.",
+          "warning": "Thao tác này sẽ xóa tất cả dữ liệu và cài đặt sunnypilot.",
+          "safetyLevel": "critical",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "MaxTimeOffroad",
+          "label": "Thời gian offroad tối đa",
+          "type": "dropdown",
+          "options": [
+            "Always On",
+            "5m",
+            "10m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "3h",
+            "5h",
+            "10h",
+            "24h",
+            "30h"
+          ],
+          "default": "30h",
+          "helpText": "Mặc định: 30 giờ. Đặt thời gian thiết bị duy trì hoạt động sau khi tắt động cơ.",
+          "description": "Đặt thời gian thiết bị bật nguồn sau khi tắt động cơ trước khi tự động tắt. Cài đặt thành Luôn bật sẽ tắt hoàn toàn bộ hẹn giờ tự động tắt.",
+          "useCase": "Kiểm soát thời gian thiết bị hoạt động sau khi đỗ xe.",
+          "tradeoffs": [
+            "Giá trị cao hơn giúp thiết bị sẵn sàng lâu hơn nhưng lại tiêu hao pin.",
+            "Luôn bật giúp thiết bị luôn bật cho đến khi tắt nguồn theo cách thủ công hoặc pin xuống quá thấp."
+          ],
+          "userNote": "Mặc định 30 giờ.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ForcePowerDown",
+          "label": "Buộc tắt nguồn",
+          "type": "toggle",
+          "default": false,
+          "description": "Buộc tắt thiết bị ngay lập tức.",
+          "useCase": "Tắt nguồn nhanh chóng khi rời khỏi xe trong thời gian dài.",
+          "userNote": "Sử dụng để tắt ngay lập tức thay vì chờ thời gian chờ.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "Reboot",
+          "label": "Khởi động lại",
+          "type": "action",
+          "description": "Khởi động lại thiết bị ngay lập tức.",
+          "useCase": "Áp dụng các thay đổi cài đặt hoặc khắc phục sự cố phần mềm.",
+          "userNote": "Sử dụng sau khi thực hiện những thay đổi cấu hình quan trọng.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "PowerOff",
+          "label": "Tắt nguồn",
+          "type": "action",
+          "description": "Tắt nguồn thiết bị ngay lập tức.",
+          "useCase": "Tắt an toàn trước khi ngắt nguồn điện.",
+          "userNote": "Sử dụng thay vì rút phích cắm để tắt máy một cách nhẹ nhàng.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "GithubUsername",
+          "label": "Tên người dùng GitHub",
+          "type": "text",
+          "default": "",
+          "description": "Tài khoản GitHub được kết nối để phát triển và cập nhật.",
+          "useCase": "Liên kết tài khoản GitHub của bạn để quản lý nhánh tùy chỉnh.",
+          "userNote": "Cần thiết để thực hiện các thay đổi tùy chỉnh hoặc truy cập các nhánh riêng tư.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "RecordFrontLock",
+          "label": "Ghi lại khóa trước",
+          "type": "toggle",
+          "default": false,
+          "description": "Ngăn thiết bị xóa cảnh quay camera trước.",
+          "useCase": "Bảo quản các bản ghi ổ đĩa cụ thể để làm bằng chứng hoặc đánh giá.",
+          "userNote": "Hữu ích nếu bạn cần lưu một ổ đĩa cụ thể để làm bằng chứng.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "DeviceId",
+          "label": "ID thiết bị",
+          "type": "readonly",
+          "description": "Mã định danh thiết bị duy nhất.",
+          "userNote": "Chỉ đọc. Được sử dụng để nhận dạng và hỗ trợ thiết bị.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "GitCommit",
+          "label": "Cam kết Git",
+          "type": "readonly",
+          "description": "Phiên bản phần mềm hiện tại được băm.",
+          "userNote": "Chỉ đọc. Hữu ích cho các báo cáo lỗi.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "OpenpilotVersion",
+          "label": "Phiên bản openpilot",
+          "type": "readonly",
+          "description": "Số phiên bản phần mềm.",
+          "userNote": "Chỉ đọc. Hiển thị phiên bản đã cài đặt hiện tại.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "GitBranch",
+          "label": "Chi nhánh Git",
+          "type": "readonly",
+          "description": "Tên chi nhánh git hiện tại.",
+          "userNote": "Chỉ đọc. Hiển thị nhánh nào bạn đang chạy (ví dụ: 'dev', 'release').",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "UptimeOffroad",
+          "label": "Thời gian hoạt động Offroad",
+          "type": "readonly",
+          "description": "Thời gian nhàn rỗi của hệ thống tính bằng giây.",
+          "userNote": "Chỉ đọc. Hiển thị thời gian thiết bị đã bật trong khi đỗ.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SerialNumber",
+          "label": "Số seri",
+          "type": "readonly",
+          "description": "Số sê-ri phần cứng.",
+          "userNote": "Chỉ đọc. Được sử dụng để nhận dạng thiết bị.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "RouteCount",
+          "label": "Số lượng tuyến đường",
+          "type": "readonly",
+          "description": "Tổng số tuyến đường được ghi lại.",
+          "userNote": "Chỉ đọc. Hiển thị có bao nhiêu ổ đĩa đã được ghi lại.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "GitCommitDate",
+          "label": "Ngày cam kết Git",
+          "type": "readonly",
+          "description": "Ngày cam kết hiện tại.",
+          "userNote": "Chỉ đọc. Hiển thị thời điểm phiên bản hiện tại được tạo.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "UptimeOnroad",
+          "label": "Thời gian hoạt động trên đường",
+          "type": "readonly",
+          "description": "Thời gian lái xe phiên tính bằng giây.",
+          "userNote": "Chỉ đọc. Hiển thị tổng thời gian lái xe cho phiên hiện tại.",
+          "deviceAvailability": "config-hidden"
+        }
+      ]
+    },
+    {
+      "id": "toggles",
+      "name": "Công tắc",
+      "icon": "🔘",
+      "description": "Các nút bật tắt hỗ trợ lái xe cốt lõi kiểm soát hành vi cơ bản của sunnypilot, tính cách lái xe, giám sát người lái và ghi dữ liệu.",
+      "settings": [
+        {
+          "key": "EnableSunnypilot",
+          "label": "Kích hoạt sunnypilot",
+          "type": "toggle",
+          "default": true,
+          "description": "Kích hoạt hệ thống hỗ trợ lái xe sunnypilot để ga tự động thích ứng và giữ làn đường. Sự chú ý của bạn luôn cần thiết trong khi hệ thống đang hoạt động.",
+          "recommended": true,
+          "useCase": "Bật/tắt nhanh chóng tất cả các tính năng của sunnypilot.",
+          "warning": "Việc thay đổi nút chuyển đổi này yêu cầu thiết bị phải ở chế độ offroad. Cần phải khởi động lại để thay đổi có hiệu lực.",
+          "userNote": "Giữ BẬT để hoạt động bình thường.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "ExperimentalMode",
+          "label": "Chế độ thử nghiệm",
+          "type": "toggle",
+          "default": false,
+          "description": "Kích hoạt điều khiển theo chiều dọc từ đầu đến cuối từ mô hình thế giới. Tính năng này sử dụng mạng nơ-ron để xử lý trực tiếp khả năng tăng tốc và phanh, bỏ qua các ràng buộc MPC truyền thống trên mọi loại đường.",
+          "useCase": "Lái xe trong thành phố nơi bạn thường xuyên gặp đèn giao thông và biển báo dừng.",
+          "tradeoffs": [
+            "Có thể phanh đột ngột khi có kết quả dương tính giả (bóng, dấu).",
+            "Có thể không dừng lại kịp thời ở tất cả các đèn/biển báo - hãy sẵn sàng phanh.",
+            "Phanh phía sau xe mượt mà hơn nhưng có thể không thể đoán trước được."
+          ],
+          "deepDive": "MPC theo chiều dọc được thay thế bằng quy hoạch E2E từ mô hình thế giới khi được kích hoạt.",
+          "warning": "Yêu cầu điều khiển dọc. Không có sẵn trên các xe sử dụng hệ thống ga tự động thích ứng nguyên bản.",
+          "userNote": "Yêu cầu điều khiển dọc.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "DrivingPersonality",
+          "label": "Tính cách lái xe",
+          "type": "dropdown",
+          "options": [
+            "Relaxed",
+            "Standard",
+            "Aggressive"
+          ],
+          "default": "Standard",
+          "helpText": "Thoải mái = khoảng cách lớn hơn, Tiêu chuẩn = cân bằng, Tích cực = theo sát hơn",
+          "description": "Kiểm soát mức độ sunnypilot theo sát xe phía trước cũng như mức độ tăng tốc và phanh mạnh mẽ của xe.",
+          "useCase": "Tùy chỉnh cảm giác lái - Thư giãn để đảm bảo an toàn, Tích cực để theo kịp giao thông.",
+          "tradeoffs": [
+            "Chế độ linh hoạt có thể mang lại cảm giác không an toàn khi giao thông dừng và đi.",
+            "Chế độ thư giãn có thể làm nản lòng những người lái xe phía sau bạn với khoảng cách lớn."
+          ],
+          "userNote": "Yêu cầu điều khiển dọc. 'Tiêu chuẩn' là mặc định.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "LaneDepartureWarnings",
+          "label": "Bật cảnh báo chệch làn đường",
+          "type": "toggle",
+          "default": false,
+          "description": "Cảnh báo bạn lái trở lại làn đường của mình khi xe vượt qua vạch làn đường được phát hiện mà không bật đèn xi nhan. Cảnh báo kích hoạt ở tốc độ trên 31 mph (50 km/h).",
+          "useCase": "Nhận cảnh báo bằng âm thanh khi đi chệch làn đường mà không có đèn nháy.",
+          "tradeoffs": [
+            "Có thể gây khó chịu trên những con đường có vạch kẻ làn đường kém.",
+            "Chỉ hoạt động ở tốc độ trên 31 mph (50 km/h)."
+          ],
+          "userNote": "Hữu ích khi lái xe trên đường cao tốc để duy trì sự tỉnh táo.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "DisengageOnAccelerator",
+          "label": "Nhả bàn đạp ga",
+          "type": "toggle",
+          "default": true,
+          "description": "Khi được bật, nhấn bàn đạp ga sẽ ngay lập tức nhả sunnypilot. Khi bị tắt, việc nhấn bàn đạp ga sẽ ghi đè điều khiển tốc độ của sunnypilot mà không cần ngắt hệ thống.",
+          "useCase": "Giữ TẮT nếu bạn muốn giúp tăng tốc mà không ngắt quãng.",
+          "tradeoffs": [
+            "TẮT: Có thể hỗ trợ tăng tốc nhưng vô lăng vẫn hoạt động.",
+            "BẬT: Mọi đầu vào của bàn đạp ga sẽ ngắt hoàn toàn hệ thống."
+          ],
+          "userNote": "Giữ TẮT nếu bạn muốn có thể giúp xe tăng tốc mà không bị mất lái.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "AlwaysOnDriverMonitor",
+          "label": "Giám sát trình điều khiển luôn bật",
+          "type": "toggle",
+          "default": false,
+          "description": "Giữ cho camera giám sát người lái xe hoạt động ngay cả khi sunnypilot không hoạt động. Hệ thống sẽ vẫn theo dõi tình trạng lái xe mất tập trung hoặc buồn ngủ bất cứ khi nào xe nổ máy.",
+          "useCase": "Theo dõi sự chú ý liên tục để tăng thêm sự an toàn.",
+          "tradeoffs": [
+            "Luôn theo dõi - xem xét quyền riêng tư.",
+            "Tiêu thụ điện năng cao hơn."
+          ],
+          "userNote": "Theo dõi sự chú ý của người lái ngay cả khi tắt tính năng hỗ trợ lái xe.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "DisablePowerDown",
+          "label": "Tắt nguồn",
+          "type": "toggle",
+          "default": false,
+          "description": "Giữ thiết bị hoạt động mãi mãi.",
+          "useCase": "Thử nghiệm hoặc phát triển khi bạn cần thời gian hoạt động liên tục.",
+          "tradeoffs": [
+            "Sẽ tiêu hao pin xe nếu không được cắm điện.",
+            "Máy nóng liên tục."
+          ],
+          "warning": "Sẽ tiêu hao pin xe.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "DisableUpdates",
+          "label": "Tắt cập nhật",
+          "type": "toggle",
+          "default": false,
+          "description": "Dừng cập nhật phần mềm tự động.",
+          "useCase": "Khóa trong một phiên bản nổi tiếng.",
+          "tradeoffs": [
+            "Thiếu các bản sửa lỗi và tính năng mới.",
+            "Có thể trở nên không tương thích với các dịch vụ Sunnylink theo thời gian."
+          ],
+          "userNote": "Sử dụng nếu bạn tìm thấy phiên bản bạn yêu thích và không muốn nó thay đổi.",
+          "deviceAvailability": "full"
+        }
+      ]
+    },
+    {
+      "id": "steering",
+      "name": "Cài đặt đánh lái",
+      "icon": "🎯",
+      "description": "Cấu hình để điều khiển ngang và giữ làn đường.",
+      "settings": [
+        {
+          "key": "MadsEnabled",
+          "label": "Đã bật MADS",
+          "type": "toggle",
+          "default": false,
+          "description": "Hệ thống lái tự động mô-đun. Tách hệ thống lái khỏi ga/phanh, cho phép hệ thống lái vẫn hoạt động khi nhập bàn đạp thủ công.",
+          "recommended": true,
+          "useCase": "Cần thiết cho việc lái xe trên đường cao tốc khi bạn muốn di chuyển bằng tay hoặc phanh khi tham gia giao thông mà không mất khả năng giữ làn đường.",
+          "tradeoffs": [
+            "Yêu cầu thay đổi mô hình tư duy của bạn (Phanh phanh KHÔNG làm mất khả năng lái).",
+            "Có thể có cảm giác như xe đang 'chiến đấu' với bạn nếu bạn chuyển làn mà không bật đèn nháy."
+          ],
+          "deepDive": "Tách máy trạng thái Điều khiển bên khỏi trạng thái Hành trình dọc. MADS vẫn ở trạng thái 'Hoạt động' ngay cả khi trạng thái 'Hành trình' chuyển sang 'Đã tắt'.",
+          "userNote": "Quan trọng. Đây là tính năng cốt lõi của Sunnypilot. Tiếp tục BẬT.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "MadsSteeringMode",
+          "label": "Chế độ lái MADS",
+          "type": "dropdown",
+          "options": [
+            "Default",
+            "Remain Active"
+          ],
+          "default": "Default",
+          "description": "Kiểm soát hành vi khi hành trình bị hủy. 'Vẫn hoạt động' tiếp tục điều khiển lái sau khi phanh.",
+          "recommended": "Remain Active",
+          "dependencies": [
+            {
+              "key": "MadsEnabled",
+              "label": "Đã bật MADS"
+            }
+          ],
+          "useCase": "Khi bạn muốn duy trì việc căn giữa làn đường trong quá trình điều chỉnh tốc độ thủ công khi tham gia giao thông.",
+          "tradeoffs": [
+            "Có thể gây ngạc nhiên cho những người dùng mới mong đợi vô lăng sẽ dừng lại khi phanh.",
+            "Cần chú ý nhiều hơn đến việc vô hiệu hóa vô lăng khi cố ý chuyển làn đường."
+          ],
+          "userNote": "Đặt thành 'Duy trì hoạt động' để giữ làn đường ở giữa trong khi phanh thủ công.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "MadsMainCruiseAllowed",
+          "label": "Được phép hành trình chính MADS",
+          "type": "toggle",
+          "default": true,
+          "description": "Cho phép MADS hoạt động đồng thời với hệ thống ga tự động chính.",
+          "recommended": true,
+          "dependencies": [
+            {
+              "key": "MadsEnabled",
+              "label": "Đã bật MADS"
+            }
+          ],
+          "userNote": "Tiếp tục BẬT.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "MadsUnifiedEngagementMode",
+          "label": "Chế độ tương tác hợp nhất MADS",
+          "type": "toggle",
+          "default": false,
+          "description": "Nếu được bật, việc kích hoạt ga tự động chính cũng sẽ tự động kích hoạt hệ thống lái MADS.",
+          "dependencies": [
+            {
+              "key": "MadsEnabled",
+              "label": "Đã bật MADS"
+            }
+          ],
+          "useCase": "Đơn giản hóa việc kích hoạt - nhấn một nút cho phép cả điều khiển tốc độ và lái.",
+          "userNote": "Thuận tiện cho việc kích hoạt bằng một nút bấm.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "NeuralNetworkLateralControl",
+          "label": "Điều khiển ngang bằng mạng nơ-ron",
+          "type": "toggle",
+          "default": false,
+          "description": "Thay thế các chiến lược điều khiển tiêu chuẩn (như Mô-men xoắn hoặc Góc) bằng công cụ lập kế hoạch bên dựa trên mạng thần kinh. (Lưu ý: Nói chung không nên dùng cho các mẫu hiện đại).",
+          "recommended": false,
+          "useCase": "Sửa lỗi 'bóng bàn' (dao động) trên đường thẳng thường gặp ở các loại xe cũ hoặc cụ thể.",
+          "tradeoffs": [
+            "Dao động mạnh, lắc lư và bóng bàn trên các mẫu hiện đại.",
+            "Tiềm năng cho việc ngừng sử dụng sắp tới.",
+            "Chỉ được đề xuất cho các kiểu máy cũ (ví dụ: North Dakota 0.9.7.1 Branch Release-C3)."
+          ],
+          "deepDive": "Sử dụng chính sách quy hoạch bên từ đầu đến cuối để dự đoán độ cong của đường đi. Không được định cấu hình cho các bản phát hành sunnypilot mới hơn và các mẫu hiện đại.",
+          "userNote": "Nói chung không được khuyến khích cho các mô hình hiện đại. Nếu bạn thấy lắc lư hoặc chơi bóng bàn, hãy TẮT nó. Sử dụng tốt nhất với các mô hình cũ. Trong sunnypilot 2026.002+, NNLC và Kiểm soát mô-men xoắn thực thi loại trừ lẫn nhau.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "DynamicExperimentalControl",
+          "label": "Kiểm soát thử nghiệm động",
+          "type": "toggle",
+          "default": false,
+          "description": "Tự động chuyển đổi giữa Chế độ Chill (Đường cao tốc) và Chế độ Thử nghiệm (Thành phố) dựa trên bối cảnh lái xe.",
+          "recommended": true,
+          "useCase": "Hoàn hảo cho các tuyến đường đi lại hỗn hợp bao gồm cả đường cao tốc và đường thành phố có đèn giao thông.",
+          "tradeoffs": [
+            "Có thể gây ra hiện tượng phanh ảo nếu phát hiện sai đèn đỏ hoặc biển báo dừng.",
+            "Có thể chuyển đổi chế độ một cách khó lường ở những nút giao thông phức tạp.",
+            "Có thể gây phanh trễ do đèn/biển báo.",
+            "Làm cho việc đánh giá các mô hình cụ thể trở nên khó khăn hơn do chuyển đổi chế độ."
+          ],
+          "deepDive": "Theo dõi 'throttle_prob' từ mô hình để xác định ý định. Nếu ý định của mô hình ở mức thấp, nó sẽ tạm thời đưa vào sơ đồ theo chiều dọc của Chế độ thử nghiệm cho các tình huống phức tạp.",
+          "userNote": "Tốt cho việc lái xe hỗn hợp, nhưng hãy chuyển sang Thử nghiệm hoàn toàn nếu bạn cần hành vi nhất quán.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "EnforceTorqueControl",
+          "label": "Thực thi kiểm soát mô-men xoắn",
+          "type": "toggle",
+          "default": false,
+          "description": "Buộc ô tô phải sử dụng bộ điều khiển dựa trên mô-men xoắn để đánh lái.",
+          "useCase": "Dành cho xe phản ứng tốt hơn với các lệnh mô-men xoắn trực tiếp so với các lệnh góc.",
+          "userNote": "Thường được TẮT nếu sử dụng NNLC. Trong sunnypilot 2026.002+, Thực thi kiểm soát mô-men xoắn và NNLC loại trừ lẫn nhau. Kích hoạt cái này sẽ vô hiệu hóa cái kia.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SelfTune",
+          "label": "Tự điều chỉnh",
+          "type": "toggle",
+          "default": true,
+          "description": "Cho phép xe tự hiệu chỉnh các thông số lái theo thời gian.",
+          "recommended": true,
+          "useCase": "Cải thiện cảm giác lái khi hệ thống tìm hiểu các đặc điểm cụ thể của xe bạn.",
+          "tradeoffs": [
+            "Cần có thời gian để tìm hiểu - ban đầu có thể cảm thấy khó lái.",
+            "Các giá trị có thể bị lệch nếu điều kiện lái xe không bình thường."
+          ],
+          "userNote": "Giữ BẬT để có hiệu suất tốt hơn khi bạn lái xe nhiều hơn.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "LessRestrictSettingsForSelfTune",
+          "label": "Ít hạn chế cài đặt để tự điều chỉnh",
+          "type": "toggle",
+          "default": false,
+          "description": "Tính năng beta cho phép người tự điều chỉnh trở nên tích cực/tha thứ hơn khi học.",
+          "dependencies": [
+            {
+              "key": "SelfTune",
+              "label": "Tự điều chỉnh"
+            }
+          ],
+          "tradeoffs": [
+            "Học nhanh hơn nhưng giá trị có thể không ổn định.",
+            "Có thể cần thiết lập lại thủ công nếu giá trị trôi quá xa."
+          ],
+          "warning": "Sử dụng thận trọng; cho phép học nhanh hơn nhưng có khả năng có giá trị hoang dã hơn.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "EnableCustomTorqueTuning",
+          "label": "Bật điều chỉnh mô-men xoắn tùy chỉnh",
+          "type": "toggle",
+          "default": false,
+          "description": "Mở khóa các thanh trượt thủ công để điều chỉnh ma sát mô-men xoắn và hệ số gia tốc vĩ độ.",
+          "useCase": "Dành cho người dùng cao cấp muốn kiểm soát chính xác cảm giác lái.",
+          "tradeoffs": [
+            "Đòi hỏi sự hiểu biết sâu sắc về động lực học của xe.",
+            "Giá trị sai có thể khiến việc lái trở nên nguy hiểm."
+          ],
+          "warning": "Chỉ nâng cao. Đừng chạm vào trừ khi bạn biết đặc tính vật lý cụ thể của ô tô.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ManualTuneFriction",
+          "label": "Điều chỉnh thủ công - Ma sát",
+          "type": "slider",
+          "default": 0.1,
+          "min": 0.0,
+          "max": 1.0,
+          "unit": "",
+          "description": "Điều chỉnh bù ma sát trong bộ điều khiển lái.",
+          "helpText": "Phạm vi: 0,00 - 1,00",
+          "dependencies": [
+            {
+              "key": "EnableCustomTorqueTuning",
+              "label": "Bật điều chỉnh mô-men xoắn tùy chỉnh"
+            }
+          ],
+          "useCase": "Tinh chỉnh cảm giác lái nếu cảm thấy quá dính hoặc quá lỏng.",
+          "tradeoffs": [
+            "Quá cao: dao động/bóng bàn.",
+            "Quá thấp: không đủ mô-men xoắn để giữ làn đường."
+          ],
+          "userNote": "Mặc định 0.10. Điều chỉnh theo mức tăng nhỏ (0,01).",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "TorqueControlTuneVersion",
+          "label": "Phiên bản điều chỉnh mô-men xoắn",
+          "type": "dropdown",
+          "options": [
+            "Default",
+            "v1.0",
+            "v0.0"
+          ],
+          "default": "Default",
+          "description": "Chọn giữa các cấu hình điều chỉnh toán học khác nhau cho bộ điều khiển lái dựa trên mô-men xoắn. Các phiên bản này thể hiện các bước lặp khác nhau về cách sunnypilot tính toán và áp dụng mô-men lái cho giá đỡ xe của bạn.",
+          "useCase": "Giải quyết tình trạng “bóng bàn” (lượn lờ) hoặc đánh lái “lười biếng” ở những khúc cua. v0.0 là một bản sửa lỗi được cộng đồng báo cáo rộng rãi về các vấn đề về độ ổn định trên các phương tiện gặp khó khăn với logic dọc/ngang mới hơn.",
+          "tradeoffs": [
+            "v1.0: Logic điều chỉnh hiện đại; tiêu chuẩn cho hầu hết các loại xe nhưng có thể gây dao động trên các giá lái cụ thể.",
+            "v0.0: Logic điều chỉnh kế thừa; thường ổn định hơn và có thể dự đoán được đối với các phương tiện dễ bị rung lắc.",
+            "Yêu cầu đặt lại: Việc chuyển đổi phiên bản sẽ đặt lại tiến trình học 'Tự điều chỉnh' cho bộ điều khiển đó."
+          ],
+          "deepDive": "Chuyển đổi này chuyển logic của bộ điều khiển mô-men xoắn giữa v0.0 và v1.0. v1.0 là bộ điều khiển 'mô-men xoắn' được tiêu chuẩn hóa từ openpilot hiện đại, trong khi v0.0 vẫn giữ lại các mô hình toán học cũ mà một số phần mềm lái cũ hơn vẫn yêu cầu để có độ ổn định. Hầu hết người dùng nên ở chế độ Mặc định trừ khi khắc phục sự cố ổn định bên.",
+          "userNote": "Mẹo cộng đồng: Nếu ô tô của bạn dao động hoặc cảm thấy không ổn định trong làn đường, trước tiên hãy thử chuyển sang v1.0, sau đó là v0.0 nếu vấn đề vẫn tiếp diễn. Sử dụng tốt nhất khi bật 'Tự điều chỉnh'; cho phép lái xe hơn 20 dặm để hệ thống hiệu chỉnh hoàn toàn sau khi thay đổi.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "BlinkerMinLateralControlSpeed",
+          "label": "Tốc độ điều khiển ngang của Blinker Min",
+          "type": "slider",
+          "default": 0,
+          "helpText": "Phạm vi: 0+ mph. Đặt thành 0 để luôn cho phép đánh lái bằng đèn nháy.",
+          "description": "Tốc độ tối thiểu mà ô tô sẽ tiếp tục đánh lái khi đèn nháy đang bật.",
+          "useCase": "Ngăn chặn tình trạng đánh lái khi rẽ chậm tại các giao lộ.",
+          "userNote": "Ngăn bánh xe va vào bạn khi rẽ chậm tại các giao lộ.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "BlinkerPauseLateralControl",
+          "label": "Điều khiển ngang tạm dừng Blinker",
+          "type": "toggle",
+          "default": false,
+          "description": "Tạm dừng hỗ trợ lái ngay lập tức khi đèn nháy được kích hoạt.",
+          "useCase": "Dành cho những người lái xe muốn điều khiển hoàn toàn bằng tay khi chuyển làn.",
+          "tradeoffs": [
+            "Tay lái nhả ra ngay lập tức - có thể có cảm giác đột ngột.",
+            "Không giữ làn đường trong khi thay đổi làn đường có chủ ý."
+          ],
+          "userNote": "Được ưa chuộng bởi những người lái xe muốn kiểm soát hoàn toàn khi chuyển làn đường.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "HyundaiLongitudinalTuning",
+          "label": "Điều chỉnh theo chiều dọc của Hyundai",
+          "type": "dropdown",
+          "options": [
+            "Off",
+            "Predictive",
+            "Dynamic"
+          ],
+          "default": "Off",
+          "description": "Điều chỉnh tùy chỉnh cho cấu hình tăng tốc của Hyundai/Kia.",
+          "recommended": "Dynamic",
+          "useCase": "Khắc phục hiện tượng ga phản hồi chậm ở chế độ lái Eco/Normal.",
+          "tradeoffs": [
+            "Tính năng động có thể mang lại cảm giác quá hung hăng đối với một số người dùng.",
+            "Có thể ảnh hưởng đến hiệu suất nhiên liệu."
+          ],
+          "userNote": "'Động' có thể khắc phục tình trạng tăng tốc chậm ở chế độ Tiết kiệm/Bình thường.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "TeslaCoopSteering",
+          "label": "Hệ thống lái Tesla Coop",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép đầu vào tay lái của người lái xe.",
+          "helpText": "Mặc định: Sai",
+          "deepDive": "Cho phép 'hòa trộn mô-men xoắn' trong đó hệ thống kết hợp với đầu vào của bạn để có trải nghiệm trực quan hơn, ít hung hãn hơn. Cho phép kích hoạt lái mà không cần ga tự động (MADS).",
+          "userNote": "Dành riêng cho xe: Chỉ dành cho xe Tesla.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "LateralAccelerationFactor",
+          "label": "Hệ số gia tốc bên",
+          "type": "slider",
+          "default": 2.5,
+          "min": 1.5,
+          "max": 4.0,
+          "unit": "m/s²",
+          "helpText": "Phạm vi: 1,5 đến 4,0 m/s²",
+          "description": "Hệ số gia tốc ngang mục tiêu cho bộ điều khiển mômen. Giá trị thấp hơn tạo ra cảm giác lái nhẹ nhàng hơn; giá trị cao hơn giúp đánh lái mạnh mẽ hơn trong các góc cua.",
+          "useCase": "Tinh chỉnh khả năng phản hồi của tay lái mô-men xoắn cho việc lái xe hăng hái hoặc xe hạng nặng.",
+          "tradeoffs": [
+            "Giá trị cao hơn làm tăng khả năng đánh lái và tốc độ vào cua.",
+            "Giá trị quá cao có thể gây ra hiện tượng đánh bóng bàn hoặc bị giật đột ngột.",
+            "Giá trị quá thấp có thể dẫn đến tình trạng thiếu lái trên những đoạn đường cong gấp khúc trên đường cao tốc."
+          ],
+          "userNote": "Phạm vi khuyến nghị chính thức: 2,3 - 2,7 m/s² cho hầu hết các xe sedan và crossover.",
+          "safetyLevel": "safe",
+          "deviceAvailability": "config-hidden"
+        }
+      ]
+    },
+    {
+      "id": "cruise",
+      "name": "Ga tự động và tốc độ",
+      "icon": "🚀",
+      "description": "Cấu hình để quản lý tốc độ, ga tự động và hành vi chuyển làn.",
+      "settings": [
+        {
+          "key": "VisionBasedTurnSpeedControl",
+          "label": "Ga tự động thông minh - Vision (SCC-V)",
+          "type": "toggle",
+          "default": true,
+          "description": "Hệ thống Ga tự động thông minh - Vision (SCC-V) tận dụng dữ liệu tầm nhìn của camera để chủ động điều chỉnh tốc độ xe của bạn bằng cách tính toán độ cong của đường phía trước.",
+          "recommended": true,
+          "useCase": "Lái xe trên những con đường quanh co, nơi duy trì tốc độ không đổi 55 mph sẽ rất nguy hiểm.",
+          "tradeoffs": [
+            "Thường giảm tốc độ quá nhanh (ví dụ: dưới tốc độ an toàn 20 mph).",
+            "Có thể gây khó chịu cho người lái xe phía sau do thường xuyên chạy chậm lại.",
+            "Phanh muộn so với khi nhìn thấy biển cảnh báo."
+          ],
+          "deepDive": "Tính toán gia tốc ngang dự kiến ​​dựa trên đường đi của mô hình. Giảm tốc độ để giữ lực G bên dưới ~0,3 g.",
+          "userNote": "Tính năng này chỉ khả dụng khi sunnypilot đang chủ động điều khiển theo chiều dọc của xe.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SmartCruiseControlMap",
+          "label": "Ga tự động thông minh - Bản đồ",
+          "type": "toggle",
+          "default": false,
+          "description": "Sử dụng dữ liệu bản đồ để làm chậm các đường cong.",
+          "useCase": "Sao lưu để điều khiển dựa trên tầm nhìn khi khả năng hiển thị của camera kém.",
+          "tradeoffs": [
+            "Dựa vào độ chính xác của bản đồ - có thể không phản ánh điều kiện đường thực tế.",
+            "Có thể giảm tốc độ sớm đối với những đường cong đã được làm thẳng."
+          ],
+          "userNote": "Sao lưu tốt, nhưng Vision thường nhanh hơn/phản ứng nhanh hơn.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SpeedLimitAssistMode",
+          "label": "Chế độ hỗ trợ giới hạn tốc độ",
+          "type": "dropdown",
+          "options": [
+            "Information",
+            "Auto",
+            "User Confirm"
+          ],
+          "default": "Information",
+          "description": "Xác định xem xe có tự động điều chỉnh tốc độ theo giới hạn đã đăng hay không.",
+          "useCase": "Những chuyến đi đường dài qua các thị trấn với nhiều bẫy tốc độ khác nhau.",
+          "tradeoffs": [
+            "Cực kỳ phụ thuộc vào độ chính xác của dữ liệu bản đồ.",
+            "Có thể gây phanh nhanh nguy hiểm nếu đọc giới hạn tốc độ ngoài đoạn đường nối khi đang trên đường cao tốc.",
+            "Có thể kích hoạt các dấu hiệu có điều kiện (khu vực trường học) khi không hoạt động."
+          ],
+          "deepDive": "Tổng hợp dữ liệu từ OpenStreetMap (OSM), camera ô tô (TSR) và dữ liệu điều hướng để xác định giới hạn hiện tại.",
+          "userNote": "'Thông tin' chỉ hiển thị dấu hiệu. 'Tự động' thay đổi tốc độ cho bạn.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SpeedLimitSource",
+          "label": "Nguồn giới hạn tốc độ",
+          "type": "dropdown",
+          "options": [
+            "Map Data",
+            "Car State",
+            "Combined"
+          ],
+          "default": "Map Data",
+          "description": "Nơi ô tô lấy dữ liệu tốc độ (Dữ liệu bản đồ, Trạng thái ô tô hoặc Kết hợp).",
+          "recommended": "Map Data",
+          "useCase": "Chọn nguồn đáng tin cậy nhất cho khu vực lái xe của bạn.",
+          "tradeoffs": [
+            "Dữ liệu bản đồ: Nhất quán nhất nhưng có thể lỗi thời.",
+            "Trạng thái ô tô: Thời gian thực nhưng chỉ hoạt động khi camera có thể đọc được biển báo.",
+            "Kết hợp: Bảo hiểm tốt nhất nhưng tiềm ẩn xung đột."
+          ],
+          "userNote": "'Ưu tiên dữ liệu bản đồ' thường chính xác nhất ở Hoa Kỳ.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SpeedLimitOffsetType",
+          "label": "Loại bù trừ giới hạn tốc độ",
+          "type": "dropdown",
+          "options": [
+            "Fixed",
+            "Percentage"
+          ],
+          "default": "Fixed",
+          "description": "Chọn giữa một số cố định (ví dụ: +5 mph) hoặc tỷ lệ phần trăm (ví dụ: +10%).",
+          "useCase": "Đã sửa lỗi để tăng tốc nhất quán; Tỷ lệ điều chỉnh theo tỷ lệ.",
+          "userNote": "Đặt thành 'Đã sửa' để tăng tốc ổn định.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SpeedLimitOffsetValue",
+          "label": "Giá trị bù trừ giới hạn tốc độ",
+          "type": "slider",
+          "default": 0,
+          "helpText": "Khuyến nghị: vượt quá giới hạn 5-10 mph để phù hợp với lưu lượng giao thông",
+          "description": "Số tiền thực tế để tăng tốc vượt quá giới hạn.",
+          "useCase": "Phù hợp với lưu lượng giao thông địa phương (thường vượt quá 5-10 dặm/giờ ở hầu hết các khu vực ở Hoa Kỳ).",
+          "userNote": "Đặt ở mức độ thoải mái của bạn (ví dụ: vượt quá 5-10 mph).",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "AutoLaneChangeTimer",
+          "label": "Tự động chuyển làn bằng Blinker",
+          "type": "dropdown",
+          "options": [
+            "Off",
+            "Nudge",
+            "Nudgeless",
+            "0.5 s",
+            "1 s",
+            "2 s",
+            "3 s"
+          ],
+          "default": "Nudge",
+          "description": "Kiểm soát cách bắt đầu thay đổi làn đường khi bạn bật đèn xi nhan. Tắt: bị vô hiệu hóa. Nudge: yêu cầu một cú huých nhẹ vào tay lái (mặc định). Không cần di chuyển: bắt đầu ngay lập tức khi có tín hiệu. Tùy chọn hẹn giờ (0,5-3 giây): bắt đầu sau độ trễ được chỉ định.",
+          "useCase": "Chọn mức độ thoải mái với việc thay đổi làn đường tự động.",
+          "tradeoffs": [
+            "Không cần di chuyển/Tính thời gian: Nhanh hơn nhưng ít xác nhận hơn.",
+            "Nudge: Yêu cầu bánh xe tác động nhẹ - cân bằng tốt giữa an toàn và tiện lợi."
+          ],
+          "userNote": "“Nudge” là lựa chọn mặc định và an toàn nhất.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "AutoLaneChangeBsmDelay",
+          "label": "Tự động chuyển làn đường: Trì hoãn có điểm mù",
+          "type": "toggle",
+          "default": true,
+          "description": "Khi được bật, hệ thống sẽ đợi điểm mù biến mất trước khi thực hiện chuyển làn. Nếu phát hiện có phương tiện trong điểm mù, việc chuyển làn sẽ bị trì hoãn cho đến khi đường thông thoáng.",
+          "recommended": true,
+          "dependencies": [
+            {
+              "key": "AutoLaneChangeTimer",
+              "label": "Tự động chuyển làn bằng Blinker"
+            }
+          ],
+          "useCase": "Ngăn chặn nỗ lực chuyển làn khi có xe ở trong điểm mù của bạn.",
+          "userNote": "Chỉ xuất hiện nếu xe của bạn hỗ trợ BSM và Tự động chuyển làn đường không được đặt thành Tắt hoặc Nhích.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "MapAdvisorySpeedLimit",
+          "label": "Giới hạn tốc độ tư vấn bản đồ",
+          "type": "toggle",
+          "default": true,
+          "description": "Tôn trọng biển báo tốc độ 'tư vấn' màu vàng trên đường cong/đoạn dốc.",
+          "recommended": true,
+          "useCase": "Tự động giảm tốc độ theo khuyến cáo khi ra khỏi đoạn đường nối trên đường cao tốc.",
+          "userNote": "Giữ BẬT để đảm bảo an toàn trên đường dốc.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "CustomAccIncrements",
+          "label": "Mức tăng ACC tùy chỉnh",
+          "type": "toggle",
+          "default": false,
+          "description": "Thay đổi mức độ thay đổi tốc độ khi bạn nhấn +/- trên bánh xe.",
+          "useCase": "Tinh chỉnh điều chỉnh tốc độ - chạm nhỏ để có độ chính xác.",
+          "userNote": "Tùy chỉnh nhấn nhanh đến ±1 và nhấn lâu đến ±5.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "CustomAccShortPressIncrement",
+          "label": "Tăng báo chí ngắn ACC tùy chỉnh",
+          "type": "slider",
+          "default": 1,
+          "min": 1,
+          "max": 10,
+          "unit": "mph/kph",
+          "helpText": "Phạm vi: 1 - 10 mph/kph",
+          "dependencies": [
+            {
+              "key": "CustomAccIncrements",
+              "label": "Mức tăng ACC tùy chỉnh"
+            }
+          ],
+          "description": "Thay đổi tốc độ khi nhấn nhanh các nút hành trình.",
+          "useCase": "Tinh chỉnh điều chỉnh tốc độ nhỏ.",
+          "userNote": "Đặt thay đổi tốc độ để chạm nhanh vào các nút hành trình.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "CustomAccLongPressIncrement",
+          "label": "Tăng báo chí dài ACC tùy chỉnh",
+          "type": "slider",
+          "default": 5,
+          "min": 1,
+          "max": 10,
+          "unit": "mph/kph",
+          "helpText": "Phạm vi: 1 - 10 mph/kph",
+          "dependencies": [
+            {
+              "key": "CustomAccIncrements",
+              "label": "Mức tăng ACC tùy chỉnh"
+            }
+          ],
+          "description": "Thay đổi tốc độ khi nhấn và giữ nút hành trình.",
+          "useCase": "Điều chỉnh tốc độ lớn hơn bằng nút giữ.",
+          "userNote": "Đặt thay đổi tốc độ để giữ nút hành trình.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "IntelligentCruiseButtonManagement",
+          "label": "Quản lý nút hành trình thông minh",
+          "type": "toggle",
+          "default": false,
+          "description": "Logic nút hành trình nâng cao để kiểm soát tốc độ thông minh hơn.",
+          "useCase": "Hành vi nút ga tự động trực quan hơn.",
+          "userNote": "Kích hoạt nút hành trình thông minh hơn.",
+          "deviceAvailability": "config-hidden"
+        }
+      ]
+    },
+    {
+      "id": "visuals",
+      "name": "Hiển thị và giao diện",
+      "icon": "🎨",
+      "description": "Định cấu hình thông tin và thành phần hình ảnh nào xuất hiện trên màn hình lái xe.",
+      "settings": [
+        {
+          "key": "RainbowMode",
+          "label": "Kích hoạt chế độ cầu vồng Tesla",
+          "type": "toggle",
+          "default": false,
+          "description": "Áp dụng hiệu ứng màu cầu vồng cho đường lái xe dự kiến ​​của mô hình hiển thị trên màn hình. Đây chỉ là thay đổi về mặt thẩm mỹ và không ảnh hưởng đến hành vi lái xe.",
+          "useCase": "Hiệu ứng hình ảnh vui nhộn để thể hiện hệ thống.",
+          "tradeoffs": [
+            "Chỉ mang tính thẩm mỹ - không ảnh hưởng đến việc lái xe.",
+            "Có thể gây mất tập trung."
+          ],
+          "userNote": "Hiệu ứng thẩm mỹ thú vị. Không ảnh hưởng tới việc lái xe.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "DisplayRoadName",
+          "label": "Tên đường hiển thị",
+          "type": "toggle",
+          "default": true,
+          "description": "Hiển thị tên đường bạn đang lái xe. Yêu cầu tải xuống cơ sở dữ liệu bản đồ OSM thông qua bảng OSM.",
+          "useCase": "Nhận thức tình huống khi điều hướng các khu vực xa lạ.",
+          "userNote": "Yêu cầu tải xuống dữ liệu bản đồ OSM.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "GreenLightAlert",
+          "label": "Cảnh báo đèn giao thông xanh (Beta)",
+          "type": "toggle",
+          "default": false,
+          "description": "Phát chuông và hiển thị cảnh báo trên màn hình khi đèn giao thông phía trước chuyển sang màu xanh trong khi bạn đang dừng mà không có xe dẫn đầu ở phía trước. Giúp bạn nhận thấy sự thay đổi ánh sáng.",
+          "recommended": true,
+          "useCase": "Cảnh báo khi đèn giao thông chuyển sang màu xanh khi dừng.",
+          "userNote": "Chỉ kích hoạt khi dừng lại mà không có xe dẫn đầu phía trước.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "LeadDepartAlert",
+          "label": "Cảnh báo khởi hành chính (Beta)",
+          "type": "toggle",
+          "default": false,
+          "description": "Phát chuông và hiển thị cảnh báo trên màn hình khi bạn dừng xe và xe phía trước bắt đầu di chuyển. Hữu ích khi nhận biết khi nào giao thông bắt đầu lưu thông trở lại.",
+          "recommended": true,
+          "useCase": "Ngăn chặn việc bị bấm còi khi tham gia giao thông dừng và đi.",
+          "userNote": "Thông báo cho bạn khi xe dẫn đầu bắt đầu di chuyển.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "ShowTurnSignals",
+          "label": "Hiển thị tín hiệu rẽ",
+          "type": "toggle",
+          "default": false,
+          "description": "Vẽ đèn báo rẽ trực quan trên HUD khi đèn báo rẽ đang hoạt động.",
+          "useCase": "Xác nhận trực quan rằng đèn nháy đang hoạt động.",
+          "userNote": "Chỉ được hỗ trợ trên dấu phẩy 3X/3.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "BlindSpotDetection",
+          "label": "Hiển thị cảnh báo điểm mù",
+          "type": "toggle",
+          "default": false,
+          "description": "Hiển thị cảnh báo trực quan trên màn hình lái xe khi phát hiện có xe trong điểm mù của bạn. Chỉ có trên các xe được trang bị phần cứng Giám sát điểm mù (BSM).",
+          "recommended": true,
+          "useCase": "Cảnh báo BSM dư thừa trên màn hình lái xe.",
+          "userNote": "Được hỗ trợ trên tất cả các thiết bị. dấu phẩy bốn người dùng phải sử dụng sunnylink để thay đổi cài đặt này.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ScreenBrightness",
+          "label": "Độ sáng màn hình",
+          "type": "dropdown",
+          "options": [
+            "Auto",
+            "Low",
+            "Medium",
+            "High"
+          ],
+          "default": "Auto",
+          "description": "Đặt mức độ đèn nền của màn hình.",
+          "recommended": "Auto",
+          "userNote": "'Tự động' thường hoạt động tốt nhất.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "OnroadBrightness",
+          "label": "Độ sáng trên đường",
+          "type": "dropdown",
+          "options": [
+            "Auto",
+            "Low",
+            "Medium",
+            "High"
+          ],
+          "default": "Auto",
+          "description": "Đặt độ sáng cụ thể khi lái xe.",
+          "recommended": "Auto",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "OnroadBrightnessDelay",
+          "label": "Độ trễ độ sáng trên đường",
+          "type": "slider",
+          "default": 15,
+          "min": 0,
+          "max": 60,
+          "unit": "giây",
+          "helpText": "Phạm vi: 0 - 60 giây (mặc định: 15 giây)",
+          "description": "Thời gian trước khi độ sáng trên đường giảm xuống.",
+          "useCase": "Kiểm soát tốc độ giảm độ sáng sau khi bắt đầu lái xe.",
+          "userNote": "Điều chỉnh độ trễ mờ màn hình theo sở thích của bạn.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "DeveloperUIInfo",
+          "label": "Giao diện người dùng dành cho nhà phát triển",
+          "type": "dropdown",
+          "options": [
+            "Off",
+            "Bottom",
+            "Right",
+            "Right & Bottom"
+          ],
+          "default": "Off",
+          "description": "Kiểm soát việc hiển thị số liệu của nhà phát triển theo thời gian thực trên màn hình lái xe. Tắt: không có thông tin. Dưới cùng: số liệu ở phía dưới. Bên phải: số liệu ở bên phải. Phải & Dưới: cả hai.",
+          "useCase": "Hiển thị thông tin gỡ lỗi kỹ thuật trên màn hình.",
+          "userNote": "Chỉ dành cho nhà phát triển và người dùng nâng cao. Chỉ được hỗ trợ trên dấu phẩy 3X/3.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "ChevronInfo",
+          "label": "Hiển thị số liệu bên dưới Chevron",
+          "type": "dropdown",
+          "options": [
+            "Off",
+            "Distance",
+            "Speed",
+            "Time",
+            "All"
+          ],
+          "default": "Off",
+          "description": "Kiểm soát thông tin nào xuất hiện bên dưới chữ V của xe dẫn đầu trên màn hình lái xe. Tắt: không có gì hiển thị. Khoảng cách: khoảng cách dẫn đầu. Tốc độ: tốc độ xe dẫn đầu. Thời gian: khoảng cách thời gian. Tất cả: mọi thứ cùng nhau.",
+          "useCase": "Hiển thị số liệu hữu ích về xe dẫn đầu.",
+          "userNote": "Yêu cầu điều khiển theo chiều dọc sunnypilot. Chỉ được hỗ trợ trên dấu phẩy 3X/3.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "StandstillTimer",
+          "label": "Bật hẹn giờ chờ",
+          "type": "toggle",
+          "default": false,
+          "description": "Hiển thị đồng hồ hẹn giờ trên HUD khi xe dừng. Đồng hồ bấm giờ cho biết bạn đã đứng yên trong bao lâu.",
+          "useCase": "Cho biết bạn đã dừng xe ở đèn đỏ hoặc khi tham gia giao thông trong bao lâu.",
+          "userNote": "Chỉ được hỗ trợ trên dấu phẩy 3X/3.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "HideVEgoUI",
+          "label": "Đồng hồ tốc độ: Ẩn khỏi màn hình trên đường",
+          "type": "toggle",
+          "default": false,
+          "description": "Ẩn hoàn toàn đồng hồ tốc độ khỏi màn hình lái xe. Khi được bật, không có tốc độ nào được hiển thị khi lái xe.",
+          "useCase": "Giảm thiểu phiền nhiễu bằng cách ẩn hiển thị tốc độ.",
+          "userNote": "Chỉ được hỗ trợ trên dấu phẩy 3X/3.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "TrueVEgoUI",
+          "label": "Đồng hồ tốc độ: Luôn hiển thị tốc độ thực",
+          "type": "toggle",
+          "default": false,
+          "description": "Buộc đồng hồ tốc độ luôn hiển thị tốc độ thực của xe từ cảm biến tốc độ bánh xe, thay vì tốc độ dựa trên GPS. Áp dụng cho các phương tiện có tốc độ bánh xe và tốc độ GPS khác nhau.",
+          "useCase": "Hiển thị số đọc đồng hồ tốc độ thực từ cảm biến xe.",
+          "userNote": "Chỉ được hỗ trợ trên dấu phẩy 3X/3.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "DisplayRocketFuelBar",
+          "label": "Thanh tăng tốc thời gian thực",
+          "type": "toggle",
+          "default": false,
+          "description": "Hiển thị một thanh dọc ở bên trái màn hình lái xe cho biết khả năng tăng và giảm tốc theo thời gian thực. Thanh di chuyển lên khi tăng tốc và di chuyển xuống khi phanh.",
+          "useCase": "Hình dung mức độ khó của hệ thống khi tăng tốc hoặc phanh.",
+          "userNote": "Chỉ được hỗ trợ trên dấu phẩy 3X/3.",
+          "deviceAvailability": "comma-3x-only"
+        },
+        {
+          "key": "SteeringArc",
+          "label": "Vòng lái",
+          "type": "toggle",
+          "default": false,
+          "description": "Hiển thị lớp phủ cung lái trên màn hình lái xe khi điều khiển bên (tay lái) được kích hoạt. Vòng cung này minh họa con đường mà sunnypilot đang hướng tới.",
+          "useCase": "Phản hồi trực quan của đường lái.",
+          "userNote": "Được hỗ trợ trên tất cả các thiết bị. Trên dấu phẩy bốn, cung lái luôn được hiển thị.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "InteractivityTimeout",
+          "label": "Hết thời gian tương tác",
+          "type": "slider",
+          "default": 10,
+          "min": 3,
+          "max": 30,
+          "unit": "giây",
+          "helpText": "Phạm vi: 3 đến 30 giây",
+          "description": "Đặt số giây không hoạt động cảm ứng trước khi màn hình trên đường mờ đi hoặc chuyển sang chế độ tiết kiệm năng lượng khi đang lái xe.",
+          "useCase": "Giảm độ chói của cabin vào ban đêm và quản lý khả năng tản nhiệt của thiết bị.",
+          "safetyLevel": "safe",
+          "deviceAvailability": "config-hidden"
+        }
+      ]
+    },
+    {
+      "id": "developer",
+      "name": "Cài đặt nhà phát triển",
+      "icon": "👨‍💻",
+      "description": "Cài đặt nâng cao dành cho nhà phát triển và người dùng thành thạo, bao gồm các công cụ gỡ lỗi, tùy chọn kết nối và tính năng alpha.",
+      "settings": [
+        {
+          "key": "ShowAdvancedControls",
+          "label": "Hiển thị các điều khiển nâng cao",
+          "type": "toggle",
+          "default": true,
+          "description": "Hiển thị các cài đặt nâng cao bổ sung trên toàn bộ giao diện sunnypilot. Việc bật tính năng này không thay đổi bất kỳ hành vi lái xe nào - nó chỉ hiển thị các điều khiển ẩn. Các cài đặt được kiểm soát phía sau nút chuyển đổi này bao gồm: Mô hình (Điều chỉnh tốc độ rẽ làn, Điều chỉnh độ trễ phần mềm), Phần mềm (Tắt cập nhật) và Nhà phát triển (Dịch vụ chạy GitHub, Dịch vụ sao chép, Chế độ khởi động nhanh).",
+          "recommended": true,
+          "useCase": "Truy cập tất cả các tùy chọn cấu hình có sẵn.",
+          "userNote": "Giữ BẬT để xem tất cả các cài đặt có sẵn.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "EnableAdb",
+          "label": "Kích hoạt ADB",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép ADB (Cầu gỡ lỗi Android) kết nối với thiết bị qua USB hoặc mạng để gỡ lỗi.",
+          "useCase": "Quyền truy cập của nhà phát triển qua cáp USB.",
+          "userNote": "Chỉ có thể thay đổi khi thiết bị đang ở chế độ offroad.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "EnableSsh",
+          "label": "Kích hoạt SSH",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép truy cập SSH vào thiết bị cho các phiên thiết bị đầu cuối từ xa.",
+          "warning": "Rủi ro bảo mật. Chỉ thêm khóa SSH từ người dùng mà bạn tin tưởng.",
+          "safetyLevel": "critical",
+          "useCase": "Quyền truy cập của nhà phát triển để gỡ lỗi và cấu hình nâng cao.",
+          "tradeoffs": [
+            "Lỗ hổng bảo mật nếu thiết bị nằm trên mạng công cộng.",
+            "Bất kỳ ai có khóa được cài đặt đều có toàn quyền truy cập vào thiết bị."
+          ],
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "SshKeys",
+          "label": "Khóa SSH",
+          "type": "action",
+          "description": "Tìm nạp khóa công khai SSH từ tên người dùng GitHub và cài đặt chúng trên thiết bị. Điều này cho phép đăng nhập SSH bằng cặp khóa liên kết với GitHub của bạn.",
+          "warning": "Chỉ thêm khóa SSH từ người dùng mà bạn tin tưởng. Bất kỳ ai có khóa được cài đặt đều có toàn quyền truy cập vào thiết bị.",
+          "useCase": "Cài đặt khóa SSH để truy cập từ xa.",
+          "userNote": "Chỉ thêm khóa từ người dùng đáng tin cậy.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "JoystickDebugMode",
+          "label": "Chế độ gỡ lỗi cần điều khiển",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép lái xe được điều khiển bằng cần điều khiển cho mục đích thử nghiệm và phát triển.",
+          "useCase": "Thử nghiệm và phát triển.",
+          "userNote": "Ẩn trên các nhánh phát hành. Chỉ có thể thay đổi khi thiết bị đang ở chế độ offroad.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "QuickBoot",
+          "label": "Chế độ khởi động nhanh",
+          "type": "toggle",
+          "default": false,
+          "description": "Tạo một tập tin dựng sẵn để tăng tốc khởi động, giảm thời gian khởi động. Yêu cầu tắt cập nhật phần mềm trước tiên.",
+          "useCase": "Thời gian khởi động nhanh hơn.",
+          "tradeoffs": [
+            "Yêu cầu bật Tắt cập nhật.",
+            "Không được nằm trên nhánh phát hành hoặc phát triển."
+          ],
+          "warning": "Chỉ xuất hiện khi Hiển thị điều khiển nâng cao được bật và Tắt cập nhật đang hoạt động.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "CopypartyService",
+          "label": "Dịch vụ bên sao chép",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép máy chủ tệp trên thiết bị tải xuống các tuyến đường và nhật ký lái xe từ trình duyệt web thông qua địa chỉ IP cục bộ của thiết bị.",
+          "useCase": "Tải xuống video và nhật ký ổ đĩa qua WiFi mà không cần SSH.",
+          "userNote": "Chỉ xuất hiện khi bật Hiển thị điều khiển nâng cao.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "EnableSunnylinkUploader",
+          "label": "Kích hoạt Trình tải lên sunnylink",
+          "type": "toggle",
+          "default": false,
+          "description": "Tải ổ đĩa lên sunnylink.",
+          "useCase": "Cho phép tải dữ liệu ổ đĩa lên máy chủ sunnylink để lưu trữ và phân tích trên đám mây.",
+          "userNote": "Cho phép tải ổ đĩa của bạn lên sunnylink.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "LongitudinalManeuverMode",
+          "label": "Chế độ điều động theo chiều dọc",
+          "type": "toggle",
+          "default": false,
+          "description": "Bật chế độ gỡ lỗi theo chiều dọc để kiểm tra các thao tác tăng tốc và phanh.",
+          "useCase": "Kiểm tra khả năng tăng tốc và hành vi phanh.",
+          "userNote": "Ẩn trên các nhánh phát hành. Yêu cầu điều khiển theo chiều dọc và thiết bị phải ở chế độ offroad.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "AlphaLongitudinal",
+          "label": "Điều khiển theo chiều dọc sunnypilot (Alpha)",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép điều khiển theo chiều dọc chất lượng alpha đối với các phương tiện chưa được hỗ trợ ngược dòng đầy đủ. Điều này thay thế hệ thống ga tự động thích ứng nguyên bản của ô tô bằng hệ thống quản lý phanh và tăng tốc của riêng sunnypilot.",
+          "useCase": "Kích hoạt tính năng điều khiển theo chiều dọc sunnypilot trên các phương tiện không có hỗ trợ riêng.",
+          "tradeoffs": [
+            "Tắt AEB (Phanh khẩn cấp tự động) khi được bật.",
+            "Chất lượng Alpha - có thể hoạt động bất ngờ."
+          ],
+          "warning": "Việc kích hoạt tính năng này sẽ vô hiệu hóa AEB (Phanh khẩn cấp tự động). Hộp thoại xác nhận xuất hiện trước khi kích hoạt.",
+          "userNote": "Ẩn trên các nhánh phát hành. Chỉ xuất hiện nếu xe của bạn hỗ trợ điều khiển theo chiều dọc alpha.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "GithubRunnerService",
+          "label": "Dịch vụ chạy GitHub",
+          "type": "toggle",
+          "default": false,
+          "description": "Kích hoạt dịch vụ chạy tự lưu trữ GitHub Actions trên thiết bị. Điều này cho phép thiết bị thực thi các công việc CI/CD từ kho lưu trữ của bạn.",
+          "useCase": "Chạy trình chạy GitHub Actions trên thiết bị.",
+          "userNote": "Chỉ xuất hiện khi bật Hiển thị điều khiển nâng cao. Ẩn trên các nhánh phát hành.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "GithubRunnerSufficientVoltage",
+          "label": "GitHub Runner Đủ điện áp",
+          "type": "toggle",
+          "default": true,
+          "description": "Kiểm tra điện áp cho Á hậu GitHub.",
+          "useCase": "Đảm bảo đủ điện áp trước khi chạy công việc CI.",
+          "userNote": "Ngăn ngừa hao pin trong các tác vụ CI.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "UiDebugMode",
+          "label": "Chế độ gỡ lỗi giao diện người dùng",
+          "type": "toggle",
+          "default": false,
+          "description": "Hiển thị chỉ báo cảm ứng, bộ đếm FPS và tọa độ chuột trên màn hình. Hữu ích cho việc phát triển giao diện người dùng và khắc phục sự cố hiển thị.",
+          "useCase": "Hiển thị lớp phủ gỡ lỗi trên giao diện người dùng.",
+          "userNote": "Chỉ dành cho nhà phát triển.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "DisableLogging",
+          "label": "Vô hiệu hóa ghi nhật ký",
+          "type": "toggle",
+          "default": false,
+          "description": "Dừng lưu dữ liệu ổ đĩa vào đĩa.",
+          "useCase": "Tiết kiệm không gian lưu trữ hoặc để bảo mật.",
+          "tradeoffs": [
+            "Mất tất cả bằng chứng lái xe trong trường hợp xảy ra tai nạn.",
+            "Không thể xem lại hoặc tải lên ổ đĩa."
+          ],
+          "warning": "Tiết kiệm không gian, nhưng bạn sẽ mất bằng chứng nếu tai nạn xảy ra.",
+          "deviceAvailability": "full"
+        },
+        {
+          "key": "ManualRealTimeTuning",
+          "label": "Điều chỉnh thời gian thực thủ công",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép bạn ghi đè các giá trị mô-men xoắn khi lái xe.",
+          "warning": "Chỉ gỡ lỗi. Nguy hiểm khi sử dụng bình thường.",
+          "safetyLevel": "critical",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "FirehoseMode",
+          "label": "Chế độ Firehose",
+          "type": "toggle",
+          "default": true,
+          "description": "Tải các phân đoạn ổ đĩa được lấy mẫu ngẫu nhiên lên nhóm đào tạo của dấu phẩy khi được kết nối với Wi-Fi không tính dung lượng truy cập. sunnypilot là nhánh rẽ chính đầu tiên có hỗ trợ Chế độ Firehose chính thức.",
+          "useCase": "Đóng góp dữ liệu lái xe trong thế giới thực để đào tạo các mẫu lái xe openpilot và sunnypilot thế hệ tiếp theo.",
+          "tradeoffs": [
+            "Yêu cầu kết nối với Wi-Fi không có đồng hồ đo khi xe đang đỗ/ngoài đường.",
+            "Giúp cải thiện các mô hình lái xe tự động cho tất cả người dùng."
+          ],
+          "userNote": "Hỗ trợ chính thức được giới thiệu trong sunnypilot 2026. Chỉ tải lên khi kết nối với Wi-Fi không tính dung lượng truy cập.",
+          "safetyLevel": "safe",
+          "deviceAvailability": "full"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "Cài đặt khác",
+      "icon": "🔧",
+      "description": "Các cài đặt khác bao gồm AGNOS, điều khiển kế hoạch và cấu hình dành riêng cho ô tô.",
+      "settings": [
+        {
+          "key": "LastAgnosPowerMonitorShutdown",
+          "label": "Lần tắt màn hình nguồn AGNOS cuối cùng",
+          "type": "readonly",
+          "description": "Dấu thời gian của sự kiện tắt màn hình nguồn AGNOS gần đây nhất.",
+          "userNote": "Chỉ đọc. Hiển thị thời điểm thiết bị tắt lần cuối do giám sát nguồn điện.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "PlanPlusControls",
+          "label": "Kiểm soát gói Plus",
+          "type": "slider",
+          "default": 1,
+          "min": 0,
+          "max": 2,
+          "helpText": "Phạm vi: 0 (tắt) đến 2 (tích cực). Mặc định: 1",
+          "description": "Điều chỉnh cường độ lấy lại mô hình planplus. Con số này càng cao, mô hình sẽ càng tiến về trung tâm làn đường càng tích cực. Quá cao và nó sẽ bóng bàn.",
+          "useCase": "Tinh chỉnh mức độ mạnh mẽ của mô hình để điều chỉnh trở lại vị trí làn đường trung tâm.",
+          "tradeoffs": [
+            "Giá trị cao hơn = tập trung mạnh mẽ hơn nhưng có khả năng chơi bóng bàn.",
+            "Giá trị thấp hơn = mượt mà hơn nhưng có thể trôi khỏi trung tâm."
+          ],
+          "userNote": "Mặc định 1.0. Tăng nếu xe trôi quá nhiều, giảm nếu chơi bóng bàn.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "HasAcceptedSunnypilotTerms",
+          "label": "Đã chấp nhận các điều khoản của sunnypilot",
+          "type": "readonly",
+          "description": "Cho biết liệu người dùng có chấp nhận điều khoản dịch vụ của sunnypilot hay không.",
+          "userNote": "Chỉ đọc. Hiển thị trạng thái chấp nhận.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SupportedCarList",
+          "label": "Danh sách xe được hỗ trợ",
+          "type": "action",
+          "description": "Xem tất cả các nền tảng được hỗ trợ trong sunnypilot.",
+          "useCase": "Kiểm tra xem xe của bạn có được hỗ trợ chính thức hay không.",
+          "userNote": "Mở danh sách JSON của tất cả các loại xe tương thích.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "CompletedSunnylinkConsentVersion",
+          "label": "Phiên bản đồng ý sunnylink đã hoàn thành",
+          "type": "readonly",
+          "description": "Phiên bản của biểu mẫu chấp thuận sunnylink đã được hoàn thành.",
+          "userNote": "Chỉ đọc. Hiển thị phiên bản chấp thuận nào bạn đã đồng ý.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ToyotaEnforceFactoryLongitudinalControl",
+          "label": "Toyota: Thực thi điều khiển dọc của nhà máy",
+          "type": "toggle",
+          "default": false,
+          "description": "Khi được bật, sunnypilot sẽ không kiểm soát ga và phanh. Nhà máy Toyota sẽ sử dụng hệ thống điều khiển dọc.",
+          "useCase": "Sử dụng ACC nguyên bản của Toyota thay vì điều khiển theo chiều dọc của sunnypilot.",
+          "tradeoffs": [
+            "ACC của nhà máy có thể mượt mà hơn nhưng kém thông minh hơn.",
+            "Mất các tính năng dừng và đi nâng cao của sunnypilot."
+          ],
+          "userNote": "Bật nếu bạn thích hành vi hành trình thích ứng nguyên bản của Toyota.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SubaruStopAndGo",
+          "label": "Subaru: Dừng lại và đi",
+          "type": "toggle",
+          "default": false,
+          "description": "Kích hoạt chức năng dừng và đi cho các xe Subaru được hỗ trợ. Cho phép hệ thống tiếp tục hoạt động từ trạng thái dừng hoàn toàn, thường được ngắt ở mức dưới ~ 10 dặm/giờ trên những chiếc Subaru cũ.",
+          "useCase": "Cần thiết cho người lái xe Subaru khi tham gia giao thông dừng và đi để tránh việc tiếp tục hoạt động theo cách thủ công.",
+          "tradeoffs": [
+            "Chỉ xuất hiện nếu car_fingerprint == SUBARU.",
+            "Có thể hoạt động khác nhau tùy thuộc vào năm mẫu xe Subaru."
+          ],
+          "userNote": "Dành riêng cho xe: Chỉ hiển thị trên xe Subaru.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SubaruStopAndGoManualParkingBrake",
+          "label": "Subaru: Dừng và Đi (Phanh đỗ xe bằng tay)",
+          "type": "toggle",
+          "default": false,
+          "description": "Biến thể Stop and Go dành cho Subaru với phanh tay chỉnh tay hoặc điện tử. Xử lý logic phanh đỗ khác nhau khi xe cộ dừng và đi để ngăn chặn việc phanh tay ngoài ý muốn.",
+          "useCase": "Dành cho xe Subaru có phanh tay điện tử cần xử lý đặc biệt khi dừng và đi.",
+          "tradeoffs": [
+            "Chỉ xuất hiện nếu car_fingerprint == SUBARU.",
+            "Hành vi khác nhau tùy thuộc vào loại phanh đỗ (thủ công và điện tử)."
+          ],
+          "userNote": "Dành riêng cho xe: Chỉ dành cho xe Subaru có phanh tay điện tử.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "SunnylinkDongleId",
+          "label": "ID Dongle sunnylink",
+          "type": "readonly",
+          "description": "Mã định danh thiết bị sunnylink duy nhất cho kết nối đám mây.",
+          "userNote": "Chỉ đọc. ID duy nhất của thiết bị của bạn cho các dịch vụ sunnylink.",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "EnableSunnylink",
+          "label": "Kích hoạt sunnylink",
+          "type": "toggle",
+          "default": false,
+          "description": "Chuyển đổi chính cho tất cả các tính năng đám mây sunnylink, bao gồm quản lý tham số từ xa, sao lưu cài đặt và đồng bộ hóa cấp nhà tài trợ GitHub.",
+          "useCase": "Cho phép kết nối thiết bị với cổng web sunnylink.ai để quản lý nhóm và sao lưu tham số.",
+          "safetyLevel": "safe",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ToyotaStopAndGoHack",
+          "label": "Toyota: Dừng và Đi Hack (Alpha)",
+          "type": "toggle",
+          "default": false,
+          "description": "Kích hoạt chức năng dừng và đi hoàn toàn cho các mẫu xe Toyota cũ vốn có khả năng ngắt hành trình ở tốc độ dưới 19 mph / 30 km/h.",
+          "useCase": "Các mẫu xe Toyota Prius, RAV4, Corolla cũ hơn không có hệ thống ga tự động radar động ở tốc độ tối đa.",
+          "safetyLevel": "critical",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ToyotaZSS",
+          "label": "Toyota: Cảm biến lái Zorro (ZSS)",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép hỗ trợ cảm biến lái quang học Zorro hậu mãi có độ phân giải cao trên các xe Toyota được hỗ trợ.",
+          "useCase": "Cung cấp phản hồi góc lái chính xác trên xe Toyota với cảm biến gốc có độ phân giải thấp.",
+          "safetyLevel": "safe",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ToyotaSmartDSU",
+          "label": "Toyota: DSU thông minh",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép hỗ trợ mô-đun đánh chặn Smart DSU, cung cấp khả năng điều khiển theo chiều dọc openpilot trên các mẫu xe Toyota có hạn chế hành trình bằng radar.",
+          "useCase": "Các mẫu xe Toyota yêu cầu sửa đổi DSU để điều khiển theo chiều dọc openpilot.",
+          "safetyLevel": "safe",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "HondaGasInterceptor",
+          "label": "Honda: Bộ chặn khí (bàn đạp dấu phẩy)",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép hỗ trợ bộ chặn phần cứng Bàn đạp dấu phẩy trên các xe Honda/Acura được hỗ trợ, cung cấp khả năng điều khiển dọc hoàn toàn khi dừng và đi.",
+          "useCase": "Các mẫu xe Honda Civic, CR-V, Accord cũ hơn yêu cầu chặn bàn đạp để dừng và đi.",
+          "safetyLevel": "critical",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "RivianLongitudinalHarness",
+          "label": "Rivian: Nâng cấp khai thác theo chiều dọc",
+          "type": "toggle",
+          "default": false,
+          "description": "Định cấu hình sunnypilot cho xe Rivian R1T và R1S được trang bị dây đai dọc CAN phụ trợ.",
+          "useCase": "Chủ sở hữu Rivian sử dụng bộ dây tùy chỉnh để mở rộng khả năng kiểm soát.",
+          "safetyLevel": "safe",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "GMNonAccSupport",
+          "label": "GM/Chevrolet: Hỗ trợ xe không ACC",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép điều khiển lái ngang và MADS trên các xe GM và Chevrolet không được trang bị Ga tự động thích ứng (ACC) của nhà máy.",
+          "useCase": "Xe GM chỉ có camera hoặc hệ thống ga tự động cơ bản.",
+          "safetyLevel": "safe",
+          "deviceAvailability": "config-hidden"
+        },
+        {
+          "key": "ChryslerSteerToZero",
+          "label": "Chrysler / RAM: Đánh lái về số 0",
+          "type": "toggle",
+          "default": false,
+          "description": "Cho phép MADS lái xuống tốc độ 0 dặm/giờ trên các xe Chrysler, Dodge, Jeep và RAM được hỗ trợ.",
+          "useCase": "Kích hoạt tính năng hỗ trợ lái liên tục khi xe FCA di chuyển chậm.",
+          "safetyLevel": "safe",
+          "deviceAvailability": "config-hidden"
+        }
+      ]
+    }
+  ]
+}

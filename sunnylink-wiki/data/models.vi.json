@@ -1,0 +1,3788 @@
+{
+  "appName": "Cơ sở dữ liệu mô hình Sunnylink",
+  "version": "8.4",
+  "totalModels": 128,
+  "lastUpdated": "September 06, 2026",
+  "vibeGuide": {
+    "chestnut_gpu": {
+      "title": "Dòng GPU Chestnut (Mẫu lớn)",
+      "subtitle": "Đối thủ nặng ký chỉ có eGPU",
+      "includes": "Cinque Terre, BMRLNAP v6/v4/v3/v2/v1, Sad Model, Happy Birthday, I Desire, Tee Time, TTTTFBRLM, Lebowski",
+      "vibe": "Đây là những \"mô hình lớn\" — mạng cấp hạt dẻ lớn hơn bất kỳ mạng nào trong dòng WMI hoặc OP, được gắn với tiện ích bổ sung GPU mới của dấu phẩy, bắt đầu đến tay chủ sở hữu vào tháng 8 năm 2026. Chúng nằm trong thẻ big_model của diễn đàn với nhịp độ gần như hàng ngày trong quá trình chạy. Kích thước mạng bổ sung xuất hiện đầu tiên ở phía bên: rẽ rộng 90 độ trong thành phố thay vì cắt chúng và hiển thị độ ổn định của đường cao tốc được trồng thay vì thả nổi. Các mục nổi bật như Cinque Terre và Sad Model đã cải thiện đáng kể độ ổn định bên và cảm giác lái tự nhiên, trong khi các lần chạy BMRLNAP trước đó bị dao động lái ở tốc độ thấp. Biển báo dừng và vạch dừng đèn giao thông vẫn là khu vực điều chỉnh tích cực trên toàn tuyến.",
+      "bestFor": "Chủ sở hữu Chestnut có eGPU muốn có mạng lớn nhất hiện có và thoải mái thử nghiệm.",
+      "recommendation": "Cinque Terre Model (CTM) là mẫu xe lớn được đánh giá cao nhất về độ ổn định bên vững chắc và khả năng lái thử nghiệm hàng ngày. BMRLNAP v4 vẫn là một trợ thủ đắc lực của cộng đồng đã được chứng minh về khả năng đáp ứng khi đi vào đường cao tốc, trong khi Sad Model rất phù hợp cho khả năng đánh lái tự nhiên. Tránh BMRLNAP v3 do dao động lái ở tốc độ thấp nghiêm trọng."
+    },
+    "wmi_2026": {
+      "title": "WMI & World Series 2026 (Tiêu chuẩn hiện đại)",
+      "subtitle": "Thông tin đầu cuối",
+      "includes": "WMI V12, V11, V10, SC Model, Macrostiff",
+      "vibe": "Đây là những tiên tiến. 'WMI' có thể là viết tắt của 'Lặp mô hình thế giới'. Những mô hình này sử dụng kiến ​​trúc End-to-End (E2E) mới nhất, nghĩa là chúng “nhìn” thế giới giống con người hơn. Họ hiểu cảnh 3D, biển báo dừng, giao lộ và lề đường - không chỉ các vạch sơn. WMI V12 là chiếc hạm hiện tại. Nó thông minh nhất trong các tình huống đô thị phức tạp nhưng có thể cảm thấy hơi 'lỏng lẻo' trên đường cao tốc thẳng vì nó liên tục điều chỉnh vi mô giống như người lái xe. Nếu bạn lái xe chủ yếu trên các con phố trong thành phố có biển báo dừng và rẽ thì đây chính là loạt xe của bạn.",
+      "bestFor": "Lái xe hàng ngày vào năm 2026. Họ cân bằng giữa sự êm ái và trí thông minh.",
+      "recommendation": "Bắt đầu với WMI V12. Nếu cảm thấy quá 'lắc lư' trên đường cao tốc, hãy thử Macrostiff để có cảm giác lái đầm hơn."
+    },
+    "aggressive": {
+      "title": "Loạt phim hung hãn",
+      "subtitle": "Chiến binh giao thông",
+      "includes": "Dark Souls Model, Dark Souls v2, Firehose",
+      "vibe": "Hiệu suất cao, sự chú ý cao. Dark Souls được đặt tên vì nó 'không thể tha thứ' hoặc 'cứng rắn'. Mong đợi khoảng cách theo sau chặt chẽ hơn, tăng tốc nhanh hơn và rẽ sắc nét hơn. Nó lái xe như một con người đang vội vã nhưng vẫn an toàn. Tuyệt vời cho xe tải hạng nặng (F-150, Sierras) cần đầu vào có thẩm quyền để di chuyển khối lượng của chúng. Mô hình Firehose là nguồn cấp dữ liệu thô, chưa được lọc dành cho nhà phát triển từ các hoạt động đào tạo Hiện đại (SOTA) của comma.ai. Nó đại diện cho 'đỉnh cao' tuyệt đối của việc phát triển mô hình, cập nhật gần như hàng ngày khi dữ liệu mới được nhập từ nhóm toàn cầu.",
+      "bestFor": "Những người đi lại đông đúc (Dark Souls) hoặc những người thử nghiệm mạo hiểm (Firehose).",
+      "recommendation": "Dark Souls v2 dành cho xe tải và SUV. Chỉ thử Firehose nếu bạn muốn kiểm tra các lần lặp SOTA mới nhất, có khả năng không ổn định trước khi chúng được hoàn thiện."
+    },
+    "comfort": {
+      "title": "Dòng sản phẩm Tiện nghi & Mượt mà",
+      "subtitle": "Thân thiện với hành khách",
+      "includes": "Down to Ride (DTR), Space Lab, Kumars Vibe",
+      "vibe": "Thư giãn và thân thiện với hành khách. Down to Ride (DTR) nổi tiếng là 'được vợ chấp thuận'. Nó ưu tiên phanh nhẹ nhàng và quay chậm để tập trung làn đường hoàn hảo. Kumars Vibe được điều chỉnh tùy chỉnh cho một thiết lập ô tô cụ thể nhưng đã trở nên phổ biến vì nó loại bỏ cảm giác 'robot' - chuyển đổi lái rất tự nhiên. Những mẫu xe này hoàn hảo cho những chuyến đi đường mà hành khách có thể bị say tàu xe do điều chỉnh tay lái đột ngột.",
+      "bestFor": "Những chuyến đi đường cùng gia đình hoặc hành khách bị say tàu xe.",
+      "recommendation": "Bắt đầu với Down to Ride v6. Đó là mục tiêu của cộng đồng nhằm mang lại sự thoải mái cho hành khách."
+    },
+    "tomb_raider": {
+      "title": "Dòng Tomb Raider / Thư mục rác (TR)",
+      "subtitle": "Viên ngọc ẩn",
+      "includes": "Tomb Raider 16, 15, 14, Le Tomb Raider",
+      "vibe": "Đây là những đợt huấn luyện thử nghiệm. Mặc dù tên như vậy nhưng một số lại là những viên ngọc ẩn! Tomb Raider 16 (Thư mục Thùng rác 16) đã được cộng đồng yêu thích trong một thời gian dài nhờ khả năng xử lý độc đáo các đường cong trên đường cao tốc. Cảm giác giống như đang lái xe 'trên đường ray'. Những mô hình này thường có những điểm kỳ quặc nhưng có thể làm bạn ngạc nhiên với hiệu suất tuyệt vời trong các tình huống cụ thể. Đáng thử nếu bạn lái xe trên những con đường quanh co.",
+      "bestFor": "Người dùng thích phiêu lưu đang tìm kiếm những đặc điểm lái xe độc ​​đáo.",
+      "recommendation": "Tomb Raider 16 dành cho những đoạn đường lùi quanh co. Đừng để cái tên 'Thư mục Thùng rác' làm bạn sợ hãi!"
+    },
+    "legacy": {
+      "title": "Huyền thoại kế thừa",
+      "subtitle": "Cũ đáng tin cậy",
+      "includes": "Recertified Herbalist, North Dakota, Blue Diamond",
+      "vibe": "'Người bảo vệ cũ'. Các mô hình này là từ năm 2023-2024. Họ kém 'thông minh' hơn (không giỏi về biển báo dừng) nhưng lại có khả năng giữ làn đường trên đường cao tốc một cách đáng kinh ngạc. Recertified Herbalist là 'Tiêu chuẩn Vàng' về độ ổn định. North Dakota nổi tiếng với hệ thống lái CỨNG - nó ôm vào giữa làn đường và không chịu di chuyển. WD40 ‘bôi trơn’ độ cứng này để đầu vào mượt mà hơn. Blue Diamond hoạt động tốt khi trời mưa và vạch kẻ làn đường kém. Đây là những mẫu xe 'Toyota Camry' - nhàm chán, đáng tin cậy và rắn chắc.",
+      "bestFor": "Lái xe tập trung vào đường cao tốc với làn đường tập trung vững chắc.",
+      "recommendation": "Recertified Herbalist cho những chuyến đi đường dài. North Dakota nếu bạn muốn độ cứng tối đa."
+    },
+    "opm": {
+      "title": "Dòng OPM (Off-Policy Model)",
+      "subtitle": "Học hỏi từ sự sửa chữa",
+      "includes": "OP Model 10 v3 (latest), OP Model 10 v2/v1, OP Model 7-9, Off-Policy Model v1-v5",
+      "vibe": "Những mô hình này sử dụng chương trình đào tạo ngoài chính sách - chúng học hỏi từ những thời điểm mà hành vi của mô hình khác với sự điều chỉnh của người lái xe, thay vì chỉ sao chép hành vi lái xe. Điều này cho phép họ học hỏi hiệu quả hơn từ các trường hợp khó khăn. Chúng cho thấy khả năng định tâm đường cao tốc được cải thiện và thu hồi ngang nhanh hơn so với các mẫu WMI tiêu chuẩn, mặc dù khả năng điều khiển dọc vẫn đang được cải tiến.",
+      "bestFor": "Lái xe tập trung vào đường cao tốc với việc định tâm làn đường được cải thiện.",
+      "recommendation": "OP Model 10 v3 là lựa chọn hiện tại của dòng 10-series mới nhất - v1 rất thô, v2 phanh cố định nhưng bị khựng lại và v3 đưa khả năng tăng tốc ở mức DEC trở lại. Xin lưu ý rằng khả năng vận hành và rẽ ở tốc độ thấp có thể khác nhau tùy theo loại xe."
+    }
+  },
+  "categories": [
+    {
+      "id": "favorites",
+      "name": "Yêu thích",
+      "description": "Các mẫu xe phổ biến nhất để lái xe hàng ngày hiện nay. Cộng đồng đã thử nghiệm và phê duyệt.",
+      "icon": "⭐",
+      "models": [
+        {
+          "name": "TCPmV3 (The Cool Peoples Model)",
+          "date": "October 10, 2025",
+          "badge": "COMMUNITY CHOICE",
+          "tags": [
+            "Custom",
+            "Smooth",
+            "Highway"
+          ],
+          "communityScore": 52,
+          "totalVotes": 184,
+          "sentiment": {
+            "great": 7,
+            "good": 11,
+            "ok": 74,
+            "bad": 8
+          },
+          "consensus": "Mô hình cộng đồng được đánh giá cao nhờ khả năng vận hành mượt mà đặc biệt và không bị giật ở tốc độ thấp. Nhiều người dùng mô tả nó là 'tuyệt vời' và vượt trội so với các bản phát hành tiêu chuẩn về tính nhất quán của điều khiển bên.",
+          "note": "Đặc biệt được người dùng Kia e-Niro tại Anh ưa chuộng. Một trong những mẫu side tùy chỉnh tốt nhất vào cuối năm 2025.",
+          "bestFor": "Toàn diện / Thoải mái",
+          "steeringFeel": "Ultra-Smooth",
+          "forumUrl": "https://community.sunnypilot.ai/t/the-cool-peoples-model-v3-10-october-2025/1151",
+          "testedOn": [
+            "Kia e-Niro",
+            "Honda Civic",
+            "2025 Ioniq 5",
+            "Corolla Hatchback",
+            "21 Hyundai Palisade"
+          ],
+          "positives": [
+            "Không bị giật ở tốc độ thấp",
+            "Điều khiển ngang tuyệt vời",
+            "Chuyển tiếp cực kỳ mượt mà",
+            "Ổn định tốc độ trong E2E",
+            "Hoạt động tốt với NNLC"
+          ],
+          "negatives": [
+            "Phanh muộn (thử nghiệm dài)",
+            "Những cái ôm trở nên thật chặt",
+            "Ôm bỏ đi trong đêm không có xe dẫn đường"
+          ],
+          "routesDriven": 1690,
+          "fleetRank": 14
+        },
+        {
+          "name": "WMI V12",
+          "date": "January 13, 2026",
+          "badge": "FLAGSHIP",
+          "tags": [
+            "Smart",
+            "City",
+            "Highway"
+          ],
+          "communityScore": 68,
+          "totalVotes": 69,
+          "sentiment": {
+            "great": 35,
+            "good": 29,
+            "ok": 22,
+            "bad": 14
+          },
+          "consensus": "Công cụ hàng đầu hiện tại và trình điều khiển hàng ngày cho hầu hết người dùng vào năm 2026. Thông tin thông minh cao nhất cho các tình huống phức tạp như giao lộ, biển báo dừng và các lối rẽ trong đô thị chật hẹp.",
+          "note": "Có thể cảm thấy hơi 'lỏng lẻo' trên đường cao tốc thẳng tắp.",
+          "bestFor": "Lái xe hỗn hợp",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai Ioniq 5",
+            "Kia EV6",
+            "Toyota RAV4",
+            "Honda Accord",
+            "Audi A3",
+            "Hyundai Tucson (Hybrid)",
+            "Hyundai Elantra",
+            "Hyundai Sonata",
+            "Kia K5",
+            "Hyundai Kona EV",
+            "Toyota Tundra (2022-2024)"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/wmiv12-13-jan-2026/2368",
+          "routesDriven": 6407,
+          "fleetRank": 5
+        },
+        {
+          "name": "Dark Souls Model v2",
+          "date": "December 11, 2025",
+          "badge": "POPULAR",
+          "tags": [
+            "Aggressive",
+            "Trucks",
+            "Highway"
+          ],
+          "communityScore": 50,
+          "totalVotes": 22,
+          "sentiment": {
+            "great": 23,
+            "good": 27,
+            "ok": 14,
+            "bad": 36
+          },
+          "consensus": "Mô hình 'không tha thứ', tinh tế. Khoảng cách bám sát chặt hơn, phản ứng nhanh hơn, rẽ sắc nét hơn. Tuyệt vời cho các phương tiện lớn hơn cần có thẩm quyền.",
+          "note": "Được đặt tên là 'Dark Souls' vì nó không thể tha thứ.",
+          "bestFor": "Giao thông đông đúc",
+          "steeringFeel": "Stiff",
+          "testedOn": [
+            "Ford F-150",
+            "GMC Sierra",
+            "Kia Sportage",
+            "Toyota Tacoma",
+            "Lincoln Navigator",
+            "Ram 1500",
+            "Hyundai Elantra",
+            "Ford F-150 Lightning (2022-2024)"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/dark-souls-model-v2-12-dec-2025/1657",
+          "routesDriven": 2844,
+          "fleetRank": 8
+        },
+        {
+          "name": "Nevada Model",
+          "date": "September 07, 2025",
+          "badge": "POPULAR",
+          "tags": [
+            "Stable Benchmark",
+            "Highway"
+          ],
+          "communityScore": 52,
+          "totalVotes": 431,
+          "sentiment": {
+            "great": 6,
+            "good": 10,
+            "ok": 76,
+            "bad": 8
+          },
+          "consensus": "Điểm chuẩn 'trung lập'. Nếu bạn cảm thấy kỳ lạ về một mô hình mới thì Nevada chính là nơi bạn so sánh với nó. Cân bằng tốt giữa mượt mà và đáp ứng.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Most vehicles",
+            "Kia Sportage PHEV"
+          ],
+          "routesDriven": 604,
+          "fleetRank": 26
+        },
+        {
+          "name": "Down to Ride v6",
+          "date": "August 12, 2025",
+          "badge": "LEGENDARY",
+          "tags": [
+            "Comfort",
+            "Smooth",
+            "Right-Hugging(C4)"
+          ],
+          "communityScore": 55,
+          "totalVotes": 465,
+          "sentiment": {
+            "great": 11,
+            "good": 8,
+            "ok": 76,
+            "bad": 5
+          },
+          "consensus": "Mẫu 'Vợ Chấp' huyền thoại. Hy sinh việc định tâm làn đường hoàn hảo để mang lại sự thoải mái cho hành khách. Sẽ không giật bánh xe; nhẹ nhàng trôi vào các ngã rẽ. Lưu ý: Một số người dùng Comma 4 (cụ thể là Ioniq 5) cho biết có làn đường ôm sát bên phải.",
+          "note": "Hoàn hảo cho các chuyến đi đường. Nếu ôm ngay vào C4 thì thử Điều chỉnh Camera Offset (-0,05 đến -0,10).",
+          "bestFor": "hành khách",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Hyundai Palisade",
+            "Kia Telluride",
+            "Toyota Camry",
+            "Honda CR-V",
+            "Audi A3",
+            "Mazda CX-5 (2021-2024)",
+            "Honda Pilot (2019-2022)",
+            "Lincoln Corsair (2020-2023)",
+            "Hyundai Ioniq 5 (HDA II)"
+          ],
+          "routesDriven": 7268,
+          "fleetRank": 4
+        }
+      ]
+    },
+    {
+      "id": "chestnut_gpu",
+      "name": "GPU Chestnut",
+      "description": "Các mô hình lái xe \"lớn\" thuộc lớp Chestnut — các mạng lớn hơn được gắn với tiện ích bổ sung GPU mới của dấu phẩy, bắt đầu được giao cho chủ sở hữu vào tháng 8 năm 2026. Được phát hành theo thẻ big_model của diễn đàn với nhịp độ gần như hàng ngày trong quá trình chạy.",
+      "icon": "🌰",
+      "models": [
+        {
+          "name": "Cinque Terre Model",
+          "date": "September 04, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Deep RL",
+            "Experimental"
+          ],
+          "communityScore": 90,
+          "totalVotes": 5,
+          "sentiment": {
+            "great": 60,
+            "good": 40,
+            "ok": 0,
+            "bad": 0
+          },
+          "consensus": "Cộng đồng nổi bật ban đầu đã ca ngợi Discord và Discourse là mô hình lớn ổn định và hữu dụng nhất cho đến nay (\"Mô hình tốt nhất mà tôi từng sử dụng trong một dặm\", \"Sẽ khiến POP v2 tự hào\"). Những người thử nghiệm báo cáo rằng khả năng điều khiển bên cho cảm giác chắc chắn và 'trên đường ray' ở mọi tốc độ (0-65 mph), cạnh tranh chặt chẽ với Firehose, với dao động tốc độ thấp giảm đáng kể so với rung lắc dữ dội của dòng BMRLNAP. Tuân thủ thành công các biển báo dừng và đèn đỏ ở chế độ thử nghiệm, mặc dù một số người thử nghiệm nhận thấy khả năng tăng tốc nhanh và đôi khi bị giảm tốc độ trên đường cao tốc nếu không có kiểm soát thử nghiệm động.",
+          "note": "Mô hình lớn lớp Chestnut (CTM), được xây dựng từ 68b5f8e trong dấu phẩy/openpilot. Một phần của Mô hình RL sâu năm 2026. Yêu cầu dấu phẩy bốn hoặc dấu phẩy 3X với eGPU hạt dẻ dấu phẩy. 100% người trả lời khảo sát đã bình chọn 'Tốt hơn' so với BMRLNAP v4 mặc định và khuyến nghị hợp nhất làm mặc định. Chi phí truyền mạng cao (kích thước mô hình ~700MB) đã thúc đẩy nhà phát triển sunnypilot tối ưu hóa (PR #1993 / PR #1998) để ngăn chặn tình trạng rớt khung DMA.",
+          "bestFor": "Chế độ thử nghiệm / Lái xe hàng ngày / Ổn định bên",
+          "steeringFeel": "Solid / On Rails",
+          "forumUrl": "https://community.sunnypilot.ai/t/cinque-terre-model-september-04-2026/7046",
+          "testedOn": [
+            "2023 Hyundai Elantra HEV",
+            "2025 Honda Accord Hybrid",
+            "Comma 3X + Chestnut",
+            "Comma Four"
+          ],
+          "positives": [
+            "Cơ cấu lái ngang và định tâm được trang bị tương đương với Firehose ở mọi tốc độ",
+            "Khắc phục đáng kể các dao động lái nghiêm trọng ở tốc độ thấp gặp trong BMRLNAP v3/v4/v6",
+            "Đèn dừng đáng tin cậy và sự tuân theo biển báo dừng ở chế độ thử nghiệm",
+            "Khả năng tăng tốc nhanh chóng, chính xác ngoài đường được khen ngợi bởi những người lái xe dọc mạnh mẽ"
+          ],
+          "negatives": [
+            "Yêu cầu bản dựng dev-chestnut được cập nhật (PR #1993) để tránh cảnh báo độ trễ/giảm khung hình của mô hình ban đầu trong quá trình chuyển từ CPU sang GPU DMA",
+            "Có thể chạy vài mph với tốc độ cài đặt trên đường cao tốc ở chế độ thử nghiệm thuần túy mà không cần kiểm soát thử nghiệm động",
+            "Dao động nhỏ ở tốc độ thấp vẫn có thể cảm nhận được ở tốc độ dưới 12 mph (mặc dù đã giảm đi rất nhiều)",
+            "Kích thước tải xuống lớn ~700 MB có thể mất vài phút trên các liên kết Wi-Fi có dấu phẩy chậm hơn"
+          ]
+        },
+        {
+          "name": "BMRLNAP Model v6",
+          "date": "September 01, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Experimental",
+            "Stop Line Tuning"
+          ],
+          "communityScore": 100,
+          "totalVotes": 2,
+          "sentiment": {
+            "great": 100,
+            "good": 0,
+            "ok": 0,
+            "bad": 0
+          },
+          "consensus": "Người kế nhiệm trực tiếp cho BMRLNAP Model v4 (v5 đã bị bỏ qua). Phản hồi ban đầu của cộng đồng cho thấy hành vi giảm tốc theo chiều dọc và dừng ở đèn giao thông đã được cải thiện một chút so với v4, mặc dù các phương tiện vẫn có thể di chuyển nhẹ qua vạch. Độ ổn định bên vẫn giữ được cảm giác lái trên đường cao tốc của v4.",
+          "note": "Mô hình lớn thuộc lớp Chestnut, được xây dựng từ 9d683c0 bằng dấu phẩy/openpilot. Được xây dựng nội bộ bởi sunnypilot. So sánh trực tiếp với BMRLNAP v4 để đánh giá độ chính xác của đường dừng và điều chỉnh giảm tốc.",
+          "bestFor": "Thử nghiệm / So sánh mô hình lớn",
+          "steeringFeel": "Smooth",
+          "forumUrl": "https://community.sunnypilot.ai/t/bmrlnap-model-v6-september-01-2026-big-model/7004",
+          "testedOn": [
+            "Toyota",
+            "Honda Civic"
+          ],
+          "positives": [
+            "Cải thiện hành vi giảm tốc độ và dừng đèn giao thông trên v4",
+            "Giữ lại sự trơn tru và ổn định khi di chuyển trên đường cao tốc tốc độ cao",
+            "Khả năng phản hồi tích cực của nhà phát triển và điều chỉnh nội bộ"
+          ],
+          "negatives": [
+            "Vẫn có xu hướng bò nhẹ qua vạch dừng ở đèn giao thông",
+            "Điều khiển ngang yêu cầu tinh chỉnh trên một số mẫu xe Honda chọn lọc"
+          ]
+        },
+        {
+          "name": "BMRLNAP Model v4",
+          "date": "August 30, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Highway",
+            "Cut-in Handling"
+          ],
+          "communityScore": 61,
+          "totalVotes": 7,
+          "sentiment": {
+            "great": 43,
+            "good": 14,
+            "ok": 14,
+            "bad": 29
+          },
+          "consensus": "Sự phát triển chính trong dòng BMRLNAP giúp khắc phục hoàn toàn các dao động lái ở tốc độ thấp nghiêm trọng của v3. Nổi bật khi di chuyển trên đường cao tốc, bám theo xe dẫn đầu và xử lý các đoạn cắt đột ngột với khả năng giảm tốc từ từ, bình tĩnh thay vì phanh gấp. Những người thử nghiệm lưu ý rằng việc xử lý trên đường cong hoạt động tốt hơn khi vô hiệu hóa khả năng giảm tốc theo đường cong SCC-V truyền thống, mặc dù các khúc cua 90 độ ở giao lộ sắc nét vẫn có thể bị thiếu lái do giới hạn mô-men lái và khả năng tăng tốc từ trạng thái dừng ở đèn xanh vẫn chậm.",
+          "note": "Mô hình lớn thuộc lớp Chestnut, được xây dựng từ f877d7a trong dấu phẩy/openpilot. Mức độ tương tác cao trên Discord và Discourse. Báo cáo của cộng đồng nêu bật độ nhạy đáng kể của bộ điều khiển phương tiện trên Toyotas (Torque v0 so với v1).",
+          "bestFor": "Đi trên đường cao tốc / Xử lý đường cắt",
+          "steeringFeel": "Smooth",
+          "forumUrl": "https://community.sunnypilot.ai/t/bmrlnap-model-v4-august-30-2026-big-model/6971",
+          "testedOn": [
+            "Kia EV6",
+            "2023 Hyundai Elantra HEV",
+            "2022 Rivian R1T",
+            "Toyota Corolla Hatchback"
+          ],
+          "positives": [
+            "Giải quyết hoàn toàn dao động lái bập bênh tốc độ thấp từ v3",
+            "Khả năng xử lý đặc biệt, bình tĩnh, đầy tự tin khi đột ngột vào đường cao tốc",
+            "Giảm tốc dọc êm ái mà không bị phanh gấp",
+            "Có khả năng di chuyển xung quanh chướng ngại vật đỗ trái phép ở chế độ E2E"
+          ],
+          "negatives": [
+            "Lái lái hoặc bỏ cuộc giữa chừng khi rẽ ngoặt 90 độ ở giao lộ",
+            "Tăng tốc chậm khi đèn đỏ chuyển sang xanh",
+            "Độ nhạy bộ điều khiển nghiêm trọng được báo cáo trên Toyota với bộ điều khiển mô-men xoắn v1"
+          ]
+        },
+        {
+          "name": "Sad Model",
+          "date": "August 28, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Natural Steering",
+            "Smooth Long"
+          ],
+          "communityScore": 75,
+          "totalVotes": 5,
+          "sentiment": {
+            "great": 20,
+            "good": 60,
+            "ok": 20,
+            "bad": 0
+          },
+          "consensus": "Lời chia tay dành riêng cho nhà nghiên cứu dấu phẩy Toby đã không nhận được xếp hạng tiêu cực nào từ những người thử nghiệm trong cộng đồng (80% Tốt hoặc Tuyệt vời). Được khen ngợi về khả năng tăng tốc và giảm tốc mượt mà mà không bị giật hoặc vượt quá giới hạn dừng. Tay lái cho cảm giác tự nhiên, giống người và ổn định khi không có tiếng bóng bàn, mặc dù người lái xe lưu ý rằng người lái xe có xu hướng cắt góc hẹp trên một số đường cong nhất định.",
+          "note": "Mô hình lớn thuộc lớp Chestnut, được xây dựng từ 30de303 bằng dấu phẩy/openpilot. Được phát hành để kỷ niệm sự đóng góp cuối cùng của kỹ sư nghiên cứu dấu phẩy Toby về mô hình lái xe.",
+          "bestFor": "Cảm giác lái tự nhiên / Hành trình dài nhẹ nhàng",
+          "steeringFeel": "Natural",
+          "forumUrl": "https://community.sunnypilot.ai/t/sad-model-august-28-2026-big-model/6945",
+          "testedOn": [
+            "Hyundai",
+            "Kia",
+            "Toyota"
+          ],
+          "positives": [
+            "Khả năng tăng tốc và hãm tốc mượt mà nhất trí đối với tất cả người bỏ phiếu trong cuộc thăm dò ý kiến",
+            "Hệ thống lái tự nhiên, giống con người mà không bị lệch hoặc dao động ở tốc độ thấp",
+            "Không có xếp hạng Xấu hoặc Kém từ những người thử nghiệm trong cộng đồng",
+            "Biển báo dừng mượt mà và đáng tin cậy cũng như giảm tốc nhẹ"
+          ],
+          "negatives": [
+            "Có xu hướng cắt các góc hơi chặt trên các đường cong bên trong",
+            "Làn đường nhỏ ôm sát một bên được các tài xế chọn lọc lưu ý"
+          ]
+        },
+        {
+          "name": "BMRLNAP Model v3",
+          "date": "August 26, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Experimental",
+            "Oscillating"
+          ],
+          "communityScore": 60,
+          "totalVotes": 8,
+          "sentiment": {
+            "great": 38,
+            "good": 13,
+            "ok": 25,
+            "bad": 24
+          },
+          "consensus": "Bị cản trở nặng nề bởi dao động lái ở tốc độ thấp và cưa bập bênh khiến người thử nghiệm hài hước so sánh với diễn viên giả lái trong phim ngày xưa. Trong khi quá trình di chuyển trên đường cao tốc và phanh dọc diễn ra suôn sẻ, dao động bánh xe ở tốc độ thấp được thể hiện rõ trên các xe thử nghiệm Prius, Civic, Accord và Rivian, khiến những người thử nghiệm khuyên bạn nên chuyển sang v4.",
+          "note": "Mô hình lớn thuộc lớp Chestnut, được xây dựng từ 47377ac trong dấu phẩy/openpilot. Lái xe trên đường cao tốc tốc độ cao có thể chấp nhận được, nhưng dao động ở tốc độ thấp khiến nó không phù hợp để lái xe hàng ngày.",
+          "bestFor": "Chỉ kiểm tra / so sánh tốc độ cao",
+          "steeringFeel": "Oscillating",
+          "forumUrl": "https://community.sunnypilot.ai/t/bmrlnap-model-v3-august-26-2026-big-model/6917",
+          "testedOn": [
+            "2021 Toyota Prius Prime",
+            "2025 Honda Accord Hybrid",
+            "2026 Honda Civic Hybrid",
+            "2022 Rivian R1T"
+          ],
+          "positives": [
+            "Tăng tốc dọc và phanh mượt mà khi đạt đến tốc độ bay",
+            "Xe dẫn đầu ổn định bám theo trên đường cao tốc nhiều làn đường rộng mở"
+          ],
+          "negatives": [
+            "Dao động vô lăng ở tốc độ thấp mạnh mẽ ('cưa nhìn thấy')",
+            "Lái lái và bỏ cuộc ở nửa sau của những khúc cua gấp ở giao lộ",
+            "Có xu hướng cuộn các biển báo dừng khi California dừng"
+          ],
+          "routesDriven": 54,
+          "fleetRank": 53
+        },
+        {
+          "name": "BMRLNAP Model v2",
+          "date": "August 24, 2026",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Experimental",
+            "Mixed Sentiment"
+          ],
+          "communityScore": 69,
+          "totalVotes": 9,
+          "sentiment": {
+            "great": 44,
+            "good": 11,
+            "ok": 33,
+            "bad": 12
+          },
+          "consensus": "Lần lặp thứ hai của dòng mô hình lớn BMRLNAP. Việc giữ làn đường trên đường cao tốc, phản ứng cắt ngang và căn giữa lá cỏ ba lá tốc độ cao là những hoạt động chắc chắn và tự nhiên trên những người thử nghiệm Kia EV6, Elantra và Camry. Tuy nhiên, việc lái xe trong thành phố cho thấy nhiều kết quả khác nhau, với những người thử nghiệm báo cáo khoảng cách dừng không nhất quán ở đèn giao thông và xu hướng dừng quá gần phía sau xe dẫn đầu.",
+          "note": "Mô hình lớn đẳng cấp Chestnut, gắn liền với tiện ích bổ sung GPU mới của dấu phẩy. Đã thử nghiệm trên Kia EV6, Hyundai Elantra 2022 và Camry XSE 2023.",
+          "bestFor": "Thử nghiệm / So sánh mô hình lớn",
+          "steeringFeel": "Smooth",
+          "forumUrl": "https://community.sunnypilot.ai/t/bmrlnap-model-v2-august-24-2026-big-model/6878",
+          "testedOn": [
+            "2023 Camry XSE",
+            "Kia EV6",
+            "2022 Hyundai Elantra"
+          ],
+          "positives": [
+            "Điều khiển ngang mượt mà, tự nhiên và khả năng tránh đường cắt nhanh nhạy trên đường cao tốc",
+            "Đường dốc bật/tắt của Cloverleaf được xử lý trơn tru mà không cần ôm sát đường bên trong",
+            "Phản ứng tăng tốc nhanh ngoài đường truyền"
+          ],
+          "negatives": [
+            "Dừng không nhất quán ở vạch trắng và biển báo đèn giao thông với tốc độ trên 55 mph",
+            "Dừng quá gần để có cảm giác thoải mái phía sau xe dẫn đầu khi đèn đỏ",
+            "Hồi quy đáng chú ý về tính nhất quán của điểm dừng thành phố so với v1"
+          ],
+          "routesDriven": 19,
+          "fleetRank": 63
+        },
+        {
+          "name": "Happy Birthday Model",
+          "date": "August 24, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "City",
+            "Smooth"
+          ],
+          "communityScore": 63,
+          "totalVotes": 2,
+          "sentiment": {
+            "great": 0,
+            "good": 50,
+            "ok": 50,
+            "bad": 0
+          },
+          "consensus": "Bản phát hành đặc biệt kỷ niệm sinh nhật sunnyhaibin. Những người thử nghiệm Discord ca ngợi hành vi dừng và đi nhẹ nhàng của nó khi giao thông đông đúc và cảm giác lái tự nhiên, mặc dù việc phanh tốc độ cao khi đèn đỏ đột ngột vẫn hơi muộn.",
+          "note": "Dành tặng cho người sáng lập sunnypilot sunnyhaibin nhân ngày sinh nhật của ông ấy (24/8). Những người thử nghiệm trong cộng đồng cho biết khả năng di chuyển dừng và di chuyển dễ chịu trên phần cứng Chestnut.",
+          "bestFor": "Dừng rồi đi / Lái xe trong thành phố",
+          "steeringFeel": "Smooth",
+          "forumUrl": "https://community.sunnypilot.ai/t/happy-birthday-model-august-24-2026-big-model/6871",
+          "testedOn": [
+            "Honda Accord",
+            "Toyota Camry"
+          ],
+          "positives": [
+            "Cảm giác êm ái, tự nhiên khi tham gia giao thông dừng và đi",
+            "Xe dẫn đầu tốc độ thấp mạnh mẽ theo sau và phát hiện ánh sáng",
+            "Cảm giác lái dễ chịu, không có robot"
+          ],
+          "negatives": [
+            "Phanh hơi muộn và nhanh chuyển sang màu đỏ đột ngột ở tốc độ cao"
+          ],
+          "routesDriven": 39,
+          "fleetRank": 57
+        },
+        {
+          "name": "I Desire Model",
+          "date": "August 21, 2026",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Highway",
+            "Smooth"
+          ],
+          "communityScore": 75,
+          "totalVotes": 5,
+          "sentiment": {
+            "great": 40,
+            "good": 20,
+            "ok": 40,
+            "bad": 0
+          },
+          "consensus": "Sự đón nhận ban đầu mạnh mẽ nhất trong cuộc chạy mô hình lớn: 75% Tốt hoặc tốt hơn trong một cuộc thăm dò nhỏ có bốn phiếu bầu và kết quả theo chiều dọc nhất trí duy nhất cho đến nay - cả hai cử tri đều chọn 'tăng tốc và phanh êm ái', không có phiếu bầu cho việc dừng giật, dừng mạnh/trễ hoặc xấu. Được khen ngợi về khả năng đi đúng làn đường và di chuyển mà không có dao động dài gây say tàu xe. Đèn giao thông và biển báo dừng là điểm yếu nhất quán và cuộc thăm dò bên được chia đều giữa 'mượt mà & ổn định' và ôm làn đường/bóng bàn.",
+          "note": "Mô hình lớp Chestnut, được gắn với tiện ích bổ sung GPU mới bằng dấu phẩy. Số phiếu bầu vẫn còn rất nhỏ (4 trong cuộc thăm dò tiêu đề, 2-3 trong cuộc thăm dò chi tiết), vì vậy hãy coi điểm số là tạm thời. Một phóng viên đã chạy nó trên chiếc C4 và C3X gắn trên bảng điều khiển; một người khác lái thử Camry 2023 trên đường nông thôn.",
+          "bestFor": "Đường cao tốc / Du lịch trên biển",
+          "steeringFeel": "Varies",
+          "forumUrl": "https://community.sunnypilot.ai/t/i-desire-model-august-21-2026-big-model/6831",
+          "testedOn": [
+            "2023 Camry"
+          ],
+          "positives": [
+            "Khả năng đi đường và đi đường tuyệt vời; trồng thay vì thả nổi",
+            "Thống nhất tăng tốc & phanh êm ái khi chạy dọc",
+            "Không dao động lâu gây say tàu xe",
+            "Vẫn kịp thời nhìn thấy biển báo dừng và giảm tốc độ phù hợp"
+          ],
+          "negatives": [
+            "Đèn giao thông và biển báo dừng là gót chân của nó",
+            "Điểm dừng lăn bánh — điểm dừng hoàn toàn chỉ ở 1 trong 10 biển báo trên một lần lái xe",
+            "Tăng tốc do dự, ổn định ở tốc độ 53 dặm/giờ trên đường có tốc độ 55 dặm/giờ",
+            "Giảm tốc độ ở những đường ngang không có biển báo dừng hoặc nhường đường",
+            "Dao động tốc độ chậm điển hình, với bóng bàn lang thang trên một số con đường"
+          ],
+          "routesDriven": 20,
+          "fleetRank": 62
+        },
+        {
+          "name": "BMRLNAP Model",
+          "date": "August 20, 2026",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Smooth",
+            "Early Feedback"
+          ],
+          "communityScore": 84,
+          "totalVotes": 3,
+          "sentiment": {
+            "great": 67,
+            "good": 0,
+            "ok": 33,
+            "bad": 0
+          },
+          "consensus": "Giải thưởng được nhận nhiều nhất trong cuộc chạy mô hình lớn, nhưng chỉ có hai người bình chọn: một cuộc thăm dò tiêu đề 5-Great nhất trí, khả năng tăng tốc và phanh trơn tru nhất trí 'mượt mà và ổn định'. Một nhà phát triển sunnypilot gọi nó là \"định nghĩa theo nghĩa đen của từ đầu đến cuối\". Theo chiều dọc là điểm nổi bật - giữ tốc độ tốt ở tốc độ 60, tăng ga nhanh chóng khi màu đỏ chuyển sang màu xanh lục và phản ứng tốt với màu vàng mà nó không thể xóa được. Biển báo dừng là lời cảnh báo: nó đến hơi nhanh để dừng ở hoặc trước biển báo, và khi lái xe lúc chạng vạng đã có nhiều biển báo hơn và cần có sự can thiệp.",
+          "note": "Mô hình lớp Chestnut, được gắn với tiện ích bổ sung GPU mới bằng dấu phẩy. Điểm số đến từ một cuộc thăm dò nhất trí nhưng có hai phiếu bầu, vì vậy nó chỉ mang tính tạm thời và không thể so sánh với các mục nhập mẫu lớn hơn - các cuộc thăm dò chi tiết có cùng hai người bỏ phiếu. Báo cáo đầy đủ nhất là một chiếc Camry 2023, người lái xe dự định lái nó hàng ngày bất chấp biển báo dừng lái xe lúc chạng vạng.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Smooth",
+          "forumUrl": "https://community.sunnypilot.ai/t/bmrlnap-model-august-20-2026-big-model/6828",
+          "testedOn": [
+            "2023 Camry"
+          ],
+          "positives": [
+            "Nhất trí 5-Tiêu đề lớn và nhất trí êm xuôi ổn định bên",
+            "Thống nhất tăng tốc & phanh êm ái khi chạy dọc",
+            "Giữ tốc độ tốt ngay cả ở tốc độ 60 mph",
+            "Tăng ga rất nhanh khi đèn đỏ chuyển xanh",
+            "Phản ứng rất tốt với đèn vàng, không thể xóa được"
+          ],
+          "negatives": [
+            "Tiếp cận các biển báo dừng ở tốc độ 60 dặm một giờ, hơi quá nhanh để dừng ở hoặc trước biển báo",
+            "Có nhiều biển báo dừng hơn đáng chú ý khi lái xe vào lúc hoàng hôn và cần có sự can thiệp",
+            "Vị trí đỗ xe vào ban đêm hơi xa về phía trước các biển báo và đèn",
+            "Phản ứng muộn với việc nón giao thông hướng xe vào làn đường mới",
+            "Một chút lang thang, ôm trái nhỏ trên những con đường hẹp hơn"
+          ],
+          "routesDriven": 15,
+          "fleetRank": 65
+        },
+        {
+          "name": "Tee Time Model",
+          "date": "August 19, 2026",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Mixed Sentiment"
+          ],
+          "communityScore": 51,
+          "totalVotes": 8,
+          "sentiment": {
+            "great": 13,
+            "good": 50,
+            "ok": 0,
+            "bad": 37
+          },
+          "consensus": "Phần bị chia rẽ nhiều nhất trong cuộc chạy: một cuộc thăm dò bốn phiếu được chia đều giữa Tốt và Xấu, và mục duy nhất mà cuộc thăm dò bên cạnh không trả lại phiếu bầu tích cực nào - bóng bàn/đi lang thang ở hai trong số ba cử tri, bám sát làn đường và lái quá mức ở các đường cong ở mỗi đường cong, không có gì trơn tru & ổn định hoặc tự nhiên. Bóng bàn được gọi là rất đáng chú ý ở tốc độ cao. Đọc theo chiều dọc mâu thuẫn cho đến khi bạn tách biệt sự êm ái khỏi phán đoán: cuộc thăm dò nhất trí về khả năng tăng tốc và phanh mượt mà, trong khi phản hồi bằng văn bản đều nói về việc giảm tốc độ quá sớm - giảm tốc độ đường 55 dặm/giờ xuống còn khoảng 48 và lao xuống ở mọi ngã tư hoặc cụm nhà. Điểm nổi bật là biển báo dừng tốc độ thấp, được mô tả là biển báo rõ ràng nhất trên bất kỳ mẫu xe nào có tốc độ dưới 50 dặm/giờ, dừng nhẹ nhàng ngay trước biển báo 9 hoặc 10 lần quay lại; trên tốc độ đó, người kiểm tra sẽ ngừng hoạt động vì không còn nhìn thấy chúng kịp thời nữa.",
+          "note": "Mô hình lớp Chestnut, được gắn với tiện ích bổ sung GPU mới bằng dấu phẩy. Tiêu đề cuộc thăm dò là bốn người bình chọn, chia đều Tốt và Xấu. Đọc các cuộc thăm dò và nhận xét cùng nhau: cuộc thăm dò theo chiều dọc nhất trí là tích cực trong khi văn xuôi phàn nàn về việc chậm lại quá sớm, do đó, tùy chọn thăm dò đó đang đo lường độ trôi chảy hơn là liệu thời điểm có phù hợp hay không. Báo cáo đầy đủ nhất là Camry 2023.",
+          "bestFor": "Chỉ kiểm tra",
+          "steeringFeel": "Twitchy",
+          "forumUrl": "https://community.sunnypilot.ai/t/tee-time-model-august-19-2026-big-model/6814",
+          "testedOn": [
+            "2023 Camry"
+          ],
+          "positives": [
+            "Hiệu suất của biển báo dừng dưới 50 mph được gọi là tốt nhất trên bất kỳ mẫu xe nào",
+            "Dừng nhẹ nhàng ngay trước biển báo, quay lại 9 hoặc 10 lần",
+            "Thống nhất tăng tốc & phanh êm ái khi chạy dọc",
+            "Di chuyển ra khỏi trung tâm khi xe ngược chiều đến gần"
+          ],
+          "negatives": [
+            "Không có phiếu bầu tích cực nào cả - bóng bàn/đi lang thang ở hai trong số ba cử tri",
+            "Bóng bàn rất đáng chú ý ở tốc độ cao",
+            "Chạy chậm đến mức trở nên khó chịu khi lái xe trong thành phố",
+            "Chảy máu tốc độ trên đường 55 mph và lắng xuống khoảng 48",
+            "Trên 50 mph nó không thể nhìn thấy biển báo dừng kịp thời, khiến phải dừng lại"
+          ]
+        },
+        {
+          "name": "TTTTFBRLM",
+          "date": "August 18, 2026",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Early Feedback"
+          ],
+          "consensus": "Lần đầu tiên diễn ra cuộc chạy mô hình lớn vào giữa tháng 8. Đáng chú ý là 'Lỗi mô hình lớn' được báo cáo buộc phải tiếp quản ngay lập tức khoảng một phút sau khi tương tác trên một số thiết lập Chestnut.",
+          "note": "Mô hình lớp Chestnut, được gắn với tiện ích bổ sung GPU mới bằng dấu phẩy. Phần cứng bắt đầu đến tay chủ sở hữu vào tháng 8 năm 2026. Một chuỗi Vấn đề Lái xe riêng biệt theo dõi lời nhắc tiếp quản 'Lỗi Mô hình Lớn' trên sunnypilot 2026.003.000.",
+          "bestFor": "Người thử nghiệm mô hình lớn",
+          "forumUrl": "https://community.sunnypilot.ai/t/ttttfbrlm-august-18-2026-big-model/6813",
+          "testedOn": [],
+          "positives": [],
+          "negatives": [
+            "Đã báo cáo việc tiếp quản 'Lỗi mô hình lớn' sau khoảng một phút tương tác"
+          ],
+          "routesDriven": 1,
+          "fleetRank": 93
+        },
+        {
+          "name": "Lebowski Model",
+          "date": "July 01, 2026",
+          "tags": [
+            "Big Model",
+            "Chestnut",
+            "Curves",
+            "City"
+          ],
+          "communityScore": 67,
+          "totalVotes": 6,
+          "sentiment": {
+            "great": 0,
+            "good": 67,
+            "ok": 33,
+            "bad": 0
+          },
+          "consensus": "Điểm rơi mở đầu của đường chạy và sự phân chia rõ ràng giữa các trục: bên là sức mạnh, chiều dọc thì không. Một nhà phát triển sunnypilot gọi phần bên là 'xuất sắc' và tự tin hơn nhiều khi rẽ phải và rẽ trái so với các mẫu xe nhỏ và một người thử nghiệm chiếc Rivian R1T 2022 báo cáo rằng các góc rẽ trên 90 độ trong thành phố được thực hiện rộng rãi một cách thích hợp, ít bị cắt góc và bó cứng bánh xe hơn nhiều. Theo chiều dọc là nơi nó bị hỏng: phanh gấp hoặc phanh muộn dẫn đầu cuộc thăm dò theo chiều dọc và khi ở tốc độ đã đặt, những người kiểm tra sẽ báo cáo hiệu ứng tăng ga. Biển báo dừng được nhận biết rõ hơn so với các mẫu xe nhỏ nhưng đôi khi vẫn bị trượt và lăn khi nhìn thấy California dừng lại.",
+          "note": "Được người thử nghiệm mô tả là phiên bản đầu tiên của mô hình cấp hạt dẻ. Cuộc thăm dò tiêu đề là bốn cử tri. Chủ đề này cũng ghim dòng thời gian phần cứng: một độc giả hỏi làm thế nào mọi người chạy nó mà không có tiện ích bổ sung GPU mới và người sáng lập trả lời rằng các đơn vị hạt dẻ dấu phẩy đã được giao trong tuần đó, với một người thử nghiệm khác nói rằng anh ta đã có thiết bị này từ tuần trước. Đã thử nghiệm trên Rivian R1T 2022 với dây đai lái theo góc.",
+          "bestFor": "Lái xe trong thành phố",
+          "steeringFeel": "Confident",
+          "forumUrl": "https://community.sunnypilot.ai/t/lebowski-model-july-01-2026-big-model/6812",
+          "testedOn": [
+            "2022 Rivian R1T"
+          ],
+          "positives": [
+            "Bên nổi bật - tự tin rẽ phải và rẽ trái, không giống như các mẫu xe nhỏ",
+            "Quay 90 độ trong thành phố với độ rộng thích hợp, ít có khả năng bó cứng bánh xe hơn",
+            "Tăng tốc khi dừng tốt hơn các mẫu xe nhỏ hơn",
+            "Bắt đầu giảm tốc độ sớm hơn nhiều, dừng lại một cách thoải mái và tự nhiên",
+            "Nhận biết biển báo dừng tốt hơn các mẫu nhỏ"
+          ],
+          "negatives": [
+            "Phanh gấp hoặc phanh muộn đứng đầu cuộc thăm dò theo chiều dọc, ở hai trong ba cử tri",
+            "Phanh ga tăng vọt khi nó ổn định ở tốc độ cài đặt",
+            "Vẫn bỏ lỡ một số biển báo dừng và California có dừng lại ở những biển báo đó không",
+            "Mọi cử tri bên đều báo cáo tình trạng ôm làn đường"
+          ],
+          "routesDriven": 19,
+          "fleetRank": 64
+        }
+      ]
+    },
+    {
+      "id": "world_2026",
+      "name": "WMI 2026",
+      "description": "Kiến trúc End-to-End mới nhất. Hiểu cảnh 3D, biển báo dừng và các giao lộ phức tạp.",
+      "icon": "🚀",
+      "models": [
+        {
+          "name": "OP Model 10 v3",
+          "date": "April 19, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Recommended",
+            "Off-Policy",
+            "Smooth"
+          ],
+          "communityScore": 50,
+          "totalVotes": 37,
+          "sentiment": {
+            "great": 14,
+            "good": 35,
+            "ok": 19,
+            "bad": 32
+          },
+          "consensus": "Sự phục hồi mạnh mẽ cho dòng OP Model 10. Khả năng tăng tốc được báo cáo là ngang bằng với DEC (\"cũng tăng tốc\") — một bản sửa lỗi rõ ràng cho hành vi ngoại tuyến chậm chạp của v1/v2. Những ấn tượng đầu tiên của người lái xe hàng ngày mô tả nó là \"tuyệt vời\" và là lựa chọn được đề xuất trên v1/v2/v3.",
+          "note": "Được tham chiếu trong chuỗi OP Model 9 là phiên thay thế nhận được phản hồi tốt hơn đáng kể. Được đề xuất trên v1 và v2.",
+          "bestFor": "Chế độ hàng ngày / thử nghiệm",
+          "steeringFeel": "Confident",
+          "forumUrl": "https://community.sunnypilot.ai/t/op-model-10-v3-apr-19-2026/4690",
+          "testedOn": [
+            "2018 Corolla Sport"
+          ],
+          "positives": [
+            "Tăng tốc mức DEC trong Chế độ thử nghiệm",
+            "Giải quyết các điểm dừng chậm chạp của v2",
+            "Người đánh giá có kế hoạch lái nó hàng ngày"
+          ],
+          "negatives": [],
+          "routesDriven": 7463,
+          "fleetRank": 3
+        },
+        {
+          "name": "OP Model 10 v2",
+          "date": "April 18, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Off-Policy",
+            "Smooth"
+          ],
+          "communityScore": 29,
+          "totalVotes": 12,
+          "sentiment": {
+            "great": 8,
+            "good": 17,
+            "ok": 17,
+            "bad": 58
+          },
+          "consensus": "Bước tiến lớn từ v1. Cảm giác theo chiều dọc là điểm nổi bật - lực phanh nhẹ nhàng nhất, ổn định nhất mà người đánh giá cảm nhận được trong một thời gian. Bên vẫn ôm bên trái (có thể sửa được bằng camera offset) và mẫu xe vẫn chậm làm thẳng bánh xe sau những khúc cua gấp.",
+          "note": "Ôm bên trái có thể được giảm thiểu bằng cách bù camera +0,05 đến +0,10. Một số do dự kéo dài ngoài đường và bánh xe quay chậm sau các góc cua.",
+          "bestFor": "Tiện nghi / Đường cao tốc",
+          "steeringFeel": "Smooth",
+          "forumUrl": "https://community.sunnypilot.ai/t/op-model-10-v2-apr-18-2026/4657",
+          "testedOn": [],
+          "positives": [
+            "Phanh nhẹ nhất, ổn định nhất trong một thời gian",
+            "Điều khiển dọc vững chắc",
+            "Đạt tốc độ hành trình tốt"
+          ],
+          "negatives": [
+            "Do dự để tăng tốc từ điểm dừng",
+            "Ôm làn đường bên trái",
+            "Làm thẳng bánh xe chậm sau khi rẽ gấp"
+          ],
+          "routesDriven": 7,
+          "fleetRank": 75
+        },
+        {
+          "name": "OP Model v10",
+          "date": "April 17, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Off-Policy",
+            "Twitchy",
+            "Unstable"
+          ],
+          "communityScore": 15,
+          "totalVotes": 7,
+          "sentiment": {
+            "great": 0,
+            "good": 0,
+            "ok": 29,
+            "bad": 71
+          },
+          "consensus": "Lần phát hành đầu tiên của dòng OP Model 10 đã nhận được phản hồi ban đầu tiêu cực mạnh mẽ. Những người đánh giá cho rằng khả năng điều khiển ngang kém với những điều chỉnh muộn xảy ra đột ngột sau khi xe đã rời khỏi làn đường. Không có báo cáo tích cực.",
+          "note": "Nhanh chóng được thay thế bởi v2 và v3. Chuyển trực tiếp đến v3 để có tùy chọn được đề xuất.",
+          "bestFor": "Chỉ kiểm tra",
+          "steeringFeel": "Twitchy",
+          "forumUrl": "https://community.sunnypilot.ai/t/op-model-10-apr-17-2026/4648",
+          "testedOn": [],
+          "positives": [],
+          "negatives": [
+            "Sửa làn đường muộn",
+            "Những cú va chạm mạnh ấn tượng sau khi rời khỏi làn đường",
+            "Thường xuyên lái xe ra ngoài làn đường sơn"
+          ],
+          "routesDriven": 8,
+          "fleetRank": 73
+        },
+        {
+          "name": "OP Model 9",
+          "date": "April 10, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Off-Policy",
+            "Horrible"
+          ],
+          "communityScore": 6,
+          "totalVotes": 9,
+          "sentiment": {
+            "great": 0,
+            "good": 0,
+            "ok": 11,
+            "bad": 89
+          },
+          "consensus": "Phản hồi của cộng đồng chủ yếu là tiêu cực với 9 người bỏ phiếu. 44% xếp hạng 'Xấu', 44% xếp hạng 'Kinh khủng' và chỉ 11% xếp hạng 'Ok'. Người dùng báo cáo rằng mô hình này nên bị 'xóa/hoàn nguyên' vì nó 'khá tệ'. Không có đánh giá tích cực đã được gửi.",
+          "note": "Không nên dùng cho việc lái xe hàng ngày. Được thay thế bởi OP Model 10 v3 nhận được phản hồi tốt hơn đáng kể.",
+          "bestFor": "Chỉ kiểm tra",
+          "steeringFeel": "Twitchy",
+          "forumUrl": "https://community.sunnypilot.ai/t/op-model-9-apr-10-2026/4478",
+          "testedOn": [],
+          "positives": [],
+          "negatives": [
+            "Điều khiển ngang không ổn định",
+            "Phản hồi tiêu cực nhất trí",
+            "Không giải quyết được các vấn đề về mô hình OP trước đó"
+          ]
+        },
+        {
+          "name": "OP Model 8",
+          "date": "April 07, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Off-Policy",
+            "Twitchy"
+          ],
+          "communityScore": 29,
+          "totalVotes": 15,
+          "sentiment": {
+            "great": 0,
+            "good": 20,
+            "ok": 27,
+            "bad": 53
+          },
+          "consensus": "Phản hồi ban đầu của cộng đồng chủ yếu là tiêu cực. Người dùng báo cáo rằng tay lái bị giật, dao động ở tốc độ cao, khó duy trì làn đường khi xe cộ dừng và đi và bám sát làn đường bên trái nhất quán. Mô hình dường như gặp khó khăn với độ ổn định ngang mà OP Model 7 đã cải thiện.",
+          "note": "Ôm trái là một vấn đề nhất quán. Nếu thử kiểu máy này, hãy điều chỉnh độ lệch camera (+0,05 đến +0,10). Không khuyến khích lái xe hàng ngày ở giai đoạn này.",
+          "bestFor": "Chỉ kiểm tra",
+          "steeringFeel": "Twitchy",
+          "forumUrl": "https://community.sunnypilot.ai/t/op-model-8-apr-7-2026/4380",
+          "testedOn": [],
+          "positives": [],
+          "negatives": [
+            "Tay lái giật / dao động ở tốc độ cao",
+            "Đấu tranh để duy trì làn đường trong giao thông dừng và đi",
+            "Ôm làn đường bên trái nhất quán"
+          ],
+          "routesDriven": 81,
+          "fleetRank": 50
+        },
+        {
+          "name": "OP Model 7",
+          "date": "April 03, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Recommended",
+            "Self-Correcting",
+            "Off-Policy"
+          ],
+          "communityScore": 42,
+          "totalVotes": 21,
+          "sentiment": {
+            "great": 24,
+            "good": 14,
+            "ok": 14,
+            "bad": 48
+          },
+          "consensus": "Bước nhảy vọt đáng kể cho loạt Off-Policy. Được ca ngợi là mẫu OP đáng tin cậy nhất từ ​​trước đến nay, với khả năng giảm tốc theo chiều dọc mượt mà hơn cho các dây dẫn bị dừng và khả năng điều khiển ngang được cải thiện có khả năng tự điều chỉnh ngay cả khi vượt quá góc quay gấp 90 độ. Tuy nhiên, việc ôm trái ngẫu nhiên vẫn tồn tại đối với một số người dùng.",
+          "note": "Phần bên hay nhất của bộ truyện cho đến nay. Nếu ôm sang trái thì chỉnh offset camera (+0,05).",
+          "bestFor": "Đường cao tốc & đường quanh co",
+          "steeringFeel": "Confident",
+          "forumUrl": "https://community.sunnypilot.ai/t/op-model-7-april-03-2026/4317",
+          "testedOn": [
+            "Hyundai Ioniq 5",
+            "VW Atlas",
+            "2023 Elantra HEV",
+            "Angle steering vehicles"
+          ],
+          "positives": [
+            "Tự sửa lỗi bên tuyệt vời",
+            "Điểm dừng mượt mà cho khách hàng tiềm năng",
+            "Tăng tốc nhanh"
+          ],
+          "negatives": [
+            "Ôm trái ngẫu nhiên đối với một số người",
+            "Tốc độ thành phố không nhất quán",
+            "Tay lái giật trên những chiếc xe góc cụ thể"
+          ],
+          "routesDriven": 1867,
+          "fleetRank": 13
+        },
+        {
+          "name": "OP Model",
+          "date": "April 01, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Early Feedback"
+          ],
+          "communityScore": 50,
+          "totalVotes": 3,
+          "sentiment": {
+            "great": 0,
+            "good": 67,
+            "ok": 0,
+            "bad": 33
+          },
+          "consensus": "Cho đến nay, mô hình này đã bị loại bỏ rất sớm với phản hồi của cộng đồng còn hạn chế. Số phiếu bầu ban đầu nghiêng về tích cực (Tốt) nhưng cỡ mẫu cực kỳ nhỏ. Cần thử nghiệm và đánh giá cộng đồng nhiều hơn trước khi đưa ra kết luận.",
+          "note": "Cho đến nay có rất ít phiếu bầu — hãy kiểm tra lại để có được sự đồng thuận cập nhật khi có nhiều người dùng thử nghiệm nó hơn.",
+          "bestFor": "TBD",
+          "steeringFeel": "TBD",
+          "forumUrl": "https://community.sunnypilot.ai/t/op-model-april-01-2026/4314",
+          "testedOn": [],
+          "routesDriven": 75,
+          "fleetRank": 51
+        },
+        {
+          "name": "Pop v2",
+          "date": "March 24, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Mixed Sentiment",
+            "Aggressive Long"
+          ],
+          "communityScore": 52,
+          "totalVotes": 37,
+          "sentiment": {
+            "great": 22,
+            "good": 19,
+            "ok": 32,
+            "bad": 27
+          },
+          "consensus": "Bản phát hành có tính phân cực cao với tâm lý tiêu cực ngày càng tăng. Một số người khen ngợi khả năng điều khiển dọc (dừng êm phía sau đèn dẫn trên GV60), nhưng nhiều báo cáo về hành vi 'sợ đèn xanh' và không dừng lại ở đèn đỏ. Khả năng bung ra hai bên được cải thiện nhưng tay lái cứng hơn gây ra dao động và say tàu xe trên một số phương tiện. Rất phụ thuộc vào phương tiện - F-150 Lightning báo cáo hành vi giật cục ở tốc độ thấp.",
+          "note": "Phụ thuộc vào phương tiện. Tuyệt vời trên GV60, giật trên F-150 Lightning. Người dùng Subaru Crosstrek báo cáo bị say tàu xe. Khuyến nghị điều chỉnh mô-men xoắn v0.",
+          "bestFor": "Đường cao tốc (có giám sát)",
+          "steeringFeel": "Varies",
+          "forumUrl": "https://community.sunnypilot.ai/t/pop-model-v2-24-mar-2026/4019",
+          "testedOn": [
+            "GV60",
+            "Ford F-150 Lightning",
+            "Honda Civic Hybrid",
+            "Hyundai Kona",
+            "2020 Subaru Crosstrek"
+          ],
+          "positives": [
+            "Thư giãn bên tốt hơn",
+            "Điểm dừng mượt mà phía sau dây dẫn (GV60)",
+            "Cải thiện theo chiều dọc cho một số"
+          ],
+          "negatives": [
+            "Sợ đèn xanh",
+            "Không dừng lại khi đèn đỏ",
+            "Co giật ở tốc độ thấp (F-150 Lightning)",
+            "Tay lái cứng hơn gây ra dao động",
+            "Khoảng cách theo sau Yoyo",
+            "Say tàu xe gây ra trên một số phương tiện"
+          ]
+        },
+        {
+          "name": "Pop Model",
+          "date": "March 20, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Highway",
+            "Fast Long"
+          ],
+          "communityScore": 71,
+          "totalVotes": 43,
+          "sentiment": {
+            "great": 44,
+            "good": 16,
+            "ok": 30,
+            "bad": 10
+          },
+          "consensus": "Tình cảm của cộng đồng đã ấm lên đáng kể khi có nhiều thử nghiệm hơn. Khả năng điều khiển ngang phụ thuộc vào phương tiện - Người dùng Honda Civic cho biết lat tốt nhất trong một thời gian mà không có bóng bàn và tập trung 'như thể nó nợ tiền phân làn đường', trong khi Hyundai Kona và những người khác trải nghiệm bóng bàn cực đỉnh trên 50 mph. Sẵn sàng đạt tốc độ cài đặt hơn Pop v2. Vẫn nổi tiếng là hay vượt đèn đỏ.",
+          "note": "Rất phụ thuộc vào phương tiện. Người dùng Honda/Kia có xu hướng tích cực. Phiên bản điều chỉnh mô-men xoắn rất quan trọng - trước tiên hãy thử nghiệm với v0.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Varies",
+          "testedOn": [
+            "2025 Honda Civic Hybrid",
+            "2026 Civic Hybrid ST",
+            "2023 Hyundai Kona Electric",
+            "GV60",
+            "Kia Niro",
+            "Honda Ridgeline",
+            "BYD Frigate 07",
+            "Hyundai Elantra",
+            "Honda Odyssey",
+            "Toyota Sienna",
+            "Kia EV6",
+            "Kia K5",
+            "Honda Pilot (2019-2022)",
+            "Tesla Model 3 / Y",
+            "Toyota Corolla (2023-2024)"
+          ],
+          "positives": [
+            "Tự tin bên trên một số loại xe",
+            "Cập nhật nhanh",
+            "Xử lý xoay 90 độ tốt",
+            "Dừng lại ở đèn đỏ",
+            "11/10 bên trên Kia Niro",
+            "Sẵn sàng hơn để đạt được tốc độ đã đặt"
+          ],
+          "negatives": [
+            "Bóng bàn cực mạnh trên một số phương tiện trên 50 mph",
+            "Tăng tốc mạnh mẽ mà không cần xe dẫn đầu",
+            "Xử lý đường cong giật/bát giác",
+            "Vượt đèn đỏ"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/pop-model-20-mar-2026/3921",
+          "routesDriven": 7902,
+          "fleetRank": 2
+        },
+        {
+          "name": "CD210 Model",
+          "date": "January 31, 2026",
+          "badge": null,
+          "tags": [
+            "Smart",
+            "Highway",
+            "Vehicle-Dependent"
+          ],
+          "communityScore": 59,
+          "totalVotes": 49,
+          "sentiment": {
+            "great": 16,
+            "good": 41,
+            "ok": 24,
+            "bad": 19
+          },
+          "consensus": "Dựa trên kiến ​​trúc WMI V12 với những khác biệt tinh tế. Cho thấy khả năng dừng đèn đỏ được cải thiện và ít bóng bàn hơn ở tốc độ thấp. Tuy nhiên, nhiều người dùng báo cáo rằng tình trạng lái quá mức rõ rệt khi rẽ - đặc biệt là vấn đề trên xe Toyota có EPS mô-men xoắn thấp. Phanh cứng ở cự ly gần và vượt đèn đỏ cũng là những nhược điểm được ghi nhận.",
+          "note": "Tùy thuộc vào phương tiện: được khen ngợi trên Hyundai Ioniq 5, nhưng lại chật vật với Toyota RAV4 Prime. Hãy cân nhắc việc bật tính năng 'tạm dừng sang bên trong khi rẽ' nếu vấn đề về lái quá mức.",
+          "bestFor": "Lái xe hỗn hợp",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai Ioniq 5 (2025)",
+            "Toyota RAV4 Prime (2025)",
+            "Subaru Crosstrek",
+            "Subaru Ascent (2019-2022)",
+            "Volvo XC90 (2016-2022)",
+            "comma 4",
+            "comma 4"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/cd210-model-31-jan-2026/2704",
+          "routesDriven": 5033,
+          "fleetRank": 6
+        },
+        {
+          "name": "WMI V11",
+          "date": "January 12, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Smart",
+            "Highway"
+          ],
+          "communityScore": 90,
+          "totalVotes": 10,
+          "sentiment": {
+            "great": 70,
+            "good": 20,
+            "ok": 10,
+            "bad": 0
+          },
+          "consensus": "Ổn định hơn một chút so với V12 trên đường thẳng. Dự phòng tốt nếu V12 cảm thấy quá bồn chồn.",
+          "note": "Ưu tiên cho việc đi lại chủ yếu trên đường cao tốc.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai Ioniq 5",
+            "Kia EV6",
+            "Toyota Prius"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/wmiv11-12-jan-2026/2352",
+          "routesDriven": 5,
+          "fleetRank": 85
+        },
+        {
+          "name": "WMI v10",
+          "date": "January 09, 2026",
+          "tags": [
+            "Smart",
+            "Stable"
+          ],
+          "communityScore": 65,
+          "totalVotes": 13,
+          "sentiment": {
+            "great": 15,
+            "good": 31,
+            "ok": 54,
+            "bad": 0
+          },
+          "consensus": "Mô hình thế hệ giữa đã được thử nghiệm tốt. Một lựa chọn chắc chắn nếu V11/V12 gặp vấn đề trên chiếc xe cụ thể của bạn.",
+          "bestFor": "Lái xe hỗn hợp",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai Palisade",
+            "Kia Telluride",
+            "Toyota RAV4",
+            "Toyota Camry",
+            "Subaru Crosstrek"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/wmiv10-9-jan-2026/2335"
+        },
+        {
+          "name": "SC Model",
+          "date": "January 08, 2026",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Experimental",
+            "Stable"
+          ],
+          "communityScore": 73,
+          "totalVotes": 35,
+          "sentiment": {
+            "great": 43,
+            "good": 20,
+            "ok": 29,
+            "bad": 8
+          },
+          "consensus": "Có khả năng là biến thể 'Space Cat' hoặc 'Kiểm soát ổn định'. Thử nghiệm các thuật toán ổn định mới.",
+          "note": "Đáng thử nếu bạn muốn một cái gì đó khác biệt.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Stiff",
+          "testedOn": [
+            "Hyundai Ioniq 5",
+            "Kia EV6",
+            "Honda Ridgeline"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/sc-model-8-jan-2026/2305",
+          "routesDriven": 2732,
+          "fleetRank": 9
+        },
+        {
+          "name": "WMI V9",
+          "date": "January 07, 2026",
+          "badge": "STABLE",
+          "tags": [
+            "Smart",
+            "C4 Default",
+            "2025+"
+          ],
+          "communityScore": 71,
+          "totalVotes": 14,
+          "sentiment": {
+            "great": 21,
+            "good": 57,
+            "ok": 14,
+            "bad": 8
+          },
+          "consensus": "Sự lựa chọn vững chắc cho các nền tảng mới hơn 2025+ (ví dụ: Kia K4). Hiện tại là model được cài đặt sẵn mặc định trên phần cứng Comma 4. Được ưa chuộng vì tính ổn định và khả năng dự đoán trên các kiến ​​trúc ADAS hiện đại.",
+          "bestFor": "Lái xe hỗn hợp",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Toyota Camry",
+            "Honda CR-V",
+            "2025 Kia K4",
+            "comma 4"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/wmiv9-7-jan-2026/2275",
+          "routesDriven": 173,
+          "fleetRank": 45
+        },
+        {
+          "name": "WMI V8",
+          "date": "January 03, 2026",
+          "tags": [
+            "Smart"
+          ],
+          "communityScore": 92,
+          "totalVotes": 16,
+          "sentiment": {
+            "great": 63,
+            "good": 38,
+            "ok": 0,
+            "bad": 0
+          },
+          "consensus": "Công trình xây dựng đầu năm 2026 đã thiết lập nền móng. Vẫn hoạt động cho người dùng E2E bảo thủ.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various vehicles"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/wmiv8-3-jan-2026/2184"
+        },
+        {
+          "name": "WMI V7",
+          "date": "January 01, 2026",
+          "tags": [
+            "Smart"
+          ],
+          "communityScore": 77,
+          "totalVotes": 13,
+          "sentiment": {
+            "great": 46,
+            "good": 31,
+            "ok": 15,
+            "bad": 8
+          },
+          "consensus": "Bản phát hành năm mới khởi đầu cho dòng WMI 2026. Ý nghĩa lịch sử.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai",
+            "Toyota"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/wmiv7-1-jan-2026/2150"
+        },
+        {
+          "name": "Macrostiff Model",
+          "date": "January 01, 2026",
+          "badge": "POPULAR",
+          "tags": [
+            "Stiff",
+            "Highway"
+          ],
+          "communityScore": 86,
+          "totalVotes": 32,
+          "sentiment": {
+            "great": 66,
+            "good": 22,
+            "ok": 6,
+            "bad": 6
+          },
+          "consensus": "World Model được điều chỉnh để có phản hồi lái CỨNG HƠN. Nếu WMI V12 cảm thấy quá 'lắc lư', thao tác này sẽ khóa nó lại.",
+          "note": "Tuyệt vời cho những chiếc xe có giá lái lỏng lẻo.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Heavy",
+          "testedOn": [
+            "Ford",
+            "Chevy",
+            "GMC trucks"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/macrostiff-model-1-jan-2026/2145",
+          "routesDriven": 1977,
+          "fleetRank": 12
+        },
+        {
+          "name": "OP Model 16 Deep",
+          "date": "June 03, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Deep Network",
+            "Urban",
+            "Off-Policy"
+          ],
+          "consensus": "Có kiến ​​trúc mạng thần kinh mở rộng trong dòng mô hình OP. Cung cấp nhận thức không gian vượt trội khi lái xe trong thành phố lộn xộn và giao lộ nhiều làn, mặc dù yêu cầu phần cứng dấu phẩy 4 hiện đại để có độ trễ tính toán tối ưu.",
+          "note": "Tối ưu hóa cho Dấu phẩy 4. Được khuyến nghị cho môi trường đô thị và ngoại ô dày đặc.",
+          "communityScore": 50,
+          "totalVotes": 1,
+          "sentiment": {
+            "great": 0,
+            "good": 0,
+            "ok": 100,
+            "bad": 0
+          },
+          "bestFor": "Lái xe trong đô thị / hỗn hợp",
+          "steeringFeel": "Confident",
+          "forumUrl": "https://community.sunnypilot.ai/t/op-model-16-deep-june-03-2026/6557",
+          "testedOn": [
+            "2025 Kia K4",
+            "2024 Honda Civic",
+            "Toyota Prius (2023+)",
+            "comma 4"
+          ],
+          "positives": [
+            "Cải thiện đáng kể nhận thức về nhiều làn đường và theo dõi giao lộ",
+            "Xử lý tốt các vạch kẻ đường phức tạp và thùng xây dựng",
+            "Mô men lái tự tin khi rẽ ở tốc độ trung bình"
+          ],
+          "negatives": [
+            "Chi phí tính toán cao hơn trên phần cứng dấu phẩy 3X cũ hơn",
+            "Có thể phanh đột ngột đối với người đi bộ sát lề đường"
+          ],
+          "routesDriven": 468,
+          "fleetRank": 30
+        },
+        {
+          "name": "Michael RL V2",
+          "date": "July 18, 2026",
+          "badge": "openpilot only",
+          "tags": [
+            "Reinforcement Learning",
+            "Natural",
+            "Experimental"
+          ],
+          "consensus": "Sự phát triển tiếp theo trong các mô hình học lái xe tăng cường sau Deep_RL V3. Mang lại chuyển động vô lăng đặc biệt tự nhiên và dự đoán đường cong chủ động, mô phỏng chặt chẽ động lực lái xe của con người.",
+          "note": "Phù hợp nhất cho các nhánh thử nghiệm openpilot và trình điều khiển thích động lực học mượt mà, giống con người hơn là định tâm cứng nhắc.",
+          "communityScore": 50,
+          "totalVotes": 2,
+          "sentiment": {
+            "great": 0,
+            "good": 0,
+            "ok": 100,
+            "bad": 0
+          },
+          "bestFor": "Lái xe giống con người tự nhiên",
+          "steeringFeel": "Natural",
+          "forumUrl": "https://community.sunnypilot.ai/t/michael-rl-v2-july-18-2026/6558",
+          "testedOn": [
+            "comma 4",
+            "Toyota Corolla",
+            "Hyundai Palisade",
+            "Subaru Outback"
+          ],
+          "positives": [
+            "Định vị làn đường giống con người với đỉnh góc trong trực quan",
+            "Dự đoán phanh theo chiều dọc tiến bộ và mượt mà",
+            "Điều chỉnh hệ thống lái bằng chất lỏng mà không cần điều chỉnh vi mô cơ học"
+          ],
+          "negatives": [
+            "Có thể cắt góc gần hơn một chút so với các mẫu dựa trên quy tắc",
+            "Thỉnh thoảng do dự khi vạch phân làn hoặc kết thúc đột ngột"
+          ],
+          "routesDriven": 361,
+          "fleetRank": 34
+        },
+        {
+          "name": "Rebel Legion Model",
+          "date": "July 22, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Highway",
+            "Stable",
+            "Experimental"
+          ],
+          "consensus": "Cặp song sinh tập trung vào đường cao tốc của loạt phim Rebel. Thay đổi mô-men xoắn mạnh để theo dõi đường thẳng ổn định và thay đổi làn đường trơn tru với độ lệch tối thiểu.",
+          "note": "Được khuyến nghị cho những người đi làm trên đường cao tốc đang tìm kiếm một giải pháp thay thế ổn định hơn cho các mẫu WMI đời đầu.",
+          "communityScore": 0,
+          "totalVotes": 1,
+          "sentiment": {
+            "great": 0,
+            "good": 0,
+            "ok": 0,
+            "bad": 100
+          },
+          "bestFor": "Đường đi lại trên đường cao tốc",
+          "steeringFeel": "Balanced",
+          "forumUrl": "https://community.sunnypilot.ai/t/rebel-legion-model-july-22-2026/6559",
+          "testedOn": [
+            "Hyundai Ioniq 5",
+            "Kia EV6",
+            "Toyota RAV4 Prime",
+            "Honda CR-V",
+            "comma 4"
+          ],
+          "positives": [
+            "Định tâm đường cao tốc bị khóa với độ lệch tối thiểu",
+            "Chuyển làn mượt mà trong quá trình thay đổi làn openpilot",
+            "Xe dẫn đầu bảo thủ theo khoảng cách"
+          ],
+          "negatives": [
+            "Ít hung hãn hơn ở những khúc cua gấp trong đô thị so với Rebellious Hope",
+            "Tăng tốc tương đối thận trọng từ điểm dừng hoàn toàn"
+          ],
+          "routesDriven": 35,
+          "fleetRank": 58
+        },
+        {
+          "name": "Get Your Hopes Up Model",
+          "date": "July 25, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Curves",
+            "Deep RL"
+          ],
+          "consensus": "Tiền thân ban đầu của Rebelious Hope trong loạt phim Rebel. Đã khám phá khả năng theo dõi đường cong góc cao với đầu vào bên cạnh phản hồi nhanh.",
+          "note": "Tiền thân của niềm hy vọng nổi loạn. Được khuyến nghị thử nghiệm Rebellious Hope để có những cải tiến mới nhất.",
+          "communityScore": 65,
+          "totalVotes": 18,
+          "sentiment": {
+            "great": 25,
+            "good": 45,
+            "ok": 20,
+            "bad": 10
+          },
+          "bestFor": "Đường cong & Thử nghiệm",
+          "steeringFeel": "Firm",
+          "forumUrl": "https://community.sunnypilot.ai/tag/model-drop/155",
+          "testedOn": [
+            "comma 4",
+            "Hyundai Ioniq 5"
+          ],
+          "positives": [
+            "Rẽ vào đường cong tốt",
+            "Tham gia lái chủ động"
+          ],
+          "negatives": [
+            "Đi lang thang tốc độ thấp trên một số phương tiện"
+          ],
+          "routesDriven": 207,
+          "fleetRank": 41
+        },
+        {
+          "name": "Rebellious Hope Model",
+          "date": "July 27, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Curves",
+            "Torque-Assist"
+          ],
+          "consensus": "Được thiết kế để xử lý các góc cua mạnh khi vượt quá giới hạn mô-men xoắn của xe mà không lao qua các làn đường như CD210. Mang lại khả năng duy trì làn đường hiệu quả khi qua các khúc cua, mặc dù một số phương tiện gặp phải tình trạng chơi bóng bàn ngang ở tốc độ thấp.",
+          "note": "Tuyệt vời cho các tuyến đường có đường cong đầy thử thách. Nếu gặp tình trạng di chuyển ở tốc độ thấp, hãy chuyển sang tạm dừng ở tốc độ thấp.",
+          "communityScore": 30,
+          "totalVotes": 9,
+          "sentiment": {
+            "great": 11,
+            "good": 11,
+            "ok": 22,
+            "bad": 56
+          },
+          "bestFor": "Đường cong / Vào cua có hỗ trợ",
+          "steeringFeel": "Firm",
+          "forumUrl": "https://community.sunnypilot.ai/t/rebellious-hope-model-july-27-2026/6560",
+          "testedOn": [
+            "2023 Lexus RC 350",
+            "Hyundai Ioniq 5",
+            "Honda Civic Hybrid",
+            "comma 4"
+          ],
+          "positives": [
+            "Duy trì tính toàn vẹn của làn đường khi vào cua có hỗ trợ mô-men xoắn cao tốt hơn CD210",
+            "Cảm giác vững chắc ở trung tâm khi vào những khúc cua mạnh",
+            "Cấu hình giảm tốc có thể dự đoán được theo các lượt"
+          ],
+          "negatives": [
+            "Bóng bàn/dao động ngang tốc độ thấp được báo cáo trên nền tảng Lexus và một số Toyota",
+            "Chuyển tiếp hơi giật khi người lái can thiệp vào những khúc cua giới hạn mô-men xoắn"
+          ],
+          "routesDriven": 893,
+          "fleetRank": 22
+        },
+        {
+          "name": "Terrible Super Fantastic Do Over Model",
+          "date": "August 15, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Mixed Sentiment"
+          ],
+          "communityScore": 67,
+          "totalVotes": 17,
+          "sentiment": {
+            "great": 41,
+            "good": 18,
+            "ok": 24,
+            "bad": 17
+          },
+          "consensus": "Tỷ lệ tiếp nhận chia rẽ trong cuộc thăm dò có 12 phiếu bầu: 58% đạt mức Tốt hoặc tốt hơn, nhưng 1/4 ở mức Xấu hoặc Kinh khủng. Theo chiều dọc là một nửa mạnh mẽ - được gọi là 'thực sự ấn tượng' trong giao thông dừng và đi. Bên là một nửa yếu, đưa ra các báo cáo về việc ôm sát bên trong các góc cua, không thể rẽ vào giao lộ và những khúc cua quét đủ rộng để đi trên đường địa hình.",
+          "note": "Cắt lại Terrible Super Fantastic Model ngày 12 tháng 8. Phản hồi bị phân cực chứ không phải ấm áp - các phiếu bầu tập trung ở cả hai đầu, vì vậy hãy mong đợi kết quả phụ thuộc vào phương tiện.",
+          "bestFor": "Đường cao tốc / Dừng và đi",
+          "steeringFeel": "Light",
+          "forumUrl": "https://community.sunnypilot.ai/t/terrible-super-fantastic-do-over-model-august-15-2026/6765",
+          "testedOn": [
+            "2023 Ioniq 6",
+            "Chevy Bolt EUV",
+            "Kia Niro PHEV",
+            "VW Golf R"
+          ],
+          "positives": [
+            "Theo chiều dọc được ca ngợi là một trong những mượt mà nhất; nhìn thấy các đèn dẫn và đèn đã dừng ở phía trước mà không bị phanh gấp",
+            "Hành trình dừng và đi êm ái ấn tượng trong điều kiện giao thông đông đúc",
+            "58% đánh giá thăm dò cộng đồng là Tốt hoặc Tuyệt vời"
+          ],
+          "negatives": [
+            "Ôm trái trên nhiều phương tiện, lang thang sát vạch làn đường dưới 6 mph",
+            "Lái xe cẩu thả trên những đoạn đường cong và giao lộ sắc nét hơn, thỉnh thoảng cần phải điều khiển tài xế"
+          ],
+          "routesDriven": 3,
+          "fleetRank": 89
+        },
+        {
+          "name": "Terrible Super Fantastic Model",
+          "date": "August 12, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental"
+          ],
+          "consensus": "Sự sụt giảm phần cứng tiêu chuẩn vào giữa tháng 8, được thay thế bằng đợt cắt giảm 'Do Over' ba ngày sau đó.",
+          "forumUrl": "https://community.sunnypilot.ai/t/terrible-super-fantastic-model-august-12-2026/6764",
+          "testedOn": [],
+          "positives": [],
+          "negatives": [],
+          "routesDriven": 32,
+          "fleetRank": 59,
+          "communityScore": 0,
+          "totalVotes": 2,
+          "sentiment": {
+            "great": 0,
+            "good": 0,
+            "ok": 0,
+            "bad": 100
+          }
+        },
+        {
+          "name": "RDF Model v2",
+          "date": "August 11, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental"
+          ],
+          "consensus": "Tiếp nối RDF Model ngày 5 tháng 8. Lần lặp thứ hai của cùng một dòng trên phần cứng tiêu chuẩn.",
+          "forumUrl": "https://community.sunnypilot.ai/t/rdf-model-v2-august-11-2026/6763",
+          "testedOn": [],
+          "positives": [],
+          "negatives": [],
+          "routesDriven": 788,
+          "fleetRank": 24,
+          "communityScore": 52,
+          "totalVotes": 15,
+          "sentiment": {
+            "great": 27,
+            "good": 33,
+            "ok": 0,
+            "bad": 40
+          }
+        },
+        {
+          "name": "RDF Model",
+          "date": "August 05, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Recommended",
+            "Longitudinal",
+            "Highway",
+            "Yassine/MVL"
+          ],
+          "consensus": "Được điều chỉnh bởi Yassine/MVL với mức tăng theo chiều dọc đáng chú ý so với POP và CD210. Cung cấp khả năng kết hợp tốc độ dừng và đi mượt mà và theo dõi đường cong chính xác trên đường cao tốc rộng lớn. Một số người dùng báo cáo rằng có hiện tượng lắc lư bên một chút ở tốc độ thấp và giảm mô-men xoắn trên các đường cong góc cao đối với một số thiết lập lái nhất định.",
+          "note": "Kết hợp với các điều chỉnh MVL gần đây nếu sử dụng nền tảng Honda/Hyundai. Điều khiển dọc rất chắc chắn ở chế độ thử nghiệm.",
+          "communityScore": 76,
+          "totalVotes": 44,
+          "sentiment": {
+            "great": 32,
+            "good": 43,
+            "ok": 23,
+            "bad": 2
+          },
+          "bestFor": "Đường cao tốc / Dừng và đi",
+          "steeringFeel": "Assertive",
+          "forumUrl": "https://community.sunnypilot.ai/t/rdf-model-august-5-2026/6569",
+          "testedOn": [
+            "2022 Honda Civic",
+            "2024 Ioniq 5 (HDA2)",
+            "2022 Rivian R1T (Angle Steering)",
+            "2025 Ioniq 5N",
+            "comma 4"
+          ],
+          "positives": [
+            "Cải thiện đáng kể khả năng tăng tốc và dừng so với POP và CD210",
+            "Dừng và đi trên đường cao tốc mượt mà và phù hợp với tốc độ",
+            "Trợ lực lái quyết đoán và khả năng xử lý các khúc cua trên những đoạn đường cong dài",
+            "Phát hiện chì dọc mạnh mẽ"
+          ],
+          "negatives": [
+            "Từ bỏ các đường cong góc cao sắc nét trên một số xe hạng nặng/góc nghiêng (Rivian R1T)",
+            "Dao động/lắc lư theo chiều ngang ở tốc độ thấp khi xe tự điều chỉnh",
+            "Giao thông vuông góc cắt ngang đường có thể gây giảm tốc độ đột ngột"
+          ],
+          "routesDriven": 3248,
+          "fleetRank": 7
+        }
+      ]
+    },
+    {
+      "id": "opm",
+      "name": "Mô hình OPM",
+      "description": "Off-Policy Model học hỏi từ các sửa đổi của trình điều khiển thay vì chỉ sao chép hành vi, cho phép định tâm và lấy lại đường cao tốc thông minh hơn.",
+      "icon": "🧪",
+      "models": [
+        {
+          "name": "Off-Policy Model",
+          "date": "February 4, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Experimental",
+            "Off-Policy",
+            "Highway"
+          ],
+          "communityScore": 48,
+          "totalVotes": 17,
+          "sentiment": {
+            "great": 12,
+            "good": 12,
+            "ok": 53,
+            "bad": 23
+          },
+          "consensus": "Mô hình thử nghiệm sử dụng đào tạo ngoài chính sách - học hỏi từ các sửa chữa thay vì chỉ nhân bản. Định tâm đường cao tốc tốt hơn và thu hồi ngang nhanh hơn so với WMI V12. Tuy nhiên, chế độ dài thử nghiệm có cảm giác giật và những khúc cua gấp có thể là một bước thụt lùi. Tiềm năng tốt cho những người lái xe tập trung vào đường cao tốc.",
+          "note": "'Không chính sách' có nghĩa là nó học từ dữ liệu trong đó hành vi của mô hình khác với hành động của người lái xe, cho phép nó học từ các sửa chữa hiệu quả hơn so với sao chép tiêu chuẩn.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai Ioniq 5",
+            "Honda Civic",
+            "Toyota"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/off-policy-model-4-feb-2026/2819",
+          "routesDriven": 67,
+          "fleetRank": 52
+        },
+        {
+          "name": "Off-Policy Model v2",
+          "date": "February 20, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Off-Policy",
+            "Highway",
+            "Experimental"
+          ],
+          "communityScore": 61,
+          "totalVotes": 16,
+          "sentiment": {
+            "great": 31,
+            "good": 19,
+            "ok": 31,
+            "bad": 19
+          },
+          "consensus": "Lặp lại lần thứ hai của đào tạo ngoài chính sách. Hiệu suất bên được khen ngợi - không ôm bên trái và ít ôm hơn khi rẽ trên đường cao tốc ở mức 70+. Tuy nhiên, điều khiển dọc là một sự thoái lui đáng chú ý: phanh muộn, bám dây cao su phía sau xe dẫn đầu và khoảng cách theo sau quá mức thường được báo cáo. Tốt nhất ở dấu phẩy 4; kết quả hỗn hợp trên các nền tảng khác.",
+          "note": "Những cải tiến mạnh mẽ về mặt bên so với v1, nhưng cần có khả năng kiểm soát lâu dài. Ý kiến ​​​​của cộng đồng bị chia rẽ - một số yêu thích lat, những người khác không thể chịu đựng được hành vi kéo dài.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai Elantra HEV",
+            "Mazda CX-5",
+            "Rivian",
+            "comma 4"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/off-policy-model-v2-20-feb-2026/3162",
+          "routesDriven": 219,
+          "fleetRank": 39
+        },
+        {
+          "name": "Off-Policy Model v3",
+          "date": "February 26, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Off-Policy",
+            "Highway",
+            "PlanPlus",
+            "Experimental"
+          ],
+          "communityScore": 67,
+          "totalVotes": 9,
+          "communityViews": 323,
+          "sentiment": {
+            "great": 56,
+            "good": 0,
+            "ok": 22,
+            "bad": 22
+          },
+          "consensus": "Được đánh giá cao lần lặp lại thứ ba của đào tạo ngoài chính sách. Cộng đồng mô tả đây là phiên bản 'mad max' của CD210/WMI — phản hồi theo chiều dọc nhanh với khả năng kiểm soát theo chiều ngang tốt hơn so với các phiên bản tiền nhiệm. Bao gồm tích hợp PlanPlus để có thể tùy chỉnh khả năng tập trung làn đường. Được xếp hạng A+ bởi những người thử nghiệm đầu tiên.",
+          "note": "Có sự không nhất quán nhỏ về khoảng cách dẫn đầu và đôi khi lắc lư ở tốc độ đường cao tốc. Tích hợp PlanPlus cho phép điều chỉnh việc căn giữa làn đường và ôm sát đường cong.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai Sonata 2022",
+            "Rivian R1T (2022-2024)",
+            "comma 4",
+            "comma 4"
+          ],
+          "positives": [
+            "Gia tốc dọc mạnh mẽ",
+            "Bên tốt hơn CD210/WMI",
+            "Định tâm làn đường có thể tùy chỉnh PlanPlus",
+            "Xếp hạng cộng đồng A+"
+          ],
+          "negatives": [
+            "Khoảng cách không nhất quán giữa các xe dẫn đầu",
+            "Thỉnh thoảng lắc lư ở tốc độ cao"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/off-policy-model-v3-26-feb-2026/3297",
+          "routesDriven": 6,
+          "fleetRank": 80
+        },
+        {
+          "name": "Off-Policy Model v4",
+          "date": "February 27, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Off-Policy",
+            "Highway",
+            "PlanPlus",
+            "Experimental"
+          ],
+          "communityScore": 41,
+          "totalVotes": 28,
+          "communityViews": 480,
+          "sentiment": {
+            "great": 11,
+            "good": 21,
+            "ok": 29,
+            "bad": 39
+          },
+          "consensus": "Lần lặp lại thứ tư của quá trình đào tạo ngoài chính sách với khả năng xử lý lái quá mức được cải thiện so với v2. Định tâm làn đường tuyệt vời và lái xe êm ái trong thành phố khi kết hợp với SCC-V. Tuy nhiên, thể hiện sự do dự khi đi theo xe dẫn đầu và có xu hướng lái xe chậm hơn các xe xung quanh khi không có xe dẫn đầu. Kết quả khác nhau trên các đường cong - được cải thiện cho Hyundai/Toyota nhưng người dùng Tesla báo cáo rằng họ đang lái xe trong đường.",
+          "note": "SCC-V được khuyến nghị mạnh mẽ để xử lý tốc độ đường cong an toàn. Tăng tốc chậm khi bám theo xe dẫn đầu là nhược điểm chính so với WMI/CD210.",
+          "bestFor": "Lái xe trong thành phố",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "2025 Hyundai Ioniq 5",
+            "2023 Toyota RAV4 Prime",
+            "Tesla V4"
+          ],
+          "positives": [
+            "Định tâm làn đường tuyệt vời",
+            "Tăng tốc thành phố mượt mà",
+            "Cải thiện oversteer so với v2",
+            "Hoạt động tốt với SCC-V"
+          ],
+          "negatives": [
+            "Lúng túng khi xe dẫn đầu di chuyển",
+            "Lái xe quá chậm nếu không có xe dẫn đầu",
+            "Thỉnh thoảng chơi bóng bàn tại PlanPlus 1.5",
+            "Đường cong bên trong trên Tesla"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/off-policy-model-v4-27-feb-2026/3331"
+        },
+        {
+          "name": "Off-Policy Model v5",
+          "date": "March 14, 2026",
+          "badge": "NEW",
+          "tags": [
+            "Off-Policy",
+            "Highway",
+            "Experimental"
+          ],
+          "communityScore": 43,
+          "totalVotes": 22,
+          "sentiment": {
+            "great": 0,
+            "good": 18,
+            "ok": 59,
+            "bad": 23
+          },
+          "consensus": "Lần lặp lại thứ năm của chương trình đào tạo ngoài chính sách với phản hồi cộng đồng nhiều hơn đáng kể. Cải thiện khả năng vào cua so với v4 - rẽ rộng hơn và tránh xa lề đường. Hiệu suất tốt ở tốc độ cao hơn (trên 30 mph). Tuy nhiên, đa số đánh giá nó chỉ ở mức 'OK' với những điểm lùi đáng chú ý: hành vi tốc độ thấp gặp khó khăn trong việc đi vào làn đường, ôm hoặc băng qua vạch và rẽ giữa chừng. Bóng bàn đáng kể ở tốc độ thấp được báo cáo trên Prius Prime. Sự dao động ở tốc độ cao trên 65 mph vẫn tồn tại.",
+          "note": "Sự đồng thuận của cộng đồng đã thay đổi - đa số thấy nó ở mức tầm thường. Cải thiện khả năng vào cua so với v4 nhưng khả năng xử lý ở tốc độ thấp và rẽ kém hơn. Đề nghị điều chỉnh mô-men xoắn v0.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "2026 Hyundai Ioniq 5",
+            "2023 Lexus RC",
+            "GV60",
+            "2022 Toyota RAV4 Prime",
+            "Prius Prime"
+          ],
+          "positives": [
+            "Vào cua tốt hơn v4",
+            "Khoảng cách rộng hơn khỏi lề đường",
+            "Thay đổi làn đường tốt",
+            "Tốt trên 30 mph"
+          ],
+          "negatives": [
+            "Cam kết làn đường tốc độ thấp kém",
+            "Tắt khóa giữa chừng",
+            "Lắc lư ở tốc độ cao trên 65 mph",
+            "Lúng túng ở các ngã tư lân cận",
+            "Đánh bóng bàn đáng kể ở tốc độ thấp",
+            "Đến gần vạch kẻ một cách khó chịu"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/off-policy-model-v5-14-mar-2026/3756",
+          "routesDriven": 330,
+          "fleetRank": 35
+        }
+      ]
+    },
+    {
+      "id": "aggressive_exp",
+      "name": "Quyết liệt",
+      "description": "Dành cho những người lái xe muốn có hiệu suất, khả năng bám sát chặt chẽ hoặc các tính năng tiên tiến.",
+      "icon": "🔥",
+      "models": [
+        {
+          "name": "Dark Souls Model",
+          "date": "December 03, 2025",
+          "tags": [
+            "Aggressive"
+          ],
+          "communityScore": 76,
+          "totalVotes": 6,
+          "sentiment": {
+            "great": 67,
+            "good": 0,
+            "ok": 17,
+            "bad": 16
+          },
+          "consensus": "Mô hình 'không thể tha thứ' ban đầu. Vẫn phổ biến cho việc lái xe quyết đoán. Ít tinh tế hơn v2 nhưng có tính chất thô.",
+          "bestFor": "Lái xe hung hãn",
+          "steeringFeel": "Stiff",
+          "testedOn": [
+            "Ford F-150",
+            "Toyota Tacoma",
+            "Kia Sportage"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/dark-souls-model-3-dec-2025/1481",
+          "routesDriven": 10,
+          "fleetRank": 70
+        },
+        {
+          "name": "Firehose Model",
+          "date": "August 31, 2025",
+          "badge": "DEV",
+          "tags": [
+            "Dev",
+            "Unstable"
+          ],
+          "communityScore": 52,
+          "totalVotes": 490,
+          "sentiment": {
+            "great": 5,
+            "good": 7,
+            "ok": 84,
+            "bad": 4
+          },
+          "consensus": "Nguồn cấp dữ liệu thô, chưa được lọc dành cho nhà phát triển từ hệ thống đào tạo Hiện đại (SOTA) của comma.ai. Đây chính là 'điểm chảy máu' tuyệt đối của trí thông minh openpilot, cập nhật gần như hàng ngày khi lấy dữ liệu mới từ firehose toàn cầu. RỦI RO CAO, PHẦN THƯỞNG CAO: Nó thường chứa những đột phá mới nhất trong kế hoạch và tầm nhìn đường đi, nhưng chưa trải qua quá trình xác nhận dài hạn cần thiết cho một bản phát hành tiêu chuẩn.",
+          "note": "Lưu ý kỹ thuật: Mô hình này là sản phẩm trực tiếp của quá trình đào tạo liên tục. Mong đợi những thay đổi căn bản trong hành vi hàng ngày. Nếu bạn gặp phải bản dựng 'hồi quy', chỉ cần đợi lần giảm hàng ngày tiếp theo hoặc quay lại chuỗi ổn định.",
+          "bestFor": "Thử nghiệm & Nghiên cứu SOTA",
+          "steeringFeel": "Volatile (Varies by Drop)",
+          "testedOn": [
+            "Lexus IS",
+            "Lexus RX 350",
+            "Dev vehicles only"
+          ],
+          "routesDriven": 1667,
+          "fleetRank": 15
+        },
+        {
+          "name": "Planplus v2",
+          "date": "December 11, 2025",
+          "badge": "DEV",
+          "tags": [
+            "Dev",
+            "Experimental"
+          ],
+          "communityScore": 74,
+          "totalVotes": 9,
+          "sentiment": {
+            "great": 44,
+            "good": 33,
+            "ok": 11,
+            "bad": 12
+          },
+          "consensus": "Thử nghiệm thuật toán lập kế hoạch bên mới. Rất thử nghiệm - dành cho nhà phát triển và người thử nghiệm.",
+          "bestFor": "Phát triển",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Test vehicles"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/planplus-v2-model-11-dec-2025/1650",
+          "routesDriven": 49,
+          "fleetRank": 55
+        },
+        {
+          "name": "Neurips Driving Model v2",
+          "date": "November 12, 2025",
+          "tags": [
+            "Academic"
+          ],
+          "communityScore": 67,
+          "totalVotes": 21,
+          "sentiment": {
+            "great": 43,
+            "good": 19,
+            "ok": 19,
+            "bad": 19
+          },
+          "consensus": "Mô hình được trình bày tại hội nghị NeurIPS AI. Trưng bày công nghệ với trọng tâm là học thuật.",
+          "bestFor": "Nghiên cứu",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Research vehicles"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/neurips-model-12-nov-2025/986",
+          "routesDriven": 382,
+          "fleetRank": 33
+        },
+        {
+          "name": "Neurips Driving Model",
+          "date": "November 12, 2025",
+          "tags": [
+            "Academic"
+          ],
+          "communityScore": 53,
+          "totalVotes": 29,
+          "sentiment": {
+            "great": 7,
+            "good": 10,
+            "ok": 76,
+            "bad": 7
+          },
+          "consensus": "Mô hình hội nghị ban đầu Thú vị cho mục đích nghiên cứu.",
+          "bestFor": "Nghiên cứu",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Research vehicles"
+          ]
+        },
+        {
+          "name": "Steam Powered Model",
+          "date": "August 16, 2025",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Experimental"
+          ],
+          "communityScore": 54,
+          "totalVotes": 299,
+          "sentiment": {
+            "great": 7,
+            "good": 12,
+            "ok": 75,
+            "bad": 6
+          },
+          "consensus": "Hành vi theo chiều dọc (khí/phanh) thử nghiệm. Cảm giác tăng tốc và phanh độc đáo.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 159,
+          "fleetRank": 46
+        }
+      ]
+    },
+    {
+      "id": "comfort",
+      "name": "Êm ái",
+      "description": "Mẫu mã thân thiện với hành khách. Đầu vào mượt mà hơn độ chính xác. Hoàn hảo cho các chuyến đi đường.",
+      "icon": "🛋️",
+      "models": [
+        {
+          "name": "Down to Ride v5",
+          "date": "July 08, 2025",
+          "tags": [
+            "Comfort",
+            "Smooth"
+          ],
+          "communityScore": 52,
+          "totalVotes": 136,
+          "sentiment": {
+            "great": 4,
+            "good": 11,
+            "ok": 79,
+            "bad": 6
+          },
+          "consensus": "Phiên bản DTR trước đó. Vẫn mượt mà và thoải mái, kém tinh tế hơn một chút so với v6.",
+          "bestFor": "hành khách",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Hyundai Palisade",
+            "Toyota Camry"
+          ],
+          "routesDriven": 23,
+          "fleetRank": 61
+        },
+        {
+          "name": "Space Lab 3",
+          "date": "August 08, 2025",
+          "tags": [
+            "Smooth"
+          ],
+          "communityScore": 52,
+          "totalVotes": 350,
+          "sentiment": {
+            "great": 6,
+            "good": 9,
+            "ok": 78,
+            "bad": 7
+          },
+          "consensus": "Mô hình mượt mà theo chủ đề không gian với những chuyển tiếp nhẹ nhàng và cảm giác thư giãn.",
+          "bestFor": "Lái xe thư giãn",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Most sedans"
+          ],
+          "routesDriven": 2029,
+          "fleetRank": 11
+        },
+        {
+          "name": "Space Lab 2",
+          "date": "July 26, 2025",
+          "tags": [
+            "Smooth"
+          ],
+          "communityScore": 50,
+          "totalVotes": 668,
+          "sentiment": {
+            "great": 3,
+            "good": 5,
+            "ok": 87,
+            "bad": 5
+          },
+          "consensus": "Phiên bản Space Lab trước đó. Sự thoải mái cơ bản tốt.",
+          "bestFor": "Lái xe thư giãn",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Toyota Camry",
+            "Honda Accord"
+          ],
+          "routesDriven": 194,
+          "fleetRank": 44
+        },
+        {
+          "name": "Kumars Vibe",
+          "date": "August 16, 2025",
+          "badge": "HIDDEN GEM",
+          "tags": [
+            "Smooth",
+            "Highway"
+          ],
+          "communityScore": 56,
+          "totalVotes": 123,
+          "sentiment": {
+            "great": 9,
+            "good": 10,
+            "ok": 79,
+            "bad": 2
+          },
+          "consensus": "Giai điệu tùy chỉnh giúp loại bỏ cảm giác 'robot'. Đầu vào lái rất tự nhiên, giống con người.",
+          "note": "Cộng đồng yêu thích vì cảm giác lái tự nhiên.",
+          "bestFor": "Cảm giác tự nhiên",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various Hyundai/Kia",
+            "Kia Sportage PHEV"
+          ],
+          "routesDriven": 322,
+          "fleetRank": 36
+        },
+        {
+          "name": "UV + DTR Model",
+          "date": "August 13, 2025",
+          "tags": [
+            "Comfort",
+            "Vision"
+          ],
+          "communityScore": 50,
+          "totalVotes": 168,
+          "sentiment": {
+            "great": 2,
+            "good": 6,
+            "ok": 86,
+            "bad": 6
+          },
+          "consensus": "Hợp nhất 'Tầm nhìn không giới hạn' và 'Down to Ride.' Kết hợp khả năng hiển thị với sự thoải mái.",
+          "bestFor": "Lái xe hỗn hợp",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Toyota",
+            "Honda"
+          ],
+          "routesDriven": 14,
+          "fleetRank": 67
+        },
+        {
+          "name": "Duck Amigo",
+          "date": "March 18, 2024",
+          "tags": [
+            "Soft",
+            "Legacy"
+          ],
+          "communityScore": 50,
+          "totalVotes": 173,
+          "sentiment": {
+            "great": 4,
+            "good": 12,
+            "ok": 73,
+            "bad": 11
+          },
+          "consensus": "Mô hình thoải mái kế thừa với đầu vào rất mềm. Tập trung vào hành khách.",
+          "bestFor": "hành khách",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Toyota",
+            "Honda sedans"
+          ],
+          "routesDriven": 148,
+          "fleetRank": 47
+        },
+        {
+          "name": "Space Lab Model",
+          "date": "July 24, 2025",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Comfort",
+            "Experimental",
+            "Original"
+          ],
+          "communityScore": 50,
+          "totalVotes": 219,
+          "sentiment": {
+            "great": 1,
+            "good": 8,
+            "ok": 85,
+            "bad": 6
+          },
+          "consensus": "Space Lab ban đầu. Phản ứng nhanh và tập trung tốt ở tốc độ trung bình và cao với độ dọc thử nghiệm tốt, được bù đắp bởi hiện tượng giật cục đáng sợ ở tốc độ thấp, đánh lái quá mức khi rẽ trái và độ lệch trái nói chung.",
+          "note": "Đầu tiên của dòng Space Lab.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Twitchy",
+          "testedOn": [
+            "2025 Ioniq 5",
+            "'21 Niro"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tomb_raider",
+      "name": "Tomb Raider",
+      "description": "'Thư mục thùng rác' thử nghiệm đang chạy. Đá quý ẩn cho đường cong. Đừng để cái tên làm bạn sợ!",
+      "icon": "🔬",
+      "models": [
+        {
+          "name": "Tomb Raider 16",
+          "date": "July 21, 2025",
+          "badge": "HIDDEN GEM",
+          "tags": [
+            "Curves",
+            "Highway"
+          ],
+          "communityScore": 50,
+          "totalVotes": 372,
+          "sentiment": {
+            "great": 5,
+            "good": 7,
+            "ok": 80,
+            "bad": 8
+          },
+          "consensus": "SỰ CỔ ĐIỂN! Thường được gọi là 'Thư mục Thùng rác 16.' Khả năng xử lý đường cong TỐT NHẤT so với bất kỳ mẫu xe nào năm 2025.",
+          "note": "Lái xe 'trên đường ray' qua những con đường ngoằn ngoèo.",
+          "bestFor": "Đường cong",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai",
+            "Kia",
+            "Toyota"
+          ],
+          "routesDriven": 1437,
+          "fleetRank": 20
+        },
+        {
+          "name": "Tomb Raider 15",
+          "date": "July 11, 2025",
+          "tags": [
+            "Curves",
+            "Experimental"
+          ],
+          "communityScore": 51,
+          "totalVotes": 249,
+          "sentiment": {
+            "great": 5,
+            "good": 10,
+            "ok": 76,
+            "bad": 9
+          },
+          "consensus": "Tiền thân của TR16. Xử lý đường cong tốt nhưng hơi kém tinh tế.",
+          "bestFor": "Đường cong",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Hyundai",
+            "Toyota"
+          ]
+        },
+        {
+          "name": "Le Tomb Raider 14",
+          "date": "July 14, 2025",
+          "tags": [
+            "Experimental"
+          ],
+          "communityScore": 53,
+          "totalVotes": 435,
+          "sentiment": {
+            "great": 6,
+            "good": 7,
+            "ok": 83,
+            "bad": 4
+          },
+          "consensus": "Biến thể có tên tiếng Pháp. Một chiếc nĩa thử nghiệm với những đặc điểm độc đáo.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "Tomb Raider 14",
+          "date": "June 30, 2025",
+          "tags": [
+            "Experimental"
+          ],
+          "communityScore": 52,
+          "totalVotes": 691,
+          "sentiment": {
+            "great": 7,
+            "good": 7,
+            "ok": 79,
+            "bad": 7
+          },
+          "consensus": "Lặp lại TR14 tiêu chuẩn. Đặt nền móng cho TR15 và TR16.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "Tomb Raider 13",
+          "date": "June 27, 2025",
+          "tags": [
+            "Experimental"
+          ],
+          "communityScore": 53,
+          "totalVotes": 81,
+          "sentiment": {
+            "great": 9,
+            "good": 9,
+            "ok": 74,
+            "bad": 8
+          },
+          "consensus": "Dòng TR trước đó. Nền tảng cho các đặc tính xử lý đường cong.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "Aggressive TR",
+          "date": "June 28, 2025",
+          "tags": [
+            "Aggressive",
+            "Curves"
+          ],
+          "communityScore": 48,
+          "totalVotes": 124,
+          "sentiment": {
+            "great": 6,
+            "good": 8,
+            "ok": 71,
+            "bad": 15
+          },
+          "consensus": "Giai điệu mạnh mẽ của dòng TR. Kết hợp xử lý đường cong với đầu vào quyết đoán.",
+          "bestFor": "Lái xe thể thao",
+          "steeringFeel": "Stiff",
+          "testedOn": [
+            "Sporty vehicles"
+          ],
+          "routesDriven": 9,
+          "fleetRank": 71
+        },
+        {
+          "name": "Tomb Raider 7",
+          "date": "May 07, 2025",
+          "tags": [
+            "Early"
+          ],
+          "communityScore": 48,
+          "totalVotes": 52,
+          "sentiment": {
+            "great": 8,
+            "good": 2,
+            "ok": 77,
+            "bad": 13
+          },
+          "consensus": "Dòng TR sớm. Nền tảng cho các phiên bản sau.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "Vegetarian Filet o Fish",
+          "date": "June 21, 2025",
+          "tags": [
+            "Smooth",
+            "Eco"
+          ],
+          "communityScore": 49,
+          "totalVotes": 111,
+          "sentiment": {
+            "great": 6,
+            "good": 10,
+            "ok": 71,
+            "bad": 13
+          },
+          "consensus": "Cấu hình phanh nhẹ nhàng được tối ưu hóa cho xe hybrid. Tối đa hóa phanh tái tạo.",
+          "bestFor": "Xe hybrid/EV",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Toyota Prius",
+            "Hyundai Ioniq"
+          ],
+          "routesDriven": 462,
+          "fleetRank": 31
+        },
+        {
+          "name": "Kerrygold Driving",
+          "date": "June 08, 2025",
+          "tags": [
+            "Smooth"
+          ],
+          "communityScore": 53,
+          "totalVotes": 70,
+          "sentiment": {
+            "great": 7,
+            "good": 10,
+            "ok": 76,
+            "bad": 7
+          },
+          "consensus": "Được đặt theo tên thương hiệu bơ - 'Mịn như bơ'. Đầu vào rất nhẹ nhàng.",
+          "bestFor": "Êm ái",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Sedans"
+          ],
+          "routesDriven": 116,
+          "fleetRank": 48
+        },
+        {
+          "name": "Liquid Crystal Driving",
+          "date": "June 21, 2025",
+          "tags": [
+            "Experimental"
+          ],
+          "communityScore": 51,
+          "totalVotes": 80,
+          "sentiment": {
+            "great": 0,
+            "good": 8,
+            "ok": 90,
+            "bad": 2
+          },
+          "consensus": "Mẫu xe thử nghiệm thời TR với đặc điểm lái độc đáo.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 1533,
+          "fleetRank": 17
+        },
+        {
+          "name": "Secret Good Openpilot",
+          "date": "May 16, 2025",
+          "badge": "HIDDEN GEM",
+          "tags": [
+            "Hidden Gem"
+          ],
+          "communityScore": 57,
+          "totalVotes": 7,
+          "sentiment": {
+            "great": 0,
+            "good": 29,
+            "ok": 71,
+            "bad": 0
+          },
+          "consensus": "Cái tên nói lên tất cả - một viên ngọc ẩn! Hiệu suất tổng thể tốt đáng ngạc nhiên.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various Hyundai/Kia"
+          ],
+          "routesDriven": 7,
+          "fleetRank": 76
+        },
+        {
+          "name": "Simple Plan Driving",
+          "date": "July 07, 2025",
+          "tags": [
+            "Simple",
+            "Reliable"
+          ],
+          "communityScore": 52,
+          "totalVotes": 289,
+          "sentiment": {
+            "great": 5,
+            "good": 8,
+            "ok": 81,
+            "bad": 6
+          },
+          "consensus": "Mô hình quy hoạch đơn giản Hành vi đáng tin cậy và có thể dự đoán được.",
+          "bestFor": "Độ tin cậy",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Most vehicles"
+          ]
+        },
+        {
+          "name": "Tomb Raider 10",
+          "date": "June 17, 2025",
+          "badge": "POPULAR",
+          "tags": [
+            "Highway",
+            "Smooth",
+            "Vehicle-Dependent"
+          ],
+          "communityScore": 50,
+          "totalVotes": 176,
+          "sentiment": {
+            "great": 9,
+            "good": 6,
+            "ok": 73,
+            "bad": 12
+          },
+          "consensus": "Lái xe giống như SP Vikander theo chiều ngang với chiều dọc tốt hơn một chút, khiến nó trở thành trình điều khiển hàng ngày đối với một số người thử nghiệm. Tuyệt vời ở những khúc cua tốc độ thấp, nhưng lại đi trên làn đường dày đặc trên một số ô tô, đặc biệt là Ioniq 5 và RAV4 Prime 2025.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "2025 Ioniq 5",
+            "RAV4 Prime",
+            "'21 Niro",
+            "'22 Niro EV"
+          ]
+        },
+        {
+          "name": "Cookiemonster Tomb Raider",
+          "date": "July 4, 2025",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Curves",
+            "Experimental"
+          ],
+          "communityScore": 48,
+          "totalVotes": 101,
+          "sentiment": {
+            "great": 6,
+            "good": 8,
+            "ok": 71,
+            "bad": 15
+          },
+          "consensus": "Biến thể TR14 tập trung vào làn đường hơn một chút nhưng lại có cảm giác do dự, khiến lực lái lớn hơn khi rẽ vào thành phố. Nổi bật trên những cung đường lưng núi lộng gió dù nghiêng trái khó chịu.",
+          "bestFor": "Đường cong",
+          "steeringFeel": "Confident",
+          "testedOn": [
+            "'23 GV60",
+            "2021 Lexus NX300",
+            "'21 Niro"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "world_2025",
+      "name": "Mẫu 2025",
+      "description": "Kỷ nguyên phát triển của 'Mô hình Thế giới'. Hiệu suất rất đa dạng.",
+      "icon": "🌍",
+      "models": [
+        {
+          "name": "WMI v6",
+          "date": "December 30, 2025",
+          "tags": [
+            "Smart"
+          ],
+          "communityScore": 40,
+          "totalVotes": 15,
+          "sentiment": {
+            "great": 13,
+            "good": 0,
+            "ok": 53,
+            "bad": 34
+          },
+          "consensus": "Phiên bản cuối năm 2025 bắc cầu tới loạt phim năm 2026. Ổn định hơn các phiên bản WMI đời đầu.",
+          "bestFor": "Lái xe hỗn hợp",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "WMI v5",
+          "date": "December 29, 2025",
+          "tags": [
+            "Smart"
+          ],
+          "communityScore": 55,
+          "totalVotes": 5,
+          "sentiment": {
+            "great": 0,
+            "good": 20,
+            "ok": 80,
+            "bad": 0
+          },
+          "consensus": "Mô hình thế giới ở mức phát triển trung bình. Được cộng đồng thử nghiệm tốt.",
+          "bestFor": "Lái xe hỗn hợp",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "WMI v4",
+          "date": "December 22, 2025",
+          "tags": [
+            "Smart"
+          ],
+          "communityScore": 51,
+          "totalVotes": 31,
+          "sentiment": {
+            "great": 6,
+            "good": 13,
+            "ok": 71,
+            "bad": 10
+          },
+          "consensus": "Mô hình thế giới ổn định trước đó. Ít thông minh hơn nhưng được chứng minh là đáng tin cậy.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "WMI v3",
+          "date": "December 19, 2025",
+          "tags": [
+            "Early"
+          ],
+          "communityScore": 51,
+          "totalVotes": 14,
+          "sentiment": {
+            "great": 0,
+            "good": 21,
+            "ok": 71,
+            "bad": 8
+          },
+          "consensus": "Lần lặp lại thứ ba của Mô hình Thế giới. Nền tảng cho các bản phát hành ổn định.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "WMI2",
+          "date": "December 09, 2025",
+          "tags": [
+            "Early"
+          ],
+          "communityScore": 49,
+          "totalVotes": 51,
+          "sentiment": {
+            "great": 4,
+            "good": 8,
+            "ok": 78,
+            "bad": 10
+          },
+          "consensus": "Lặp lại mô hình thế giới thứ hai. Thử nghiệm E2E ban đầu cho thấy nhiều hứa hẹn.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Test vehicles"
+          ]
+        },
+        {
+          "name": "WMI",
+          "date": "December 06, 2025",
+          "tags": [
+            "Original"
+          ],
+          "communityScore": 49,
+          "totalVotes": 82,
+          "sentiment": {
+            "great": 4,
+            "good": 7,
+            "ok": 80,
+            "bad": 9
+          },
+          "consensus": "Lặp lại mô hình thế giới GỐC. Bắt đầu cuộc cách mạng E2E ở Sunnypilot.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Test vehicles"
+          ]
+        },
+        {
+          "name": "Planplus Model",
+          "date": "November 28, 2025",
+          "tags": [
+            "Experimental"
+          ],
+          "communityScore": 50,
+          "totalVotes": 128,
+          "sentiment": {
+            "great": 5,
+            "good": 9,
+            "ok": 77,
+            "bad": 9
+          },
+          "consensus": "Thí nghiệm lập kế hoạch bên. Tiền thân của Planplus v2.",
+          "bestFor": "Phát triển",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Test vehicles"
+          ],
+          "routesDriven": 4,
+          "fleetRank": 86
+        },
+        {
+          "name": "ST Model",
+          "date": "November 11, 2025",
+          "tags": [
+            "Experimental"
+          ],
+          "communityScore": 49,
+          "totalVotes": 144,
+          "sentiment": {
+            "great": 3,
+            "good": 8,
+            "ok": 80,
+            "bad": 9
+          },
+          "consensus": "Mô hình lập kế hoạch ngắn hạn Tập trung vào các quyết định về con đường ngay lập tức.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "Cool GWM",
+          "date": "October 24, 2025",
+          "tags": [
+            "Community"
+          ],
+          "communityScore": 50,
+          "totalVotes": 254,
+          "sentiment": {
+            "great": 7,
+            "good": 5,
+            "ok": 79,
+            "bad": 9
+          },
+          "consensus": "Biến thể Mô hình Thế giới chung do cộng đồng tạo ra.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 533,
+          "fleetRank": 27
+        },
+        {
+          "name": "GWM V9 (gWM9)",
+          "date": "October 21, 2025",
+          "tags": [
+            "Community"
+          ],
+          "communityScore": 81,
+          "totalVotes": 28,
+          "sentiment": {
+            "great": 50,
+            "good": 29,
+            "ok": 18,
+            "bad": 3
+          },
+          "consensus": "Phiên bản Generic World Model 9. Hiệu suất tiêu chuẩn.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "forumUrl": "https://community.sunnypilot.ai/t/gwm9-21-oct-2025/308"
+        },
+        {
+          "name": "The Cool Peoples Model v3",
+          "date": "October 10, 2025",
+          "tags": [
+            "Community"
+          ],
+          "communityScore": 52,
+          "totalVotes": 184,
+          "sentiment": {
+            "great": 7,
+            "good": 11,
+            "ok": 74,
+            "bad": 8
+          },
+          "consensus": "Lần lặp thứ ba của mô hình hướng tới cộng đồng. Tích cực phát triển.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 1690,
+          "fleetRank": 14
+        },
+        {
+          "name": "The Cool Peoples Model v2",
+          "date": "October 09, 2025",
+          "tags": [
+            "Community"
+          ],
+          "communityScore": 51,
+          "totalVotes": 23,
+          "sentiment": {
+            "great": 9,
+            "good": 4,
+            "ok": 78,
+            "bad": 9
+          },
+          "consensus": "Phiên bản thứ hai của mô hình cộng đồng. Cải thiện về phản hồi.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 14,
+          "fleetRank": 66
+        },
+        {
+          "name": "The Cool Peoples Model",
+          "date": "October 03, 2025",
+          "tags": [
+            "Community",
+            "Original"
+          ],
+          "communityScore": 52,
+          "totalVotes": 381,
+          "sentiment": {
+            "great": 7,
+            "good": 10,
+            "ok": 75,
+            "bad": 8
+          },
+          "consensus": "Mô hình hướng tới cộng đồng ban đầu. 'Bởi nhân dân, vì nhân dân.'",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "Nuggets in Digon",
+          "date": "October 09, 2025",
+          "tags": [
+            "Meme"
+          ],
+          "communityScore": 54,
+          "totalVotes": 132,
+          "sentiment": {
+            "great": 5,
+            "good": 8,
+            "ok": 86,
+            "bad": 1
+          },
+          "consensus": "Chương trình đào tạo thử nghiệm mang tên Meme. Không nhất quán nhưng vui vẻ.",
+          "note": "Không sử dụng cho việc lái xe hàng ngày.",
+          "bestFor": "Vui vẻ",
+          "steeringFeel": "Varies",
+          "testedOn": [
+            "Brave testers"
+          ],
+          "routesDriven": 5,
+          "fleetRank": 81
+        },
+        {
+          "name": "North Nevada Model V2",
+          "date": "October 08, 2025",
+          "tags": [
+            "Stable"
+          ],
+          "communityScore": 52,
+          "totalVotes": 48,
+          "sentiment": {
+            "great": 10,
+            "good": 6,
+            "ok": 75,
+            "bad": 9
+          },
+          "consensus": "Phiên bản cập nhật của điểm chuẩn ổn định. Định tâm làn đường được tinh chỉnh.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Most vehicles"
+          ],
+          "routesDriven": 2310,
+          "fleetRank": 10
+        },
+        {
+          "name": "North Nevada Model",
+          "date": "October 07, 2025",
+          "tags": [
+            "Stable",
+            "Classic"
+          ],
+          "communityScore": 51,
+          "totalVotes": 215,
+          "sentiment": {
+            "great": 5,
+            "good": 6,
+            "ok": 82,
+            "bad": 7
+          },
+          "consensus": "Điểm chuẩn ổn định sớm. Thiết lập đường cơ sở 'trung lập'.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Most vehicles"
+          ]
+        },
+        {
+          "name": "gWM v8",
+          "date": "September 28, 2025",
+          "tags": [
+            "Generic"
+          ],
+          "communityScore": 53,
+          "totalVotes": 140,
+          "sentiment": {
+            "great": 8,
+            "good": 7,
+            "ok": 80,
+            "bad": 5
+          },
+          "consensus": "Phiên bản Mô hình thần kinh chung 8. Hiệu suất cơ bản vững chắc.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 768,
+          "fleetRank": 25
+        },
+        {
+          "name": "gWM v6",
+          "date": "September 20, 2025",
+          "tags": [
+            "Generic"
+          ],
+          "communityScore": 53,
+          "totalVotes": 123,
+          "sentiment": {
+            "great": 5,
+            "good": 9,
+            "ok": 82,
+            "bad": 4
+          },
+          "consensus": "Mô hình thần kinh chung phiên bản 6. Ít tinh tế hơn v8.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 13,
+          "fleetRank": 69
+        },
+        {
+          "name": "gWM v5",
+          "date": "September 09, 2025",
+          "tags": [
+            "Generic"
+          ],
+          "communityScore": 54,
+          "totalVotes": 368,
+          "sentiment": {
+            "great": 7,
+            "good": 11,
+            "ok": 77,
+            "bad": 5
+          },
+          "consensus": "Mô hình thần kinh chung phiên bản 5. Phát triển ở giai đoạn giữa.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "gWM Model v3",
+          "date": "August 22, 2025",
+          "tags": [
+            "Generic",
+            "Early"
+          ],
+          "communityScore": 52,
+          "totalVotes": 303,
+          "sentiment": {
+            "great": 5,
+            "good": 9,
+            "ok": 80,
+            "bad": 6
+          },
+          "consensus": "Mô hình thần kinh chung sớm. Mối quan tâm lịch sử.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Test vehicles"
+          ]
+        },
+        {
+          "name": "Fly By Wire",
+          "date": "September 04, 2025",
+          "badge": "HIDDEN GEM",
+          "tags": [
+            "Smooth",
+            "Highway"
+          ],
+          "communityScore": 51,
+          "totalVotes": 91,
+          "sentiment": {
+            "great": 5,
+            "good": 11,
+            "ok": 75,
+            "bad": 9
+          },
+          "consensus": "Được đặt tên theo hệ thống điều khiển máy bay. Mượt mà, lọc có cảm giác như đang bay.",
+          "note": "Chuyển động vô lăng tối thiểu.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Sedans",
+            "SUVs"
+          ],
+          "routesDriven": 29,
+          "fleetRank": 60
+        },
+        {
+          "name": "Falling Phoenix",
+          "date": "August 14, 2025",
+          "tags": [
+            "Experimental"
+          ],
+          "communityScore": 55,
+          "totalVotes": 208,
+          "sentiment": {
+            "great": 11,
+            "good": 12,
+            "ok": 70,
+            "bad": 7
+          },
+          "consensus": "Hợp nhất thử nghiệm. Tay lái độc đáo được một số người dùng yêu thích.",
+          "bestFor": "Thử nghiệm",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 1482,
+          "fleetRank": 19
+        },
+        {
+          "name": "SP Vikander Model",
+          "date": "May 03, 2025",
+          "tags": [
+            "Sunnypilot"
+          ],
+          "communityScore": 60,
+          "totalVotes": 45,
+          "sentiment": {
+            "great": 16,
+            "good": 16,
+            "ok": 64,
+            "bad": 4
+          },
+          "consensus": "Giai điệu dành riêng cho Sunnypilot. Tối ưu hóa cho ngã ba này.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Sunnypilot vehicles"
+          ],
+          "routesDriven": 228,
+          "fleetRank": 38
+        },
+        {
+          "name": "Filet o Fish",
+          "date": "March 07, 2025",
+          "tags": [
+            "Smooth",
+            "Original"
+          ],
+          "communityScore": 52,
+          "totalVotes": 157,
+          "sentiment": {
+            "great": 8,
+            "good": 11,
+            "ok": 71,
+            "bad": 10
+          },
+          "consensus": "Mô hình 'cá' nguyên bản. Cấu hình phanh mượt mà. Ý nghĩa lịch sử.",
+          "bestFor": "Êm ái",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Various sedans"
+          ],
+          "routesDriven": 1015,
+          "fleetRank": 21
+        },
+        {
+          "name": "Down to Ride (Original)",
+          "date": "May 27, 2025",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Custom",
+            "Vision",
+            "Predecessor"
+          ],
+          "communityScore": 63,
+          "totalVotes": 4,
+          "sentiment": {
+            "great": 0,
+            "good": 50,
+            "ok": 50,
+            "bad": 0
+          },
+          "consensus": "Down to Ride ban đầu, được xây dựng trên mô hình tầm nhìn TR7. Cá nhân tôi ban đầu yêu thích khả năng kiểm soát theo chiều ngang, mặc dù theo chiều dọc bị tụt lại phía sau và một số người thử nghiệm đã thiên về làn đường bên phải nhiều.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "'21 Niro"
+          ]
+        },
+        {
+          "name": "Down to Ride v3",
+          "date": "May 30, 2025",
+          "badge": "POPULAR",
+          "tags": [
+            "Smooth",
+            "Comfort",
+            "Recommended"
+          ],
+          "communityScore": 54,
+          "totalVotes": 101,
+          "sentiment": {
+            "great": 7,
+            "good": 15,
+            "ok": 72,
+            "bad": 6
+          },
+          "consensus": "Lái xe hàng ngày suôn sẻ, hơi thiên về làn đường bên trái. Có thể so sánh với SP Vikander về mặt ngang nhưng lại lười chạm vào các lượt, đôi khi cần sự trợ giúp để hoàn thành một pha sắc bén.",
+          "note": "Được người thử nghiệm đánh giá khoảng 10/10 theo chiều ngang và 6/10 theo chiều dọc.",
+          "bestFor": "Toàn diện",
+          "steeringFeel": "Ultra-Smooth",
+          "testedOn": [
+            "'21 Hyundai",
+            "Mazda CX-5",
+            "24 GV70 3.5",
+            "'21 Niro"
+          ]
+        },
+        {
+          "name": "Down to Ride v4",
+          "date": "July 7, 2025",
+          "badge": "POPULAR",
+          "tags": [
+            "Smooth",
+            "Fast Long"
+          ],
+          "communityScore": 53,
+          "totalVotes": 143,
+          "sentiment": {
+            "great": 5,
+            "good": 8,
+            "ok": 83,
+            "bad": 4
+          },
+          "consensus": "Những người thử nghiệm mượt mà ở bên đã kiểm tra kỹ xem NNLC có được bật hay không và mẫu xe đầu tiên gần như dừng hẳn ở đèn đỏ. Xử lý khúc cua có ý kiến ​​chia rẽ - một số ô tô đã đi đủ rộng để vượt qua vạch.",
+          "bestFor": "Tiện nghi / Dừng và Đi",
+          "steeringFeel": "Ultra-Smooth",
+          "testedOn": [
+            "Ioniq 6",
+            "2022 Rivian R1T",
+            "'21 Hyundai"
+          ]
+        },
+        {
+          "name": "Organic Kerrygold",
+          "date": "June 18, 2025",
+          "badge": "HIDDEN GEM",
+          "tags": [
+            "Custom",
+            "Curves"
+          ],
+          "communityScore": 56,
+          "totalVotes": 43,
+          "sentiment": {
+            "great": 14,
+            "good": 14,
+            "ok": 63,
+            "bad": 9
+          },
+          "consensus": "Kerrygold v2. Ấn tượng trên những quãng đường dài và tự tin trên những con đường nông thôn có vạch kẻ làn đường kém, nhưng lại thiếu nhất quán khi không có xe dẫn đầu bám theo.",
+          "bestFor": "Đường cong",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "23 Kona EV",
+            "'17 Ioniq 28kWh"
+          ]
+        },
+        {
+          "name": "Watermelon Model (WM)",
+          "date": "August 16, 2025",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Experimental",
+            "City"
+          ],
+          "communityScore": 54,
+          "totalVotes": 54,
+          "sentiment": {
+            "great": 6,
+            "good": 6,
+            "ok": 87,
+            "bad": 1
+          },
+          "consensus": "Quyết đoán và chắc chắn khi nhận biết chỗ rẽ, đặc biệt là sẵn sàng dừng lại khi có biển báo dừng. Hoạt động trên đường cao tốc diễn ra suôn sẻ, nhưng một số người thử nghiệm gặp phải hiện tượng sợ hãi khi khởi hành trên đường gợi nhớ đến Falling Phoenix.",
+          "bestFor": "Lái xe trong thành phố",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "2025 HKG"
+          ]
+        },
+        {
+          "name": "Green Watermelon (gWM)",
+          "date": "August 16, 2025",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Experimental",
+            "Highway",
+            "Vehicle-Dependent"
+          ],
+          "communityScore": 53,
+          "totalVotes": 72,
+          "sentiment": {
+            "great": 6,
+            "good": 13,
+            "ok": 74,
+            "bad": 7
+          },
+          "consensus": "Theo chiều dọc rất mượt mà ở chế độ thử nghiệm và trên đường ray để lái xe trên đường cao tốc, nhưng nó không bị trượt khi chạy bán kết và ít nhất một người thử nghiệm đã tự tin lái xe về phía lề đường giữa chừng.",
+          "note": "Sự khởi đầu của chuỗi gWM dài hạn.",
+          "bestFor": "Đường cao tốc (có giám sát)",
+          "steeringFeel": "Twitchy",
+          "testedOn": [
+            "2025 Ioniq 5",
+            "'25 EV6"
+          ]
+        },
+        {
+          "name": "gWM Model v2",
+          "date": "August 17, 2025",
+          "badge": "STABLE",
+          "tags": [
+            "Highway",
+            "Smooth"
+          ],
+          "communityScore": 56,
+          "totalVotes": 82,
+          "sentiment": {
+            "great": 11,
+            "good": 7,
+            "ok": 79,
+            "bad": 3
+          },
+          "consensus": "Vẫn tập trung hoàn hảo khi bật NNLC và mang lại trải nghiệm dọc đường cao tốc mượt mà, mặc dù những người thử nghiệm khó có thể phân biệt được với các mẫu xe có thẩm quyền khác trong thời kỳ đó. Ôm bên phải vẫn là một vấn đề thực sự trên Ioniq 5 2024.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Niro PHEV",
+            "2024 Ioniq 5"
+          ]
+        },
+        {
+          "name": "gWM v4",
+          "date": "September 4, 2025",
+          "badge": "POPULAR",
+          "tags": [
+            "Curves",
+            "Aggressive"
+          ],
+          "communityScore": 54,
+          "totalVotes": 258,
+          "sentiment": {
+            "great": 5,
+            "good": 10,
+            "ok": 83,
+            "bad": 2
+          },
+          "consensus": "Một lựa chọn yêu thích dành cho những con đường núi lộng gió - cực kỳ mô-men xoắn khi rẽ và giữ nguyên, với độ lệch trái vừa phải. Sự thụt lùi theo chiều dọc so với gWM3 và khả năng phanh thận trọng của nó đã thu hút những lời phàn nàn khi tham gia giao thông trên đường cao tốc.",
+          "bestFor": "Đường cong",
+          "steeringFeel": "Confident",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "gWM7",
+          "date": "September 27, 2025",
+          "badge": "STABLE",
+          "tags": [
+            "City",
+            "Highway"
+          ],
+          "communityScore": 51,
+          "totalVotes": 73,
+          "sentiment": {
+            "great": 8,
+            "good": 7,
+            "ok": 75,
+            "bad": 10
+          },
+          "consensus": "Được một số người thử nghiệm ưa thích hơn Nevada, với mô-men xoắn được yêu cầu tuyệt vời và hoạt động đáng tin cậy trên đường cao tốc. Không có biển báo dừng thành công nào dừng lại và xe dần dần chuyển sang làn bên trái khi lái xe trong thành phố.",
+          "bestFor": "Lái xe trong thành phố",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "'21 Niro",
+            "'23 GV60"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "name": "Di sản",
+      "description": "'Người bảo vệ cũ'. Đá ổn định đường cao tốc vững chắc. Ít 'thông minh' hơn nhưng giữ làn đường đáng kinh ngạc.",
+      "icon": "🏛️",
+      "models": [
+        {
+          "name": "Recertified Herbalist",
+          "date": "March 01, 2024",
+          "badge": "LEGENDARY",
+          "tags": [
+            "Legendary",
+            "Highway"
+          ],
+          "communityScore": 49,
+          "totalVotes": 43,
+          "sentiment": {
+            "great": 9,
+            "good": 5,
+            "ok": 72,
+            "bad": 14
+          },
+          "consensus": "Mô hình kế thừa đáng tin cậy nhất. Mẫu xe 'Toyota Camry' - nhàm chán, dễ đoán, cứng nhắc.",
+          "note": "KHÔNG THỂ CHUYỂN ĐỘNG trên đường cao tốc. Lỗi ở biển báo dừng.",
+          "bestFor": "Chuyến đi đường bộ",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "All compatible vehicles",
+            "Kia Sportage PHEV"
+          ],
+          "routesDriven": 489,
+          "fleetRank": 28
+        },
+        {
+          "name": "North Dakota",
+          "date": "April 29, 2024",
+          "badge": "LEGENDARY",
+          "tags": [
+            "Stiff",
+            "Highway"
+          ],
+          "communityScore": 51,
+          "totalVotes": 201,
+          "sentiment": {
+            "great": 7,
+            "good": 9,
+            "ok": 75,
+            "bad": 9
+          },
+          "consensus": "Được biết đến với hệ thống lái SIÊU CỨNG. Ôm làn đường trung tâm và KHÔNG THỂ di chuyển. Trên đường ray.",
+          "note": "Có thể cảm thấy robot nhưng cực kỳ ổn định.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Heavy",
+          "testedOn": [
+            "Most vehicles"
+          ],
+          "routesDriven": 195,
+          "fleetRank": 43
+        },
+        {
+          "name": "WD40",
+          "date": "April 09, 2024",
+          "badge": "POPULAR",
+          "tags": [
+            "Smooth",
+            "Highway"
+          ],
+          "communityScore": 68,
+          "totalVotes": 7,
+          "sentiment": {
+            "great": 29,
+            "good": 14,
+            "ok": 57,
+            "bad": 0
+          },
+          "consensus": "Được đặt tên vì nó “bôi trơn” độ cứng của North Dakota. Tốt nhất của cả hai thế giới.",
+          "note": "Định tâm ổn định mà không có cảm giác robot.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Most vehicles"
+          ],
+          "routesDriven": 8357,
+          "fleetRank": 1
+        },
+        {
+          "name": "Notre Dame",
+          "date": "July 01, 2024",
+          "tags": [
+            "Stable"
+          ],
+          "communityScore": 53,
+          "totalVotes": 61,
+          "sentiment": {
+            "great": 3,
+            "good": 7,
+            "ok": 89,
+            "bad": 1
+          },
+          "consensus": "Mô hình di sản vững chắc. Được đặt theo tên của nhà thờ - được xây dựng để trường tồn.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 880,
+          "fleetRank": 23
+        },
+        {
+          "name": "Certified Herbalist v2",
+          "date": "February 19, 2024",
+          "tags": [
+            "Predecessor"
+          ],
+          "communityScore": 54,
+          "totalVotes": 115,
+          "sentiment": {
+            "great": 10,
+            "good": 10,
+            "ok": 73,
+            "bad": 7
+          },
+          "consensus": "Tiền thân của Recertified Herbalist. Vẫn tốt nhưng kém bóng bẩy.",
+          "bestFor": "Đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various"
+          ],
+          "routesDriven": 203,
+          "fleetRank": 42
+        },
+        {
+          "name": "Blue Diamond v2",
+          "date": "December 12, 2023",
+          "badge": "LEGENDARY",
+          "tags": [
+            "Vision",
+            "Rain"
+          ],
+          "communityScore": 53,
+          "totalVotes": 171,
+          "sentiment": {
+            "great": 9,
+            "good": 6,
+            "ok": 78,
+            "bad": 7
+          },
+          "consensus": "'VUA TẦM NHÌN' của các mẫu cũ. TUYỆT VỜI khi trời mưa hoặc vạch kẻ làn đường kém.",
+          "note": "Có thể nhìn thấy làn đường mà các mẫu xe khác bỏ lỡ.",
+          "bestFor": "Thời tiết xấu",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "All compatible vehicles"
+          ]
+        },
+        {
+          "name": "Farmville",
+          "date": "November 07, 2023",
+          "tags": [
+            "Deprecated"
+          ],
+          "communityScore": 67,
+          "totalVotes": 6,
+          "sentiment": {
+            "great": 33,
+            "good": 0,
+            "ok": 67,
+            "bad": 0
+          },
+          "consensus": "Mẫu rất cũ từ năm 2023. Hầu hết không được dùng nữa.",
+          "note": "Chỉ quan tâm lịch sử. Không sử dụng cho việc lái xe hàng ngày.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Legacy vehicles"
+          ]
+        },
+        {
+          "name": "New Lemon Pie (NLP)",
+          "date": "December 8, 2023",
+          "badge": "LEGENDARY",
+          "tags": [
+            "Legacy",
+            "Classic",
+            "Original"
+          ],
+          "communityScore": 54,
+          "totalVotes": 14,
+          "sentiment": {
+            "great": 7,
+            "good": 0,
+            "ok": 93,
+            "bad": 0
+          },
+          "consensus": "Được chấp nhận rộng rãi như một bước nhảy vọt lớn trong việc điều khiển ngang. Được biết đến với việc đưa kế hoạch đường đi vào mô hình lần đầu tiên, điều này khiến nó trở thành một cộng đồng được yêu thích lâu dài trong kỷ nguyên 2023.",
+          "note": "Được vận chuyển dưới tên 'Nightstrike' trong một số bản dựng sunnypilot, điều này gây ra sự nhầm lẫn dai dẳng về cách đặt tên.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Various HKG"
+          ]
+        },
+        {
+          "name": "Bad Dragon (BD)",
+          "date": "December 11, 2023",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Legacy",
+            "Experimental"
+          ],
+          "communityScore": 35,
+          "totalVotes": 27,
+          "sentiment": {
+            "great": 0,
+            "good": 4,
+            "ok": 63,
+            "bad": 33
+          },
+          "consensus": "Mô hình thử nghiệm được đồn đại là sẽ cải thiện khả năng điều khiển theo chiều dọc của dòng FarmVille. Những người thử nghiệm lưu ý rằng nó chuẩn bị tốt hơn cho đèn vàng và có đường đi thoải mái hơn qua các khúc cua thay vì cố định giữ làn đường ở giữa.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Smooth",
+          "testedOn": [
+            "23 Sonata SE",
+            "Honda Pilot"
+          ]
+        },
+        {
+          "name": "New Delhi (ND)",
+          "date": "December 21, 2023",
+          "badge": "STABLE",
+          "tags": [
+            "Legacy",
+            "Bad Weather"
+          ],
+          "communityScore": 49,
+          "totalVotes": 52,
+          "sentiment": {
+            "great": 6,
+            "good": 15,
+            "ok": 63,
+            "bad": 16
+          },
+          "consensus": "Xử lý những điều cơ bản tốt hơn bất kỳ mô hình nào khác trong thời đại của nó đối với một số người thử nghiệm. Lập kế hoạch quỹ đạo tốt khi vạch kẻ đường bị tuyết che khuất và nhận ra các biển báo dừng vào đầu đêm, mặc dù nó bám sát các làn đường trên các khúc cua.",
+          "note": "Phân cực: xuất sắc trên Honda Pilot và Kona EV, những chuyển làn kém được những người khác báo cáo.",
+          "bestFor": "Thời tiết xấu",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "2020 Honda Pilot",
+            "23 Kona EV"
+          ]
+        },
+        {
+          "name": "Los Angeles (LA)",
+          "date": "January 18, 2024",
+          "badge": "LEGENDARY",
+          "tags": [
+            "Legacy",
+            "City",
+            "Classic"
+          ],
+          "communityScore": 53,
+          "totalVotes": 49,
+          "sentiment": {
+            "great": 6,
+            "good": 8,
+            "ok": 82,
+            "bad": 4
+          },
+          "consensus": "Mẫu xe đầu tiên được nhiều người thử nghiệm chứng kiến ​​hoàn thành khả năng quay 90 độ ở điểm dừng 4 chiều. Lái xe hàng ngày chắc chắn, không bị hồi quy trong thời đại của nó, thỉnh thoảng đi trên làn đường qua những khúc cua gấp.",
+          "note": "Giới thiệu giao diện hành động/mong muốnCurvature mà các mô hình sau này đã xây dựng dựa trên đó.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "23 F-150",
+            "Various"
+          ]
+        },
+        {
+          "name": "Los Angeles V2 (LA2)",
+          "date": "January 23, 2024",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Legacy",
+            "Experimental",
+            "Mixed Sentiment"
+          ],
+          "communityScore": 54,
+          "totalVotes": 30,
+          "sentiment": {
+            "great": 10,
+            "good": 7,
+            "ok": 77,
+            "bad": 6
+          },
+          "consensus": "Kiến trúc bên chính thay đổi nhưng còn thô sơ khi xuất hiện - một số người thử nghiệm đã báo cáo rằng nó đi theo vạch màu vàng ở giữa về phía luồng xe cộ đang chạy tới. Những người khác gọi nó là sản phẩm tốt nhất trong thời đại của nó khi chạy trên dev-c3.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Twitchy",
+          "testedOn": [
+            "Various"
+          ]
+        },
+        {
+          "name": "Certified Herbalist (CH)",
+          "date": "February 4, 2024",
+          "badge": "STABLE",
+          "tags": [
+            "Legacy",
+            "Curves"
+          ],
+          "communityScore": 52,
+          "totalVotes": 15,
+          "sentiment": {
+            "great": 7,
+            "good": 7,
+            "ok": 80,
+            "bad": 6
+          },
+          "consensus": "Thực hiện các cú rẽ trái và phải tốt hơn so với dòng Los Angeles với khả năng phát hiện vật thể được cải thiện và theo chiều dọc mượt mà hơn LA v3 đối với một số người thử nghiệm.",
+          "note": "Đã hoàn nguyên từ dấu phẩy chính khi thay đổi làn đường không được chỉ huy; được thay thế bởi v2.",
+          "bestFor": "lịch sử",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Kia Niro EV"
+          ]
+        },
+        {
+          "name": "Vibe (Custom Model)",
+          "date": "June 27, 2025",
+          "badge": "HIDDEN GEM",
+          "tags": [
+            "Custom",
+            "Comfort",
+            "Deprecated"
+          ],
+          "communityScore": 58,
+          "totalVotes": 40,
+          "sentiment": {
+            "great": 13,
+            "good": 10,
+            "ok": 75,
+            "bad": 2
+          },
+          "consensus": "Hợp nhất cộng đồng kết hợp mô hình tầm nhìn Down to Ride với chính sách TR10. Thoải mái và êm ái trên đường cao tốc với khả năng chuyển làn rõ ràng, tuy nhiên kém quyết đoán hơn TR7 trên những khúc cua trong thành phố và thiên về ôm trái.",
+          "note": "Không dùng nữa - được thay thế bằng các hợp nhất tùy chỉnh sau này.",
+          "bestFor": "Lái xe thư giãn",
+          "steeringFeel": "Smooth",
+          "testedOn": [
+            "RAV4 Prime",
+            "'21 Niro",
+            "'26 Kia EV9",
+            "23 Escape PHEV"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "specialty_forks",
+      "name": "Đặc sản & Nĩa",
+      "description": "Phuộc dành riêng cho xe, giai điệu dọc và mô hình nhánh chuyên dụng được thiết kế riêng cho nền tảng phần cứng cụ thể.",
+      "icon": "🔧",
+      "models": [
+        {
+          "name": "BluePilot 5.0",
+          "date": "Late 2025",
+          "tags": [
+            "Ford",
+            "F-150",
+            "Navigator"
+          ],
+          "communityScore": 85,
+          "totalVotes": 95,
+          "sentiment": {
+            "great": 50,
+            "good": 30,
+            "ok": 15,
+            "bad": 5
+          },
+          "consensus": "Được tùy chỉnh cho logic phần cứng BlueCruise của Ford. Quản lý mô-men xoắn tuyệt vời cho xe tải hạng nặng và SUV.",
+          "bestFor": "Kéo & Đường cao tốc",
+          "steeringFeel": "Stiff",
+          "testedOn": [
+            "Ford F-150",
+            "Lincoln Navigator"
+          ]
+        },
+        {
+          "name": "sunnypilot (MVL Fork)",
+          "date": "Late 2025",
+          "tags": [
+            "Honda",
+            "Odyssey",
+            "Fork"
+          ],
+          "communityScore": 80,
+          "totalVotes": 45,
+          "sentiment": {
+            "great": 35,
+            "good": 45,
+            "ok": 15,
+            "bad": 5
+          },
+          "consensus": "Được duy trì bởi MVL. Cụ thể là nhắm đến các vấn đề về vùng chết lái hiện diện trên nền tảng Honda Odyssey.",
+          "bestFor": "Lái xe hỗn hợp",
+          "steeringFeel": "Light",
+          "testedOn": [
+            "Honda Odyssey"
+          ]
+        },
+        {
+          "name": "Deep_RL V1",
+          "date": "December 2025",
+          "badge": "openpilot only",
+          "tags": [
+            "Experimental",
+            "Stock-Only",
+            "Off-Policy"
+          ],
+          "communityScore": 45,
+          "totalVotes": 12,
+          "sentiment": {
+            "great": 15,
+            "good": 25,
+            "ok": 50,
+            "bad": 10
+          },
+          "consensus": "Thử nghiệm mô hình mô phỏng từ đầu đến cuối ban đầu cho các nhà lập kế hoạch quỹ đạo học tập sâu. Kiểm soát ngang ổn định khi chạy trên đường cao tốc thẳng nhưng hiển thị dao động định tâm nhỏ trên đường cong. Khả năng khớp tốc độ có độ ổn định cao nhưng gặp khó khăn khi dừng và đi và quay đầu chặt chẽ.",
+          "note": "⚠️ Độc quyền chỉ có hàng openpilot. KHÔNG có trên sunnylink/sunnypilot.",
+          "bestFor": "Định tâm / Kiểm tra đường cao tốc",
+          "steeringFeel": "Balanced",
+          "testedOn": [
+            "Honda Accord Hybrid 2025"
+          ],
+          "positives": [
+            "Phù hợp với tốc độ đường cao tốc ổn định",
+            "Giữ làn đường tốt khi chạy thẳng"
+          ],
+          "negatives": [
+            "Dao động định tâm nhỏ (dệt làn) trên đường cong",
+            "Đấu tranh với leo thang dừng và đi",
+            "Hiệu suất quay đầu kém ở các góc nhọn"
+          ]
+        },
+        {
+          "name": "Deep_RL V2",
+          "date": "February 2026",
+          "badge": "openpilot only",
+          "tags": [
+            "Experimental",
+            "Stock-Only",
+            "Off-Policy"
+          ],
+          "communityScore": 58,
+          "totalVotes": 18,
+          "sentiment": {
+            "great": 20,
+            "good": 40,
+            "ok": 30,
+            "bad": 10
+          },
+          "consensus": "Mô hình lập kế hoạch từ đầu đến cuối được cải tiến tập trung vào kiểm soát tốc độ và chuyển tiếp phanh mượt mà hơn. Giải quyết vấn đề dệt ngang được thấy trong V1 với nhiều đầu vào lái giảm chấn. Tuy nhiên, việc khởi động từ điểm dừng trong tình trạng giao thông dừng và đi rất chậm, đòi hỏi người lái phải chủ động nhấn chân ga.",
+          "note": "⚠️ Độc quyền chỉ có hàng openpilot. KHÔNG có trên sunnylink/sunnypilot.",
+          "bestFor": "Tiện nghi / Dừng và Đi",
+          "steeringFeel": "Solid",
+          "testedOn": [
+            "Honda Accord Hybrid 2025"
+          ],
+          "positives": [
+            "Giảm chấn bên tuyệt vời (không dệt nữa)",
+            "Chuyển đổi phanh cực kỳ mượt mà",
+            "Mức độ thoải mái cao"
+          ],
+          "negatives": [
+            "Khởi động chậm chạp từ điểm dừng",
+            "Yêu cầu sự can thiệp của người lái xe (bàn đạp ga) khi giao thông đông đúc"
+          ]
+        },
+        {
+          "name": "Deep_RL V3",
+          "date": "May 2026",
+          "badge": "openpilot only",
+          "tags": [
+            "Experimental",
+            "Stock-Only",
+            "Off-Policy"
+          ],
+          "communityScore": 84,
+          "totalVotes": 35,
+          "sentiment": {
+            "great": 60,
+            "good": 30,
+            "ok": 10,
+            "bad": 0
+          },
+          "consensus": "Tính năng lặp lại nâng cao có tính năng hiểu cảnh 3D được cải thiện, được thử nghiệm rộng rãi bởi @Eyezenheim ở Khu vực Vịnh SF. Hiệu suất vượt trội khi vượt qua những con đường dốc của San Francisco và chuyển tiếp liền mạch trên Cầu Vịnh SF. Việc giữ các đường cong ở bên rất tự tin và tự nhiên, mặc dù nó vẫn có thể cắt các góc đô thị hơi quá chặt.",
+          "note": "⚠️ Độc quyền chỉ có hàng openpilot. KHÔNG có trên sunnylink/sunnypilot.",
+          "bestFor": "Đường cong trên đường cao tốc / Lái xe trong đô thị",
+          "steeringFeel": "Natural",
+          "testedOn": [
+            "Honda Accord Hybrid 2025",
+            "Hyundai Ioniq 5"
+          ],
+          "positives": [
+            "Khả năng bám ngang tuyệt vời trên những đường cong dốc",
+            "Chuyển tiếp và sáp nhập đường cao tốc liền mạch",
+            "Tay lái rất tự nhiên giống con người"
+          ],
+          "negatives": [
+            "Có thể cắt các góc đô thị hơi quá chặt",
+            "Thỉnh thoảng cần thận trọng tại các nút giao thông phức tạp"
+          ]
+        },
+        {
+          "name": "UV Model",
+          "date": "August 11, 2025",
+          "badge": "EXPERIMENTAL",
+          "tags": [
+            "Experimental",
+            "Unstable"
+          ],
+          "communityScore": 50,
+          "totalVotes": 136,
+          "sentiment": {
+            "great": 7,
+            "good": 6,
+            "ok": 77,
+            "bad": 10
+          },
+          "consensus": "Một thử nghiệm torq_bois đưa ý tưởng không làn đường lên một tầm cao mới. Đường dọc là một trong những đường tốt nhất trong thời đại của nó và các khúc cua mang lại cảm giác tự tin, nhưng đường bên thì ngoằn ngoèo và lạch bạch, với một số người thử nghiệm đã báo cáo việc khởi hành trên làn đường cao tốc quá nghiêm trọng.",
+          "note": "Thử nghiệm - không được khuyến khích làm trình điều khiển hàng ngày.",
+          "bestFor": "Chỉ kiểm tra",
+          "steeringFeel": "Volatile (Varies by Drop)",
+          "testedOn": [
+            "2025 Ioniq 5",
+            "Toyota Sienna"
+          ]
+        }
+      ]
+    }
+  ]
+}

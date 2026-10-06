@@ -1,0 +1,166 @@
+'use client';
+
+import { useId, useState, ReactNode } from 'react';
+import { useLanguage } from '../lib/i18n';
+import { getFilterButtonClasses, getFilterBadgeClasses } from '../lib/filterStyles';
+
+interface Category {
+    id: string;
+    name: string;
+    icon: ReactNode;
+    count: number;
+    deviceCount?: number;
+    /** Set when deviceCount is a parent-company total rather than this make's own. */
+    deviceGroup?: string;
+}
+
+interface CategoryFilterProps {
+    categories: Category[];
+    activeCategories: string[];
+    onToggleCategory: (categoryId: string) => void;
+    onClearAll: () => void;
+    collapsible?: boolean;
+    initialOpen?: boolean;
+    vertical?: boolean;
+    recommendedCount?: number;
+}
+
+export default function CategoryFilter({
+    categories,
+    activeCategories,
+    onToggleCategory,
+    onClearAll,
+    collapsible = false,
+    initialOpen = false,
+    vertical = false,
+    recommendedCount = 0,
+}: CategoryFilterProps) {
+    const [isOpen, setIsOpen] = useState(initialOpen);
+    const listId = useId();
+    const { t } = useLanguage();
+    const isAllActive = activeCategories.length === 0;
+    const totalCount = categories.reduce((sum, cat) => sum + cat.count, 0);
+
+    const toggleOpen = () => setIsOpen(!isOpen);
+
+    const containerClasses = collapsible
+        ? `flex gap-2 transition-all duration-300 overflow-hidden overflow-y-auto ${vertical ? 'flex-col items-stretch' : 'flex-wrap'} ${isOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0'}`
+        : `flex gap-2 pb-2 scrollbar-hide lg:overflow-visible lg:mx-0 lg:px-0 lg:pb-0 ${vertical ? 'flex-col items-stretch mx-0 px-0' : 'overflow-x-auto -mx-4 px-4 lg:flex-wrap'}`;
+
+    return (
+        <div className="space-y-3">
+            <div className="flex items-center justify-between">
+                {collapsible ? (
+                    <button
+                        type="button"
+                        onClick={toggleOpen}
+                        aria-expanded={isOpen}
+                        aria-controls={listId}
+                        className="flex items-center gap-2 text-sm text-slate-400 uppercase tracking-wider font-medium w-full text-left cursor-pointer hover:text-slate-300"
+                    >
+                        <span>{t('filter.categories')}</span>
+                        <svg
+                            className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                ) : (
+                    // Static section label: a heading, not a permanently disabled button.
+                    <h2 className="flex items-center gap-2 text-sm text-slate-400 uppercase tracking-wider font-medium w-full text-left">
+                        {t('filter.categories')}
+                    </h2>
+                )}
+
+                {!isAllActive && !collapsible && (
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onClearAll();
+                        }}
+                        className="text-xs text-slate-400 hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0"
+                    >
+                        {t('filter.showAll')}
+                    </button>
+                )}
+                {collapsible && !isAllActive && (
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onClearAll();
+                        }}
+                        className="text-xs text-slate-400 hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0"
+                    >
+                        {t('filter.reset')}
+                    </button>
+                )}
+            </div>
+
+            <div className={containerClasses} id={listId}>
+                {/* All Button */}
+                <button
+                    onClick={onClearAll}
+                    type="button"
+                    className={getFilterButtonClasses({ isActive: isAllActive })}
+                >
+                    <span className="shrink-0">🏠</span>
+                    <span className="flex-1 break-words">{t('filter.all')}</span>
+                    <span className={getFilterBadgeClasses(isAllActive)}>
+                        {totalCount}
+                    </span>
+                </button>
+
+                {/* Recommended Filter */}
+                <button
+                    onClick={() => onToggleCategory('recommended')}
+                    type="button"
+                    className={getFilterButtonClasses({ isActive: activeCategories.includes('recommended'), variant: 'emerald' })}
+                >
+                    <span className="text-emerald-400 shrink-0">★</span>
+                    <span className="flex-1 break-words">{t('filter.recommended')}</span>
+                    {recommendedCount > 0 && (
+                        <span className={getFilterBadgeClasses(activeCategories.includes('recommended'), 'emerald')}>
+                             {recommendedCount}
+                        </span>
+                    )}
+                </button>
+
+
+                {/* Category Buttons */}
+                {categories.map((category) => {
+                    const isActive = activeCategories.includes(category.id);
+                    return (
+                        <button
+                            key={category.id}
+                            onClick={() => onToggleCategory(category.id)}
+                            type="button"
+                            className={getFilterButtonClasses({ isActive })}
+                        >
+                            <span className="shrink-0">{category.icon}</span>
+                            <span className="flex-1 break-words">{category.name}</span>
+                            <div className="flex items-center gap-1.5 shrink-0">
+                                {category.deviceCount !== undefined && category.deviceCount > 0 && (
+                                    <span
+                                        className="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20"
+                                        title={category.deviceGroup
+                                            ? `${category.deviceCount.toLocaleString()} active Sunnylink devices across the ${category.deviceGroup} group`
+                                            : `${category.deviceCount.toLocaleString()} active ${category.name} Sunnylink devices`}
+                                    >
+                                        ⚡{category.deviceCount >= 1000 ? `${(category.deviceCount / 1000).toFixed(1)}k` : category.deviceCount}
+                                    </span>
+                                )}
+                                <span className={getFilterBadgeClasses(isActive)}>
+                                    {category.count}
+                                </span>
+                            </div>
+                        </button>
+                    );
+                })}
+            </div>
+        </div>
+    );
+}
